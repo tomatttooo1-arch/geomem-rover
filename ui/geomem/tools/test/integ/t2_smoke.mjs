@@ -1,0 +1,21 @@
+// 冒烟（不算判据）：夹具＋真桥＋最小 WS 客户端＋真前端，看形状、托管与静态文件。
+import fs from 'node:fs';
+import { startFixture, startBridge, waitLog, waitHttp, stopAll, tokenFile, RawClient, ctl, launch, snap, wait, APP, PY313 } from './tb.mjs';
+const [out] = process.argv.slice(2); fs.mkdirSync(out, { recursive: true });
+const tok = tokenFile(out);
+const fx = startFixture(PY313, tok, out); await waitLog(fx, /fixture up/);
+const br = startBridge(PY313, tok, out, 'smoke'); await waitHttp(`${APP}/`);
+const c = await new RawClient().open();
+await wait(3000);
+const hello = c.last('hello'), sn = c.last('snapshot'), clouds = c.msgs.filter(m => m.type === 'cloud');
+console.log('hello', JSON.stringify(hello));
+console.log('clouds', JSON.stringify(clouds.map(x => x.header)));
+console.log('snapshot', JSON.stringify({ ...sn, objects: sn.objects.slice(0, 2), nObjects: sn.objects.length }));
+const { browser, page } = await launch();
+const failed = []; page.on('requestfailed', r => failed.push(r.url())); page.on('response', r => { if (r.status() >= 400) failed.push(`${r.status()} ${r.url()}`); });
+await page.goto(`${APP}/?source=live`, { waitUntil: 'networkidle' }); await wait(3000);
+console.log('page', JSON.stringify(await snap(page)), 'cloud', await page.evaluate(() => document.getElementById('map-canvas').dataset.cloudPoints), 'failed', JSON.stringify(failed), 'errors', page.errors.length);
+await page.screenshot({ path: `${out}/smoke.png` });
+console.log('ctl', JSON.stringify(await ctl('op=state')).slice(0, 400));
+await browser.close(); c.close(); await stopAll();
+console.log('bridge stats', fs.readFileSync(`${out}/bridge_stats_smoke.json`, 'utf8').slice(0, 600));

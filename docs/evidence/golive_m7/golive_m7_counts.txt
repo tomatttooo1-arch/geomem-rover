@@ -1,0 +1,59 @@
+# Whole-system run on the m7 full-board bitstream m7_pl_m7s17 (BUILD_ID 0x063ba99b, search core SRCHK6 m17), MEM=pl SRCH=pl PLN=gmap3, 640 model
+# Lines below are copied from the run logs; only the listed keys are kept from each JSON line.
+
+## Run duration (source: kv/progress.txt)
+== PHASE running 1077.93 2026-11-04T09:04:54+0000
+== PHASE stop 1328.57 2026-11-04T09:09:05+0000
+# running -> stop = 1328.57 - 1077.93 = 250.6 s
+
+## Planner path readback, 510 calls, PS cross-check (source: kv/depth.jsonl, ev=field lines, key "pln")
+first field line: frame=446 {"field_calls": 2, "field_ok": 2, "path_calls": 2, "path_found": 2, "path_match": 2, "path_mismatch": 0, "gmap_enabled": 1, "merge_calls": 1, "merge_ok": 1}
+last field line: frame=8451 {"field_calls": 510, "field_ok": 510, "path_calls": 510, "path_found": 510, "path_match": 510, "path_mismatch": 0, "gmap_enabled": 1, "merge_calls": 509, "merge_ok": 509}
+# field lines in log: 509
+
+## Memory uplink, 507 records from the memory core (source: kv/uplink.jsonl)
+first uplink: seq=1 {"src": "pl", "calls": {"init": 1, "assoc": 0, "exec": 84}, "fallbacks": 0, "frames": 84}
+last uplink: seq=507 {"src": "pl", "calls": {"init": 1, "assoc": 5, "exec": 1887}, "fallbacks": 0, "frames": 1887}
+# uplink records: 507; with mem.src == "pl": 507; with mem.fallbacks == 0: 507
+
+## Search core, 26 episodes (source: kv/srch.jsonl and kv/srch_status.json)
+init: {"impl_req": "pl", "impl": "pl", "init_ms": 1172.4}
+episode n=1 impl=pl ms=2527.1 core_calls=97
+episode n=2 impl=pl ms=2294.9 core_calls=190
+episode n=3 impl=pl ms=2376.4 core_calls=283
+episode n=4 impl=pl ms=2319.2 core_calls=375
+episode n=5 impl=pl ms=2382.1 core_calls=468
+episode n=6 impl=pl ms=2286.0 core_calls=561
+episode n=7 impl=pl ms=2417.4 core_calls=653
+episode n=8 impl=pl ms=2221.6 core_calls=746
+episode n=9 impl=pl ms=2285.9 core_calls=839
+episode n=10 impl=pl ms=2361.5 core_calls=931
+episode n=11 impl=pl ms=2210.9 core_calls=1024
+episode n=12 impl=pl ms=2278.1 core_calls=1117
+episode n=13 impl=pl ms=2303.9 core_calls=1209
+episode n=14 impl=pl ms=2212.1 core_calls=1302
+episode n=15 impl=pl ms=2491.5 core_calls=1395
+episode n=16 impl=pl ms=2310.3 core_calls=1487
+episode n=17 impl=pl ms=2208.3 core_calls=1580
+episode n=18 impl=pl ms=2283.2 core_calls=1673
+episode n=19 impl=pl ms=2352.2 core_calls=1765
+episode n=20 impl=pl ms=2292.9 core_calls=1858
+episode n=21 impl=pl ms=2457.9 core_calls=1951
+episode n=22 impl=pl ms=2517.7 core_calls=2043
+episode n=23 impl=pl ms=2303.1 core_calls=2136
+episode n=24 impl=pl ms=2414.3 core_calls=2229
+episode n=25 impl=pl ms=2349.2 core_calls=2321
+episode n=26 impl=pl ms=2246.7 core_calls=2414
+status: {"impl": "pl", "episodes": 26, "core_calls": 2414, "selfcheck_same": true, "selfcheck_sw_ms": 9357.9, "selfcheck_pl_ms": 2527.1}
+# episode lines: 26, all impl=pl: True
+
+## CPU (source: kv/cpu_summary.json, cores, mean)
+cpu mean=1.9773
+pid:kv_cam mean=0.9993
+pid:kv_server mean=0.5029
+pid:kv_srch mean=0.2299
+pid:kv_memsvc mean=0.0577
+pid:dpu_rx mean=0.0226
+pid:kv_uplink mean=0.0219
+
+## Frame rate and latency: chain_report.txt (copied verbatim in this folder)

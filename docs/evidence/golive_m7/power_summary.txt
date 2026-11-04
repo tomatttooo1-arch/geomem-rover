@@ -1,0 +1,5 @@
+# INA260 on the SOM 5 V rail, 10 Hz; power_uW column
+file,samples,mean_W,p95_W
+pwr_run.csv,2300,6.273,6.75
+pwr_idle.csv,150,3.961,3.97
+# pwr_run.csv: whole-system run above (250.6 s); pwr_idle.csv: same bitstream loaded, application processes stopped, 15 s

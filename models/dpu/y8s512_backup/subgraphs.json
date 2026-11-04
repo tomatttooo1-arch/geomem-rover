@@ -1,0 +1,1030 @@
+{
+  "model": "/output/y8s_six_512_b1024.xmodel",
+  "sha256": "67b7c328db081d8cd2a81416f4809ce52e56f02e9e565774414d11f5d6ab11b3",
+  "dpu_subgraph_count": 1,
+  "subgraphs": [
+    {
+      "name": "subgraph_RawYOLO__input_0",
+      "device": "USER",
+      "operations": [
+        {
+          "name": "RawYOLO__input_0",
+          "type": "data-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_RawYOLO__RawYOLO_C2f_model__ModuleList_12__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_173",
+      "device": "DPU",
+      "operations": [
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_12__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_173",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_12__Bottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_179",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_12__Conv_cv1__Conv2d_conv__input_167_strided_slice_0_128",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_12__Conv_cv1__Conv2d_conv__input_167_strided_slice_128_256",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_12__Conv_cv2__Conv2d_conv__input_185",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_12__input_183",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_15__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_199",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_15__Bottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_205",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_15__Conv_cv1__Conv2d_conv__input_193_strided_slice_0_64",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_15__Conv_cv1__Conv2d_conv__input_193_strided_slice_64_128",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_15__Conv_cv2__Conv2d_conv__input_211",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_15__input_209",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_18__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_229",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_18__Bottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_235",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_18__Conv_cv1__Conv2d_conv__input_223_strided_slice_0_128",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_18__Conv_cv1__Conv2d_conv__input_223_strided_slice_128_256",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_18__Conv_cv2__Conv2d_conv__input_241",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_18__input_239",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_21__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_259",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_21__Bottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_265",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_21__Conv_cv1__Conv2d_conv__input_253_strided_slice_0_256",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_21__Conv_cv1__Conv2d_conv__input_253_strided_slice_256_512",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_21__Conv_cv2__Conv2d_conv__input_271",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_21__input_269",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_2__Bottleneck_m__ModuleList_0__9732",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_2__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_21",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_2__Bottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_27",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_2__Conv_cv1__Conv2d_conv__input_15_strided_slice_0_32",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_2__Conv_cv1__Conv2d_conv__input_15_strided_slice_32_64",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_2__Conv_cv2__Conv2d_conv__input_33",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_2__input_31",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_51",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__Bottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_57",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__Bottleneck_m__ModuleList_0__input_61",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__Bottleneck_m__ModuleList_1__9968",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__Bottleneck_m__ModuleList_1__Conv_cv1__Conv2d_conv__input_63",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__Bottleneck_m__ModuleList_1__Conv_cv2__Conv2d_conv__input_69",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__Conv_cv1__Conv2d_conv__input_45_strided_slice_0_64",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__Conv_cv1__Conv2d_conv__input_45_strided_slice_64_128",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__Conv_cv2__Conv2d_conv__input_75",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_4__input_73",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_93",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__Bottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_99",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__Bottleneck_m__ModuleList_0__input_103",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__Bottleneck_m__ModuleList_1__10204",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__Bottleneck_m__ModuleList_1__Conv_cv1__Conv2d_conv__input_105",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__Bottleneck_m__ModuleList_1__Conv_cv2__Conv2d_conv__input_111",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__Conv_cv1__Conv2d_conv__input_87_strided_slice_0_128",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__Conv_cv1__Conv2d_conv__input_87_strided_slice_128_256",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__Conv_cv2__Conv2d_conv__input_117",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_6__input_115",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_8__Bottleneck_m__ModuleList_0__10384",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_8__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_135",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_8__Bottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_141",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_8__Conv_cv1__Conv2d_conv__input_129_strided_slice_0_256",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_8__Conv_cv1__Conv2d_conv__input_129_strided_slice_256_512",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_8__Conv_cv2__Conv2d_conv__input_147",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_C2f_model__ModuleList_8__input_145",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Concat_model__ModuleList_11__input_165",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Concat_model__ModuleList_14__input_191",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Concat_model__ModuleList_17__input_221",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Concat_model__ModuleList_20__input_251",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Conv_model__ModuleList_0__Conv2d_conv__input_3",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Conv_model__ModuleList_16__Conv2d_conv__input_217",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Conv_model__ModuleList_19__Conv2d_conv__input_247",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Conv_model__ModuleList_1__Conv2d_conv__input_9",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Conv_model__ModuleList_3__Conv2d_conv__input_39",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Conv_model__ModuleList_5__Conv2d_conv__input_81",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Conv_model__ModuleList_7__Conv2d_conv__input_123",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11342",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11342_download_0",
+          "type": "download"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11491",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11491_download_0",
+          "type": "download"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11640",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11640_download_0",
+          "type": "download"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv2d_2__11266",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv_0__Conv2d_conv__input_275",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv_1__Conv2d_conv__input_281",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv2d_2__11415",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv_0__Conv2d_conv__input_299",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv_1__Conv2d_conv__input_305",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv2d_2__11564",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv_0__Conv2d_conv__input_325",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv_1__Conv2d_conv__input_331",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv2d_2__11339",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv_0__Conv2d_conv__input_287",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv_1__Conv2d_conv__input_293",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv2d_2__11488",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv_0__Conv2d_conv__input_311",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv_1__Conv2d_conv__input_317",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv2d_2__11637",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv_0__Conv2d_conv__input_337",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv_1__Conv2d_conv__input_343",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_SPPF_model__ModuleList_9__Conv_cv1__Conv2d_conv__input_153",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_SPPF_model__ModuleList_9__Conv_cv2__Conv2d_conv__input_159",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_SPPF_model__ModuleList_9__MaxPool2d_m__10455_fix",
+          "type": "pool-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_SPPF_model__ModuleList_9__MaxPool2d_m__10469_fix",
+          "type": "pool-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_SPPF_model__ModuleList_9__MaxPool2d_m__10483_fix",
+          "type": "pool-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_SPPF_model__ModuleList_9__input_157",
+          "type": "concat-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Upsample_model__ModuleList_10__10518",
+          "type": "upsample-fix"
+        },
+        {
+          "name": "RawYOLO__RawYOLO_Upsample_model__ModuleList_13__10677",
+          "type": "upsample-fix"
+        },
+        {
+          "name": "RawYOLO__input_0_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "RawYOLO__model_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_cv1_conv_bias_strided_slice_0_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_cv1_conv_bias_strided_slice_128_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_cv1_conv_weight_strided_slice_0_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_cv1_conv_weight_strided_slice_128_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_12_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_cv1_conv_bias_strided_slice_0_64",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_cv1_conv_bias_strided_slice_64_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_cv1_conv_weight_strided_slice_0_64",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_cv1_conv_weight_strided_slice_64_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_15_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_16_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_16_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_cv1_conv_bias_strided_slice_0_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_cv1_conv_bias_strided_slice_128_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_cv1_conv_weight_strided_slice_0_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_cv1_conv_weight_strided_slice_128_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_18_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_19_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_19_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_cv1_conv_bias_strided_slice_0_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_cv1_conv_bias_strided_slice_256_512",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_cv1_conv_weight_strided_slice_0_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_cv1_conv_weight_strided_slice_256_512",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_21_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_0_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_0_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_0_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_0_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_0_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_0_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_1_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_1_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_1_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_1_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_1_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_1_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_2_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_2_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_2_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_2_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_2_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv2_2_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_0_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_0_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_0_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_0_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_0_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_0_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_1_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_1_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_1_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_1_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_1_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_1_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_2_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_2_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_2_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_2_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_2_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_22_cv3_2_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_cv1_conv_bias_strided_slice_0_32",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_cv1_conv_bias_strided_slice_32_64",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_cv1_conv_weight_strided_slice_0_32",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_cv1_conv_weight_strided_slice_32_64",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_2_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_3_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_3_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_cv1_conv_bias_strided_slice_0_64",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_cv1_conv_bias_strided_slice_64_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_cv1_conv_weight_strided_slice_0_64",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_cv1_conv_weight_strided_slice_64_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_m_1_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_m_1_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_m_1_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_4_m_1_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_5_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_5_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_cv1_conv_bias_strided_slice_0_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_cv1_conv_bias_strided_slice_128_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_cv1_conv_weight_strided_slice_0_128",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_cv1_conv_weight_strided_slice_128_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_m_1_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_m_1_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_m_1_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_6_m_1_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_7_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_7_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_cv1_conv_bias_strided_slice_0_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_cv1_conv_bias_strided_slice_256_512",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_cv1_conv_weight_strided_slice_0_256",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_cv1_conv_weight_strided_slice_256_512",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_8_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_9_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_9_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_9_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "RawYOLO__model_9_cv2_conv_weight",
+          "type": "const-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11640_fix_",
+      "device": "CPU",
+      "operations": [
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11640_fix_",
+          "type": "fix2float"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11491_fix_",
+      "device": "CPU",
+      "operations": [
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11491_fix_",
+          "type": "fix2float"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11342_fix_",
+      "device": "CPU",
+      "operations": [
+        {
+          "name": "RawYOLO__RawYOLO_RawHead_model__ModuleList_22__11342_fix_",
+          "type": "fix2float"
+        }
+      ]
+    }
+  ],
+  "note": "CPU/USER input data nodes are listed separately; inspect their actual operation types before calling them compute fallback"
+}

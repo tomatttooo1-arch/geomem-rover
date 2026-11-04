@@ -1,0 +1,89 @@
+#ifndef ROI_OBS_MATH_HPP
+#define ROI_OBS_MATH_HPP
+#include <ap_int.h>
+namespace roi_obs {
+inline ap_uint<8> depth_bin(ap_uint<16> code) {
+ #pragma HLS INLINE
+ static const unsigned long long exceptions[4]={0x4210840084202000ULL,0x1084210842100000ULL,0x1084210800000000ULL,0x42ULL};
+ ap_uint<29> product=code*ap_uint<13>(5243);
+ ap_uint<11> q=product>>18;
+ ap_uint<16> multiple=q*ap_uint<6>(50);
+ bool adjust=(code==multiple)&&((exceptions[q.range(7,6)]>>(q&63))&1);
+ return (code>=101 && code<10000)?ap_uint<8>(q-adjust):ap_uint<8>(255);
+}
+inline ap_int<32> round_q32(ap_int<80> value) {
+ #pragma HLS INLINE
+ ap_int<48> base=value>>32;
+ ap_uint<32> fraction=value.range(31,0);
+ return base+(fraction>0x80000000U||(fraction==0x80000000U&&base[0]));
+}
+inline bool valid_ratio(ap_uint<17> n,ap_uint<17> area,ap_uint<56> m,bool tie) {
+ #pragma HLS INLINE off
+ // Same exact midpoint comparator as evidence, serial split multiplier.
+ ap_uint<28> lo=m.range(27,0),hi=m.range(55,28);
+ ap_uint<48> p=0,q=0;
+ for(int i=16;i>=0;--i){
+  p=(p<<1)+(area[i]?hi:ap_uint<28>(0));
+  q=(q<<1)+(area[i]?lo:ap_uint<28>(0));
+ }
+ ap_uint<49> h=p+(q>>28);ap_uint<49> lhs=ap_uint<49>(n)<<27;
+ return lhs>h || (lhs==h && q.range(27,0)==0 && tie);
+}
+inline void rgb_hsv(ap_uint<24> rgb,ap_uint<8>& hue,ap_uint<8>& sat,ap_uint<8>& val) {
+ #pragma HLS INLINE
+ static const unsigned long long tables[256]={
+  0x0ULL,0x1e000ff000ULL,0xf0007f800ULL,0xa00055000ULL,0x78003fc00ULL,0x600033000ULL,0x50002a800ULL,0x4492246dbULL,
+  0x3c001fe00ULL,0x35551c555ULL,0x300019800ULL,0x2ba3172e9ULL,0x280015400ULL,0x24ec139d9ULL,0x22491236eULL,0x200011000ULL,
+  0x1e000ff00ULL,0x1c3c0f000ULL,0x1aab0e2abULL,0x19430d6bdULL,0x18000cc00ULL,0x16db0c249ULL,0x15d10b974ULL,0x14df0b164ULL,
+  0x14000aa00ULL,0x13330a333ULL,0x127609cecULL,0x11c70971cULL,0x1125091b7ULL,0x108d08cb1ULL,0x100008800ULL,0xf7c0839dULL,
+  0xf0007f80ULL,0xe8c07ba3ULL,0xe1e07800ULL,0xdb707492ULL,0xd5507155ULL,0xcf906e45ULL,0xca206b5eULL,0xc4f0689eULL,
+  0xc0006600ULL,0xbb506383ULL,0xb6e06125ULL,0xb2a05ee2ULL,0xae905cbaULL,0xaab05aabULL,0xa6f058b2ULL,0xa36056cfULL,
+  0xa0005500ULL,0x9cc05344ULL,0x99a0519aULL,0x96905000ULL,0x93b04e76ULL,0x90e04cfbULL,0x8e404b8eULL,0x8ba04a2fULL,
+  0x892048dbULL,0x86c04794ULL,0x84704658ULL,0x82304527ULL,0x80004400ULL,0x7de042e3ULL,0x7be041ceULL,0x79e040c3ULL,
+  0x78003fc0ULL,0x76203ec5ULL,0x74603dd1ULL,0x72a03ce5ULL,0x70f03c00ULL,0x6f503b21ULL,0x6db03a49ULL,0x6c303977ULL,
+  0x6ab038abULL,0x693037e4ULL,0x67d03723ULL,0x66603666ULL,0x651035afULL,0x63c034fdULL,0x6270344fULL,0x613033a5ULL,
+  0x60003300ULL,0x5ed0325fULL,0x5db031c2ULL,0x5c803128ULL,0x5b703092ULL,0x5a603000ULL,0x59502f71ULL,0x58402ee6ULL,
+  0x57402e5dULL,0x56502dd8ULL,0x55502d55ULL,0x54602cd6ULL,0x53802c59ULL,0x52902bdfULL,0x51b02b67ULL,0x50d02af3ULL,
+  0x50002a80ULL,0x4f302a10ULL,0x4e6029a2ULL,0x4d902936ULL,0x4cd028cdULL,0x4c102865ULL,0x4b502800ULL,0x4a90279dULL,
+  0x49e0273bULL,0x492026dbULL,0x4870267eULL,0x47c02621ULL,0x472025c7ULL,0x4670256eULL,0x45d02517ULL,0x453024c2ULL,
+  0x4490246eULL,0x43f0241bULL,0x436023caULL,0x42d0237aULL,0x4230232cULL,0x41a022dfULL,0x41102294ULL,0x40902249ULL,
+  0x40002200ULL,0x3f8021b8ULL,0x3ef02171ULL,0x3e70212cULL,0x3df020e7ULL,0x3d7020a4ULL,0x3cf02062ULL,0x3c802020ULL,
+  0x3c001fe0ULL,0x3b901fa1ULL,0x3b101f62ULL,0x3aa01f25ULL,0x3a301ee9ULL,0x39c01eadULL,0x39501e73ULL,0x38e01e39ULL,
+  0x38801e00ULL,0x38101dc8ULL,0x37a01d91ULL,0x37401d5aULL,0x36e01d25ULL,0x36701cf0ULL,0x36101cbbULL,0x35b01c88ULL,
+  0x35501c55ULL,0x34f01c23ULL,0x34a01bf2ULL,0x34401bc1ULL,0x33e01b91ULL,0x33901b62ULL,0x33301b33ULL,0x32e01b05ULL,
+  0x32801ad8ULL,0x32301aabULL,0x31e01a7eULL,0x31901a53ULL,0x31401a27ULL,0x30f019fdULL,0x30a019d3ULL,0x305019a9ULL,
+  0x30001980ULL,0x2fb01957ULL,0x2f70192fULL,0x2f201908ULL,0x2ed018e1ULL,0x2e9018baULL,0x2e401894ULL,0x2e00186eULL,
+  0x2db01849ULL,0x2d701824ULL,0x2d301800ULL,0x2cf017dcULL,0x2ca017b9ULL,0x2c601795ULL,0x2c201773ULL,0x2be01750ULL,
+  0x2ba0172fULL,0x2b60170dULL,0x2b2016ecULL,0x2ae016cbULL,0x2ab016abULL,0x2a70168bULL,0x2a30166bULL,0x29f0164cULL,
+  0x29c0162dULL,0x2980160eULL,0x295015efULL,0x291015d1ULL,0x28e015b4ULL,0x28a01596ULL,0x28701579ULL,0x2830155cULL,
+  0x28001540ULL,0x27d01524ULL,0x27901508ULL,0x276014ecULL,0x273014d1ULL,0x270014b6ULL,0x26d0149bULL,0x26901481ULL,
+  0x26601466ULL,0x2630144cULL,0x26001433ULL,0x25d01419ULL,0x25a01400ULL,0x257013e7ULL,0x255013ceULL,0x252013b6ULL,
+  0x24f0139eULL,0x24c01386ULL,0x2490136eULL,0x24601356ULL,0x2440133fULL,0x24101328ULL,0x23e01311ULL,0x23c012faULL,
+  0x239012e4ULL,0x236012cdULL,0x234012b7ULL,0x231012a1ULL,0x22f0128cULL,0x22c01276ULL,0x22a01261ULL,0x2270124cULL,
+  0x22501237ULL,0x22201222ULL,0x2200120eULL,0x21d011f9ULL,0x21b011e5ULL,0x219011d1ULL,0x216011bdULL,0x214011aaULL,
+  0x21201196ULL,0x20f01183ULL,0x20d01170ULL,0x20b0115dULL,0x2090114aULL,0x20601137ULL,0x20401125ULL,0x20201112ULL,
+  0x20001100ULL,0x1fe010eeULL,0x1fc010dcULL,0x1fa010caULL,0x1f8010b9ULL,0x1f6010a7ULL,0x1f401096ULL,0x1f101085ULL,
+  0x1ef01074ULL,0x1ed01063ULL,0x1ec01052ULL,0x1ea01041ULL,0x1e801031ULL,0x1e601020ULL,0x1e401010ULL,0x1e201000ULL};
+ ap_uint<8> r=rgb.range(7,0),g=rgb.range(15,8),b=rgb.range(23,16);
+ ap_uint<8> mx=r>g?r:g;mx=mx>b?mx:b;
+ ap_uint<8> mn=r<g?r:g;mn=mn<b?mn:b;
+ ap_uint<8> diff=mx-mn;
+ ap_uint<37> tv=tables[mx],td=tables[diff];
+ ap_uint<20> sdiv=tv.range(19,0);ap_uint<17> hdiv=td.range(36,20);
+ ap_uint<28> sp=diff*sdiv;
+ ap_int<12> numerator;
+ if(mx==r)numerator=ap_int<12>(g)-ap_int<12>(b);
+ else if(mx==g)numerator=ap_int<12>(b)-ap_int<12>(r)+2*ap_int<12>(diff);
+ else numerator=ap_int<12>(r)-ap_int<12>(g)+4*ap_int<12>(diff);
+ ap_int<30> hp=numerator*ap_int<18>(hdiv);
+ ap_int<18> h=(hp+2048)>>12;
+ hue=h<0?ap_int<18>(h+180):h;sat=(sp+2048)>>12;val=mx;
+}
+inline ap_uint<3> classify(ap_uint<9> h,ap_uint<9> s,ap_uint<9> v) {
+ #pragma HLS INLINE
+ if(v<100)return 0;if(s<80 && v>360)return 1;if(s<80)return 2;
+ if(h<20||h>340)return 3;if(h<70)return 4;if(h<170)return 5;
+ if(h<270)return 6;return 7;
+}
+}
+#endif

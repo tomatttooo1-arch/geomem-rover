@@ -1,0 +1,223 @@
+{
+ "dir": "${FPGA_RUN}/GOLIVE0/raw/m5-640-w1-run1",
+ "C1_duration_s": {
+  "value": 317.9,
+  "min_s": 300.0,
+  "pass": true
+ },
+ "C2_depth": {
+  "fps_steady": 27.35,
+  "grid_fps": 27.35,
+  "segments": 10,
+  "empty_segments_at_s": [],
+  "frames": 8995,
+  "pass": true
+ },
+ "C3_field": {
+  "updates": 617,
+  "fps": 1.87,
+  "empty_segments_at_s": [],
+  "pass": true
+ },
+ "C4_recog": {
+  "fps_steady": 6.22,
+  "frames": 2048,
+  "frames_with_boxes": 1304,
+  "empty_segments_at_s": [],
+  "pass": true
+ },
+ "C5_nano": {
+  "datagrams": 628,
+  "needed": 572,
+  "status_lines": 76,
+  "status_lines_with_stuck_counter": 16,
+  "find": {
+   "target": "bottle",
+   "found": false
+  },
+  "memory": {
+   "medicine box": {
+    "sightings": 156,
+    "last_t_s": 342.8,
+    "best": 0.731
+   }
+  },
+  "alarm_lines": 17,
+  "pass": false
+ },
+ "C6_no_crash": {
+  "started": {
+   "kv_cam": "21823",
+   "kv_server": "21875",
+   "dpu_rx": "21952",
+   "kv_uplink": "21990"
+  },
+  "alive_at_stop": {
+   "kv_uplink": "21990",
+   "kv_server": "21875",
+   "kv_cam": "21823"
+  },
+  "boot": [
+   "2026-11-04 03:39:33",
+   "2026-11-04 03:39:33"
+  ],
+  "oops": false,
+  "pass": false
+ },
+ "rates_fps": {
+  "camera_depth_arrive": 27.35,
+  "geometry": 27.35,
+  "cost_map": 27.35,
+  "field": 1.87,
+  "recognition_out": 6.22,
+  "uplink_datagrams": 1.98
+ },
+ "chain_report": {
+  "warm_s": 10.0,
+  "depth": {
+   "stages": {
+    "geometry": {
+     "n": 8724,
+     "median": 13.235,
+     "p95": 15.26,
+     "p99": 16.768,
+     "max": 45.986,
+     "rate_fps": 27.352,
+     "drop_rate": 0.0866
+    },
+    "grid": {
+     "n": 8724,
+     "median": 17.674,
+     "p95": 20.25,
+     "p99": 21.75,
+     "max": 79.916,
+     "rate_fps": 27.352,
+     "drop_rate": 0.0866
+    },
+    "field": {
+     "n": 598,
+     "median": 47.615,
+     "p95": 59.569,
+     "p99": 62.376,
+     "max": 67.345,
+     "rate_fps": 1.873,
+     "drop_rate": null
+    }
+   },
+   "frames_in_window": 8724,
+   "camera_frames_offered": 9551,
+   "cam_dev_interval_ms": {
+    "n": 8723,
+    "median": 33.4,
+    "p95": 33.4,
+    "p99": 33.401,
+    "max": 33.5
+   },
+   "camera_fps_from_dev_ts": 29.94,
+   "kv_cam_arrive_to_publish_ms": {
+    "n": 8724,
+    "median": 1.171,
+    "p95": 1.962,
+    "p99": 2.328,
+    "max": 3.64
+   },
+   "publish_to_reader_ms": {
+    "n": 8724,
+    "median": 0.094,
+    "p95": 0.298,
+    "p99": 1.252,
+    "max": 8.447
+   },
+   "e2e_stage": "field",
+   "geo_status_nonzero": 0,
+   "field_refresh_hz": 1.873,
+   "grid_to_field_ms": {
+    "n": 598,
+    "median": 30.511,
+    "p95": 41.026,
+    "p99": 43.222,
+    "max": 47.922
+   },
+   "plan_ms": {
+    "n": 598,
+    "median": 0.911,
+    "p95": 1.313,
+    "p99": 1.45,
+    "max": 6.498
+   },
+   "sdk_sys_ts_to_arrive_ms_if_realtime": {
+    "n": 8724,
+    "median": 382.122,
+    "p95": 399.513,
+    "p99": 404.232,
+    "max": 450.467
+   }
+  },
+  "colour": {
+   "stages": {
+    "prep": {
+     "n": 1979,
+     "median": 15.399,
+     "p95": 17.224,
+     "p99": 20.576,
+     "max": 42.19,
+     "rate_fps": 6.824,
+     "drop_rate": 0.772
+    },
+    "dpu": {
+     "n": 1979,
+     "median": 150.024,
+     "p95": 151.972,
+     "p99": 155.751,
+     "max": 177.189,
+     "rate_fps": 6.824,
+     "drop_rate": 0.772
+    },
+    "post": {
+     "n": 1979,
+     "median": 156.994,
+     "p95": 158.931,
+     "p99": 163.203,
+     "max": 185.988,
+     "rate_fps": 6.824,
+     "drop_rate": 0.772
+    }
+   },
+   "frames_in_window": 1979,
+   "camera_frames_offered": 8679,
+   "cam_dev_interval_ms": {
+    "n": 1978,
+    "median": 33.398,
+    "p95": 33.403,
+    "p99": 33.403,
+    "max": 33.443
+   },
+   "camera_fps_from_dev_ts": 29.942,
+   "kv_cam_arrive_to_publish_ms": {
+    "n": 1979,
+    "median": 1.179,
+    "p95": 1.886,
+    "p99": 2.157,
+    "max": 2.434
+   },
+   "publish_to_reader_ms": {
+    "n": 1979,
+    "median": 9.399,
+    "p95": 11.079,
+    "p99": 14.056,
+    "max": 35.62
+   },
+   "e2e_stage": "post",
+   "not_ok": 0,
+   "prep_cpu_us": {
+    "n": 1979,
+    "median": 1266.8,
+    "p95": 1445.0,
+    "p99": 1537.2,
+    "max": 1778.5
+   }
+  }
+ },
+ "power_W_mean": 5.892,
+ "all_pass": false
+}

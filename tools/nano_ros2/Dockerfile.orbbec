@@ -1,0 +1,25 @@
+# Orbbec ROS 2 driver (OrbbecSDK_ROS2, branch v2-main, bundles OrbbecSDK 2.9.3) built from source
+# on top of the nav image. Build context = a checkout of https://github.com/orbbec/OrbbecSDK_ROS2
+# (only orbbec_camera and orbbec_camera_msgs are copied; orbbec_description meshes are not needed).
+# The host needs no udev rule for Gemini 2 on this board: its USB node is already crw-rw-rw-.
+FROM fpga-ros:humble-nav-20260927
+
+ARG MIRROR=https://mirrors.tuna.tsinghua.edu.cn
+RUN sed -i "s#http://ports.ubuntu.com/ubuntu-ports/#${MIRROR}/ubuntu-ports/#g" /etc/apt/sources.list \
+ && apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      libgflags-dev libgoogle-glog-dev nlohmann-json3-dev libssl-dev libdw-dev libgl1-mesa-dev \
+      ros-humble-image-transport ros-humble-image-publisher ros-humble-camera-info-manager \
+      ros-humble-diagnostic-updater ros-humble-diagnostic-msgs ros-humble-statistics-msgs \
+      ros-humble-backward-ros ros-humble-cv-bridge ros-humble-tf2-sensor-msgs ros-humble-rclcpp-components \
+ && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY orbbec_camera_msgs /opt/orbbec_ws/src/orbbec_camera_msgs
+COPY orbbec_camera /opt/orbbec_ws/src/orbbec_camera
+RUN . /opt/ros/humble/setup.sh && cd /opt/orbbec_ws \
+ && MAKEFLAGS=-j3 colcon build --merge-install --event-handlers console_direct+ \
+      --cmake-args -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF > /opt/orbbec_ws/colcon_build.log 2>&1 \
+ ; tail -30 /opt/orbbec_ws/colcon_build.log; test -e /opt/orbbec_ws/install/lib/orbbec_camera \
+ && rm -rf /opt/orbbec_ws/build
+
+LABEL org.fpga.image="fpga-ros:humble-nav-orbbec-20260927"

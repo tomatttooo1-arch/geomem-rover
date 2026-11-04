@@ -1,0 +1,22 @@
+{
+  "nano_ssh": "robot@198.18.1.100",
+  "nano_ip": "198.18.1.100",
+  "nano_repo": "/home/robot/geomem-competition",
+  "kv_ssh_from_nano": "kv260",
+  "kv_repo": "/home/ubuntu/geomem-competition",
+  "kv_run": "/home/ubuntu/geomem-competition-runs/competition",
+  "hub_port": 47801,
+  "hub_local_port": 18791,
+  "mapping_local_port": 8792,
+  "ssh_identity": "~/.ssh/geomem-rover-20261018",
+  "ssh_known_hosts": "known_hosts",
+  "kv_ssh_config": "/home/robot/.ssh/geomem-kv.conf",
+  "bridge_port": 8790,
+  "operator_port": 8788,
+  "map_yaml": "",
+  "memory_file": "",
+  "database": "",
+  "map_sha256": "",
+  "docker_image": "fpga-dev1-rtabmap:humble-0.23.7-20260910",
+  "preview": true
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#dce9f3"><meta name="description" content="GeoMem 智能寻物小车 · 空间记忆与寻物控制台">
+  <title>GeoMem · 空间记忆与寻物</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./styles.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到工作区</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="GeoMem 首页"><span class="brand-mark">g<span></span></span><span>GeoMem<small>让物品，有迹可循</small></span></a>
+    <div class="nav-caption">工作空间</div>
+    <nav aria-label="主导航">
+      <button class="nav-item active" data-page="overview"><i data-icon="layout"></i>寻物工作台<span class="nav-dot"></span></button>
+      <button class="nav-item" data-page="memory"><i data-icon="box"></i>空间记忆<span class="nav-count" id="memory-count">—</span></button>
+      <button class="nav-item" data-page="history"><i data-icon="history"></i>任务记录</button>
+      <button class="nav-item" data-page="device"><i data-icon="robot"></i>设备与连接</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="mini-rover"><i data-icon="robot"></i><span>GeoMem Rover<small id="side-status">演示环境</small></span><span class="status-dot"></span></div><div class="sidebar-foot">M8 · 交互控制台<span>v0.1</span></div></div>
+  </aside>
+  <main id="main-content" tabindex="-1">
+    <header class="topbar"><div class="breadcrumb">我的空间 <span>/</span> <strong id="breadcrumb">寻物工作台</strong></div><div class="top-actions"><span class="connection-pill" id="connection-pill"><span class="status-dot"></span>演示模式</span><button class="icon-button" id="help-button" aria-label="使用帮助"><i data-icon="help"></i></button><button class="icon-button" id="settings-button" aria-label="连接设置"><i data-icon="sliders"></i></button></div></header>
+    <div class="content">
+      <section class="page-heading"><div><h1 id="page-title">空间记忆控制台</h1><p id="page-subtitle">告诉小车你在找什么，剩下的路交给它。</p></div><button class="quiet-button" id="source-button"><i data-icon="sliders"></i>数据源与连接</button></section>
+      <div class="source-notice" id="source-notice"><span class="notice-dot"></span><span id="source-notice-text">正在体验演示空间。地图、物品和小车运动均为模拟数据。</span><button id="notice-connect">连接实车 <i data-icon="arrow"></i></button></div>
+      <div class="source-banner" id="source-banner" role="status" hidden></div>
+      <section id="overview-page" class="page">
+        <div class="workspace-grid">
+          <section class="task-card" aria-label="寻物任务"><h2>你想找什么？</h2><p class="muted">从空间记忆中，找到它的踪迹。</p>
+            <form id="search-form"><label class="sr-only" for="search-input">物品名称</label><div class="search-input-wrap"><i data-icon="search"></i><input id="search-input" maxlength="60" placeholder="输入物品名称" autocomplete="off"><kbd>/</kbd></div><div class="suggestions" id="suggestions" aria-label="记忆里最常见的物品"></div><button class="primary-button" id="find-button" type="submit">查找物品<i data-icon="arrow"></i></button></form>
+            <div id="search-results" class="search-results" aria-live="polite"></div><p id="query-hint" class="action-hint"></p>
+            </section>
+          <section class="map-card" aria-label="空间地图">
+            <div class="card-heading"><div><h2 id="map-title">一间熟悉的房间 <span class="subtle-tag">演示空间</span></h2></div><button class="icon-button" id="fullscreen" aria-label="全屏地图"><i data-icon="expand"></i></button></div>
+            <div class="map-toolbar"><div class="segmented" role="group" aria-label="地图视图"><button class="selected" id="global-view" aria-pressed="true">全局记忆</button><button id="local-view" aria-pressed="false">局部三维</button></div><span class="map-meta"><span class="pose-badge" id="pose-badge" hidden></span><span class="map-frame" id="map-frame">map · 米</span></span></div>
+            <div class="map-stage" id="map-stage"><canvas id="map-canvas" aria-label="三维空间地图，可拖拽旋转、滚轮缩放。也可通过物品列表选择目标。"></canvas><div class="map-labels" id="map-labels"></div><div class="map-watermark" id="map-watermark" aria-hidden="true" hidden></div><div class="robot-note" id="robot-note" hidden></div><div class="map-status"><span class="status-dot"></span><span id="map-status">演示地图 · 已载入</span></div><div class="map-tools"><button class="icon-button" id="zoom-in" aria-label="放大地图"><i data-icon="plus"></i></button><button class="icon-button" id="zoom-out" aria-label="缩小地图"><i data-icon="minus"></i></button><button class="icon-button" id="reset-view" aria-label="复位视角"><i data-icon="focus"></i></button></div><div class="map-scale"><b id="scale-line"></b><span>≈ 1 m · 视图中心</span></div><div class="map-hint" id="map-hint">拖动旋转 · 滚轮缩放 · 点击物品查看</div><div id="map-fallback" hidden>三维视图暂不可用，请启用浏览器硬件加速。物品列表和任务面板仍可使用。</div></div>
+            <div class="map-footer"><div class="legend"><span><b class="legend-rover"></b>小车</span><span><b class="legend-object"></b>物体记忆</span><span><b class="legend-path"></b>规划路径</span></div><button id="layers-button" class="text-button" aria-expanded="false" aria-controls="layers-panel"><i data-icon="layers"></i>图层</button></div>
+            <div id="layers-panel" class="layers-panel" hidden><label><input type="checkbox" id="layer-geometry" checked>几何点云</label><label><input type="checkbox" id="layer-objects" checked>物体记忆</label><label><input type="checkbox" id="layer-path" checked>导航路径</label></div>
+          </section>
+          <section class="mission-card" aria-label="当前任务进度"><div class="task-status-heading"><h2>当前任务</h2><span class="status-tag" id="task-state">待命</span></div>
+            <div id="task-empty" class="task-empty"><strong>下一次寻找，从这里出发</strong><p>先查询物品，确认目标后再开始寻物。</p></div>
+            <div id="task-active" hidden><div class="task-target" id="task-target"></div><ol class="task-steps" id="task-steps"></ol><p id="task-message" class="muted" aria-live="polite"></p><div id="task-candidates" class="task-candidates" hidden></div></div><p id="control-note" class="control-note" hidden></p><div class="task-controls" hidden><button class="danger-button" id="stop-task">停止任务</button></div>
+            <div class="task-footnote"><i data-icon="shield"></i><span>到达记忆位置后，还需现场确认物品。</span></div>
+          </section>
+        </div>
+        <div class="telemetry-strip"><div><span class="telemetry-icon"><i data-icon="robot"></i></span><span>小车状态<strong id="metric-robot">演示 · 待命</strong></span></div><div><span class="telemetry-icon"><i data-icon="pin"></i></span><span>当前位置<strong id="metric-position">—</strong></span></div><div><span class="telemetry-icon"><i data-icon="box"></i></span><span>记忆中的物品<strong id="metric-objects">—</strong></span></div><div><span class="telemetry-icon"><i data-icon="activity"></i></span><span>数据更新<strong id="metric-fresh">—</strong></span></div></div>
+      </section>
+      <section id="memory-section"><div class="section-title-row"><div><h2>记忆里的物品 <span id="object-count">0</span></h2><p>每一件物品，都有一个上次见到的位置。</p></div><div class="memory-controls"><input type="search" id="memory-filter" placeholder="筛选名称或位置" aria-label="筛选记忆物品"><button class="text-button" id="all-memory">查看全部 <i data-icon="arrow"></i></button></div></div><div id="objects-grid" class="objects-grid"></div><div id="memory-empty" class="empty-state" hidden>没有匹配的记忆。试试其他名称，或等待新的物体观测。</div></section>
+      <section id="history-page" class="page panel" hidden><div class="section-title-row"><h2>寻物任务记录</h2><button class="quiet-button" id="export-history"><i data-icon="download"></i>导出记录</button></div><p class="muted">本机保存最近 50 条终态记录；演示和实车记录分别标注。</p><div id="history-list"></div></section>
+      <section id="device-page" class="page panel" hidden><div class="device-hero"><span class="large-rover"><i data-icon="robot"></i></span><div><h2>一份清晰的连接状态</h2><p class="muted">连接桥接服务后，显示小车实际回传的数据。</p></div></div><dl class="device-details" id="device-details"></dl><button class="primary-button" id="device-connect">配置数据连接<i data-icon="arrow"></i></button><p class="device-note">“停止任务”是软件取消请求，不代替底盘硬件急停。断线时无法保证取消请求已送达。</p></section>
+      <footer class="page-footer"><span><span class="tiny-brand">g</span> GeoMem · 让每一次寻找，都有方向。</span><span>几何语义空间记忆 / M8</span></footer>
+    </div>
+  </main>
+  <dialog id="detail-dialog" aria-label="物品详情与寻物确认"><div class="dialog-heading"><span class="dialog-title">物品详情</span><button class="icon-button close-dialog" aria-label="关闭物品详情"><i data-icon="close"></i></button></div><div id="detail-body"></div><div class="dialog-actions"><button class="quiet-button" id="focus-object">在地图中定位</button><button class="primary-button" id="start-task">寻找这类物品<i data-icon="arrow"></i></button></div><p id="start-hint" class="action-hint" role="status"></p><p class="dialog-note" id="start-note">小车按类别查找：记忆里有多个时会请你选择具体哪一个。</p><p class="dialog-note">小车会前往物品附近的观察点并重新观测确认。记忆位置不代表物品仍在原处。</p></dialog>
+  <dialog id="settings-dialog" aria-label="数据源与连接"><div class="dialog-heading"><h2>数据源与连接</h2><button class="icon-button close-dialog" aria-label="关闭连接设置"><i data-icon="close"></i></button></div><p class="muted">演示模式无需设备；实车模式需要团队部署 M8 桥接服务。</p><div class="mode-cards"><label><input type="radio" name="source" value="demo" checked><strong>演示空间</strong><span>体验完整的寻物流程</span></label><label><input type="radio" name="source" value="live"><strong>连接实车</strong><span>只显示真实回传数据</span></label></div><form id="connection-form"><label class="field-label" for="endpoint">桥接服务地址</label><input class="full-input" id="endpoint" type="url" placeholder="ws://127.0.0.1:8788/ws" aria-describedby="endpoint-help"><p class="dialog-note" id="endpoint-help">使用 GeoMem 第二版协议，连接本机桥接服务（默认与页面同源的 /ws）。不是直接连接车上的 hub 或 rosbridge。</p><div class="dialog-actions"><button class="primary-button" type="submit">应用连接设置<i data-icon="arrow"></i></button></div><p id="connection-error" role="alert"></p><button id="settings-help" class="text-button" type="button"><i data-icon="help"></i>查看使用帮助</button></form></dialog>
+  <dialog id="help-dialog" aria-label="使用帮助"><div class="dialog-heading"><h2>让寻找更简单</h2><button class="icon-button close-dialog" aria-label="关闭帮助"><i data-icon="close"></i></button></div><ol class="help-steps"><li><strong>看看空间</strong><p>全局记忆查看房间、物品和路径；局部三维跟随小车查看附近点云。</p></li><li><strong>找到目标</strong><p>输入物品名称后点「让小车找」，或在物品卡片里点「寻找这类物品」。小车按名称查找；记忆里有多个同类物品时，任务卡会列出候选，请点选具体哪一个。</p></li><li><strong>确认后出发</strong><p>检查上次见到的时间与位置，再开始寻物。任务会展示检索、行驶、现场确认的进度；随时可以停止。</p></li></ol><p class="dialog-note">快捷键：/ 聚焦查找；Esc 关闭弹窗。地图支持触摸旋转和双指缩放。演示中的点云、识别分数和任务结果均为模拟值。</p></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script type="module" src="./src/app.js"></script>
+</body></html>

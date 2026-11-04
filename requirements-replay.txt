@@ -1,0 +1,9 @@
+# CPU reference environment used in this workspace (Python 3.13).
+# On a clean machine install CPU wheels for torch/torchvision via PyTorch's CPU index first.
+# Jetson wheels/runtime must match JetPack; this file is not a Jetson installation recipe.
+numpy==2.2.6
+opencv-python==4.12.0.88
+# scipy: rotations/adjoints in host/odom_base_adapter.py and the two ROS node adapters.
+scipy==1.17.1
+torch==2.10.0
+torchvision==0.25.0

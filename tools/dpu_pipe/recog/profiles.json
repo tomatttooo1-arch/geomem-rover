@@ -1,0 +1,39 @@
+{
+ "_doc": "RECOG640 (2026-11-04): recognition model profiles for dpu_rx / kv2_chain.sh, selected by RECOG_MODEL (default below). Resolved by recog_args.py. Class order is fixed: 0 cup / 1 bottle / 2 banana / 3 laptop / 4 backpack / 5 medicine box.",
+ "default": "y8s640",
+ "names": ["cup", "bottle", "banana", "laptop", "backpack", "medicine box"],
+ "profiles": {
+  "y8s640": {
+   "ready": true,
+   "desc": "dev3 round-4 YOLOv8s 6-class QAT epoch-1, square 640 letterbox (owner 11-04: product default)",
+   "source": "shared/models/20261103-dev3-recog-quant4/full/models/640/compiled-selected/q4_y8s_640_b1024.xmodel",
+   "xmodel": "q4_y8s_640_b1024.xmodel",
+   "xmodel_sha256": "b04fd7c1c7862eb965cd13fce49663e308bdaa1e6409ab9aa027113be2b884cd",
+   "tensor_w": 640, "tensor_h": 640, "fix": 6, "nc": 6,
+   "heads": [[80, 80], [40, 40], [20, 20]], "out_fix": 2,
+   "thresholds_json": "y8s640_threshold-selection.json",
+   "thresholds_sha256": "1f47a79a1872797d3b0c97d5394b8dd67506484dca12466e54b9d1a1fc785a08",
+   "post": {"conf": 0.01, "iou": 0.7, "max_det": 100, "sort_heads": true}
+  },
+  "y8s640r": {
+   "ready": false,
+   "desc": "RESERVED: dev3 640x480 rectangular re-quantisation of the same QAT weights (not delivered yet). Fill xmodel / xmodel_sha256 / thresholds_json / thresholds_sha256 / fix from the delivery and set ready=true. Pre-processing = PREP1 rectangular target 640x480 (content 640x480, bypass, no square pad); post-processing grids 80x60 / 40x30 / 20x15. dpu_rx still assumes a square tensor (Geometry.size): see RUN/RECOG640/README.md 'unfinished'.",
+   "xmodel": null, "xmodel_sha256": null,
+   "tensor_w": 640, "tensor_h": 480, "fix": null, "nc": 6,
+   "heads": [[60, 80], [30, 40], [15, 20]], "out_fix": null,
+   "thresholds_json": null, "thresholds_sha256": null,
+   "post": {"conf": 0.01, "iou": 0.7, "max_det": 100, "sort_heads": true}
+  },
+  "y8s512": {
+   "ready": true,
+   "desc": "previous product model: dev3 round-2 PTQ YOLOv8s 6-class 512 (LeakyReLU), DPUPIPE1 output processing (single conf 0.25 before NMS, no max_det)",
+   "source": "shared/models/20261103-dev3-recog-quant2/dpu/512/compiled/y8s_six_512_b1024.xmodel",
+   "xmodel": "y8s_six_512_b1024.xmodel",
+   "xmodel_sha256": "67b7c328db081d8cd2a81416f4809ce52e56f02e9e565774414d11f5d6ab11b3",
+   "tensor_w": 512, "tensor_h": 512, "fix": 7, "nc": 6,
+   "heads": [[64, 64], [32, 32], [16, 16]], "out_fix": 2,
+   "thresholds_json": null,
+   "post": {"legacy": true}
+  }
+ }
+}

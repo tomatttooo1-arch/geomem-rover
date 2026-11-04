@@ -1,0 +1,24 @@
+# Board image with scipy for the localization tier (car_up live --pose rtabmap ...), 10-17 (owner approved 12:31).
+# The base fpga-ros:humble-nav-orbbec-20260927 has no scipy, so host/ros_localization_gate.py and
+# host/odom_base_adapter.py (scipy.spatial.transform.Rotation) exit with ModuleNotFoundError at start
+# (docs/design/REAL_CAR_NAV_GOLIVE_20261016.md §5, §3 item 8). This image only adds Ubuntu 22.04's python3-scipy,
+# pinned to the jammy version that pairs with the base's python3-numpy 1:1.21.5-1ubuntu22.04.1 (apt pulls no numpy
+# change; checked with apt-get install -s in the base). The base tag is never overwritten.
+#
+# Build on the Orin Nano (context = an empty directory; /data itself is root-owned, so under /data/fpga; 10-17 build:
+# Dockerfile at /data/fpga/img_scipy_1017/Dockerfile.scipy, empty context /data/fpga/img_scipy_1017/ctx):
+#   docker build --progress=plain -f /data/fpga/img_scipy_1017/Dockerfile.scipy -t fpga-ros:humble-nav-orbbec-scipy-20261017 /data/fpga/img_scipy_1017/ctx
+# Use: BOARD_IMAGE=fpga-ros:humble-nav-orbbec-scipy-20261017 bash tools/car_run/car_up.sh live --pose rtabmap ...
+# The base already points apt at the TUNA mirror (Dockerfile.nav / Dockerfile.orbbec), so no sources edit here.
+FROM fpga-ros:humble-nav-orbbec-20260927
+
+USER root
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends python3-scipy=1.8.0-1exp2ubuntu1 \
+ && dpkg-query -W -f='${Package}\t${Version}\t${Architecture}\n' | sort > /opt/fpga/packages_scipy.tsv \
+ && apt-get clean && rm -rf /var/lib/apt/lists/* \
+ && python3 -c "import numpy, scipy; from scipy.spatial.transform import Rotation; assert numpy.__version__ == '1.21.5', numpy.__version__; assert scipy.__version__ == '1.8.0', scipy.__version__; print('numpy', numpy.__version__, 'scipy', scipy.__version__)"
+
+LABEL org.fpga.image="fpga-ros:humble-nav-orbbec-scipy-20261017" \
+      org.fpga.base="fpga-ros:humble-nav-orbbec-20260927" \
+      org.fpga.adds="python3-scipy=1.8.0-1exp2ubuntu1"

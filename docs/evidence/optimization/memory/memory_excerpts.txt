@@ -1,0 +1,13 @@
+# Memory core MEMK4 vs previous version MEMK3
+# Excerpts copied verbatim from the original files (line numbers of the original file given); numbers unchanged.
+
+## source: MEMK4/README.md -- OOC, 10 ns
+L12:    FF 909、DSP 4、RAMB36 4、URAM 2，布线后周期 8.0 ns（100 MHz 下 WNS +2.0 ns）。
+L15: 3. **拍数满足"典型帧 ≤1 ms"。** 实车 D2 每帧中位约 0.42 ms、最坏约 0.81 ms；压力流 D3 最坏一帧约 1.4 ms（第 4 节）。
+L26: | 项 | ARCH 手算 | csynth（core1，改前） | csynth（core2，改后） | **OOC（core2）** | MEMK3 OOC |
+L27: |---|---|---|---|---|---|
+L28: | LUT | ≈1,450 | 2,201 | 1,964 | **1,487** | 9,180 |
+L29: | FF | ≈630 | 573 | 1,124 | **909** | 9,041 |
+L30: | DSP | 4 | 3 | 3 | **4** | 55 |
+L31: | BRAM（RAMB36） | 4 | 4 | 4 | **4** | 5 |
+L32: | URAM | 2 | 2 | 2 | **2** | 2 |

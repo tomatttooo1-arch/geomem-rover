@@ -1,0 +1,50 @@
+{
+  "size": 640,
+  "thresholds": {
+    "cup": 0.5,
+    "bottle": 0.35,
+    "banana": 0.4,
+    "laptop": 0.7,
+    "backpack": 0.25,
+    "medicine box": 0.15
+  },
+  "original": {
+    "cup": 0.25,
+    "bottle": 0.25,
+    "banana": 0.25,
+    "laptop": 0.25,
+    "backpack": 0.35,
+    "medicine box": 0.25
+  },
+  "grid": [
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.075,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "nms": {
+    "argmax": true,
+    "iou": 0.7,
+    "max_det": 100,
+    "minimum_confidence": 0.01,
+    "threshold_application": "after_fixed_nms"
+  },
+  "criterion": "mean domain F1; tie lower mean FP-frame rate; tie higher threshold",
+  "test_used": false,
+  "prediction_index_sha256": "10199003aae50678bad43c0a2ff503fe7d8836a1d3e1355d684ba2980d327414",
+  "development_sha256": "0a14ba77d4b3521c7aa252d491e74a8e5134fc17be9033c26007a0d8e4b1465b",
+  "utc": "2026-11-03T19:08:02.587313+00:00"
+}

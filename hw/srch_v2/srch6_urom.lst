@@ -1,0 +1,894 @@
+ENTRY:
+    0  MTS   rd= 0 ra= 0 rb= 0 I=1 imm=33
+    1  MFD   rd=10 ra= 0 rb= 0 I=1 imm=0
+    2  ADD   rd=11 ra= 0 rb= 0 I=1 imm=76544
+    3  ADD   rd=12 ra= 0 rb= 0 I=1 imm=19
+PL:
+    4  DLD   rd= 0 ra=10 rb= 0 I=1 imm=0
+    5  MFD   rd=13 ra= 0 rb= 0 I=1 imm=0
+    6  ST    rd= 0 ra=11 rb=13 I=1 imm=0
+    7  MFD   rd=13 ra= 0 rb= 0 I=1 imm=1
+    8  ST    rd= 0 ra=11 rb=13 I=1 imm=1
+    9  ADD   rd=10 ra=10 rb= 0 I=1 imm=16
+   10  ADD   rd=11 ra=11 rb= 0 I=1 imm=2
+   11  SUB   rd=12 ra=12 rb= 0 I=1 imm=1
+   12  BNE   rd= 0 ra=12 rb= 0 I=0 imm=PL
+   13  ST    rd= 0 ra= 0 rb= 0 I=1 imm=76584
+   14  ST    rd= 0 ra= 0 rb= 0 I=1 imm=76585
+   15  ST    rd= 0 ra= 0 rb= 0 I=1 imm=76586
+   16  ST    rd= 0 ra= 0 rb= 0 I=1 imm=76587
+   17  ST    rd= 0 ra= 0 rb= 0 I=1 imm=76588
+   18  ST    rd= 0 ra= 0 rb= 0 I=1 imm=76589
+   19  ST    rd= 0 ra= 0 rb= 0 I=1 imm=76590
+   20  LD    rd=10 ra= 0 rb= 0 I=1 imm=76544
+   21  SHR   rd= 1 ra=10 rb= 0 I=1 imm=24
+   22  AND   rd= 1 ra= 1 rb= 0 I=1 imm=255
+   23  ADD   rd= 2 ra= 0 rb= 0 I=1 imm=0
+   24  LD    rd= 6 ra= 0 rb= 0 I=1 imm=76545
+   25  SHL   rd= 6 ra= 6 rb= 0 I=1 imm=32
+   26  SHR   rd= 6 ra= 6 rb= 0 I=1 imm=32
+   27  LD    rd= 7 ra= 0 rb= 0 I=1 imm=76546
+   28  SHL   rd= 7 ra= 7 rb= 0 I=1 imm=32
+   29  SHR   rd= 7 ra= 7 rb= 0 I=1 imm=32
+   30  LD    rd= 8 ra= 0 rb= 0 I=1 imm=76547
+   31  SHL   rd= 8 ra= 8 rb= 0 I=1 imm=32
+   32  SHR   rd= 8 ra= 8 rb= 0 I=1 imm=32
+   33  LD    rd=11 ra= 0 rb= 0 I=1 imm=76548
+   34  AND   rd= 4 ra=11 rb= 0 I=1 imm=255
+   35  SHR   rd= 5 ra=11 rb= 0 I=1 imm=16
+   36  AND   rd= 5 ra= 5 rb= 0 I=1 imm=255
+   37  MTS   rd= 0 ra=11 rb= 0 I=1 imm=0
+   38  LD    rd=11 ra= 0 rb= 0 I=1 imm=76549
+   39  MTS   rd= 0 ra=11 rb= 0 I=1 imm=1
+   40  LD    rd=11 ra= 0 rb= 0 I=1 imm=76551
+   41  MTS   rd= 0 ra=11 rb= 0 I=1 imm=2
+   42  LD    rd=11 ra= 0 rb= 0 I=1 imm=76552
+   43  MTS   rd= 0 ra=11 rb= 0 I=1 imm=3
+   44  LD    rd=11 ra= 0 rb= 0 I=1 imm=76555
+   45  MTS   rd= 0 ra=11 rb= 0 I=1 imm=4
+   46  LD    rd=11 ra= 0 rb= 0 I=1 imm=76554
+   47  MTS   rd= 0 ra=11 rb= 0 I=1 imm=5
+   48  SHR   rd=11 ra=10 rb= 0 I=1 imm=32
+   49  AND   rd=11 ra=11 rb= 0 I=1 imm=15
+   50  MTS   rd= 0 ra=11 rb= 0 I=1 imm=6
+   51  LD    rd=11 ra= 0 rb= 0 I=1 imm=76556
+   52  MTS   rd= 0 ra=11 rb= 0 I=1 imm=7
+   53  LD    rd=11 ra= 0 rb= 0 I=1 imm=76557
+   54  MTS   rd= 0 ra=11 rb= 0 I=1 imm=8
+   55  LD    rd=11 ra= 0 rb= 0 I=1 imm=76558
+   56  MTS   rd= 0 ra=11 rb= 0 I=1 imm=9
+   57  LD    rd=11 ra= 0 rb= 0 I=1 imm=76559
+   58  MTS   rd= 0 ra=11 rb= 0 I=1 imm=10
+   59  LD    rd=11 ra= 0 rb= 0 I=1 imm=76560
+   60  MTS   rd= 0 ra=11 rb= 0 I=1 imm=11
+   61  LD    rd=11 ra= 0 rb= 0 I=1 imm=76561
+   62  MTS   rd= 0 ra=11 rb= 0 I=1 imm=12
+   63  LD    rd=11 ra= 0 rb= 0 I=1 imm=76562
+   64  MTS   rd= 0 ra=11 rb= 0 I=1 imm=13
+   65  LD    rd=11 ra= 0 rb= 0 I=1 imm=76563
+   66  MTS   rd= 0 ra=11 rb= 0 I=1 imm=14
+   67  LD    rd=11 ra= 0 rb= 0 I=1 imm=76550
+   68  AND   rd= 3 ra=11 rb= 0 I=1 imm=65535
+   69  SHR   rd=12 ra=11 rb= 0 I=1 imm=16
+   70  AND   rd=12 ra=12 rb= 0 I=1 imm=65535
+   71  ST    rd= 0 ra= 0 rb=12 I=1 imm=76592
+   72  SHR   rd=12 ra=11 rb= 0 I=1 imm=32
+   73  AND   rd=12 ra=12 rb= 0 I=1 imm=65535
+   74  ST    rd= 0 ra= 0 rb=12 I=1 imm=76591
+   75  SHR   rd= 9 ra=11 rb= 0 I=1 imm=48
+   76  AND   rd=11 ra=10 rb= 0 I=1 imm=65535
+   77  ADD   rd=12 ra= 0 rb= 0 I=1 imm=21330
+   78  BNE   rd= 0 ra=11 rb=12 I=0 imm=BADH
+   79  BEQ   rd= 0 ra= 1 rb= 0 I=0 imm=BADH
+   80  ADD   rd=12 ra= 0 rb= 0 I=1 imm=13
+   81  BLT   rd= 0 ra=12 rb= 1 I=0 imm=BADH
+   82  ADD   rd=12 ra= 0 rb= 0 I=1 imm=2
+   83  BEQ   rd= 0 ra= 1 rb=12 I=0 imm=BADH
+   84  JALR  rd=31 ra= 0 rb= 0 I=1 imm=CHKS
+BADH:
+   85  OR    rd= 2 ra= 2 rb= 0 I=1 imm=1
+CHKS:
+   86  ADD   rd=12 ra= 0 rb= 0 I=1 imm=8
+   87  BLT   rd= 0 ra= 4 rb=12 I=0 imm=BADS
+   88  BLT   rd= 0 ra= 5 rb=12 I=0 imm=BADS
+   89  ADD   rd=12 ra= 0 rb= 0 I=1 imm=198
+   90  BLT   rd= 0 ra=12 rb= 4 I=0 imm=BADS
+   91  BLT   rd= 0 ra=12 rb= 5 I=0 imm=BADS
+   92  ADD   rd=12 ra= 0 rb= 0 I=1 imm=640
+   93  BLT   rd= 0 ra=12 rb= 9 I=0 imm=BADS
+   94  JALR  rd=31 ra= 0 rb= 0 I=1 imm=CHK2
+BADS:
+   95  OR    rd= 2 ra= 2 rb= 0 I=1 imm=16
+CHK2:
+   96  BNE   rd= 0 ra= 2 rb= 0 I=0 imm=FIN
+   97  ADD   rd=29 ra= 0 rb= 0 I=1 imm=1
+   98  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_1
+   99  JALR  rd=31 ra= 0 rb= 0 I=1 imm=B2
+IO_1:
+  100  MUL   rd=15 ra= 4 rb= 5 I=0 imm=0
+  101  ST    rd= 0 ra= 0 rb=15 I=1 imm=76593
+  102  ADD   rd=10 ra= 7 rb= 0 I=1 imm=0
+  103  ADD   rd=11 ra= 0 rb= 0 I=1 imm=98304
+  104  ADD   rd=12 ra= 0 rb= 0 I=1 imm=2048
+  105  JALR  rd=30 ra= 0 rb= 0 I=1 imm=LOAD
+  106  ADD   rd=10 ra= 8 rb= 0 I=1 imm=0
+  107  ADD   rd=11 ra= 0 rb= 0 I=1 imm=81920
+  108  ADD   rd=12 ra=15 rb= 0 I=1 imm=15
+  109  SHR   rd=12 ra=12 rb= 0 I=1 imm=4
+  110  JALR  rd=30 ra= 0 rb= 0 I=1 imm=LOAD
+  111  LD    rd=10 ra= 0 rb= 0 I=1 imm=76581
+  112  SHL   rd=10 ra=10 rb= 0 I=1 imm=32
+  113  SHR   rd=10 ra=10 rb= 0 I=1 imm=32
+  114  ADD   rd=11 ra= 0 rb= 0 I=1 imm=75776
+  115  ADD   rd=12 ra= 0 rb= 0 I=1 imm=384
+  116  JALR  rd=30 ra= 0 rb= 0 I=1 imm=LOAD
+  117  LD    rd=10 ra= 0 rb= 0 I=1 imm=76581
+  118  SHL   rd=10 ra=10 rb= 0 I=1 imm=32
+  119  SHR   rd=10 ra=10 rb= 0 I=1 imm=32
+  120  ADD   rd=10 ra=10 rb= 0 I=1 imm=6144
+  121  SHL   rd=10 ra=10 rb= 0 I=1 imm=32
+  122  SHR   rd=10 ra=10 rb= 0 I=1 imm=32
+  123  ADD   rd=11 ra= 0 rb= 0 I=1 imm=77056
+  124  ADD   rd=12 ra= 0 rb= 0 I=1 imm=256
+  125  JALR  rd=30 ra= 0 rb= 0 I=1 imm=LOAD
+  126  JALR  rd=30 ra= 0 rb= 0 I=1 imm=GRIDA
+B2:
+  127  ADD   rd=29 ra= 0 rb= 0 I=1 imm=4
+  128  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_2
+  129  JALR  rd=31 ra= 0 rb= 0 I=1 imm=B3
+IO_2:
+  130  JALR  rd=30 ra= 0 rb= 0 I=1 imm=GRIDB
+  131  JALR  rd=30 ra= 0 rb= 0 I=1 imm=COSTMAP
+  132  ST    rd= 0 ra= 0 rb= 3 I=1 imm=76584
+B3:
+  133  ADD   rd=29 ra= 0 rb= 0 I=1 imm=3
+  134  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_3
+  135  ADD   rd=29 ra= 0 rb= 0 I=1 imm=4
+  136  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_3
+  137  ADD   rd=29 ra= 0 rb= 0 I=1 imm=11
+  138  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_3
+  139  JALR  rd=31 ra= 0 rb= 0 I=1 imm=B4
+IO_3:
+  140  JALR  rd=30 ra= 0 rb= 0 I=1 imm=NBR
+B4:
+  141  ADD   rd=29 ra= 0 rb= 0 I=1 imm=6
+  142  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_4
+  143  ADD   rd=29 ra= 0 rb= 0 I=1 imm=5
+  144  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_4
+  145  JALR  rd=31 ra= 0 rb= 0 I=1 imm=B5
+IO_4:
+  146  ADD   rd=10 ra= 0 rb= 0 I=1 imm=0
+  147  BEQ   rd= 0 ra= 3 rb= 0 I=0 imm=B5
+  148  ADD   rd=12 ra= 0 rb= 0 I=1 imm=6
+  149  BNE   rd= 0 ra= 1 rb=12 I=0 imm=CLR1
+  150  ADD   rd=13 ra= 0 rb= 0 I=1 imm=4096
+  151  SHL   rd=13 ra=13 rb= 0 I=1 imm=26
+CLR0:
+  152  SHL   rd=11 ra=10 rb= 0 I=1 imm=1
+  153  ST    rd= 0 ra=11 rb= 0 I=1 imm=114688
+  154  ST    rd= 0 ra=11 rb=13 I=1 imm=114689
+  155  ADD   rd=10 ra=10 rb= 0 I=1 imm=1
+  156  BLT   rd= 0 ra=10 rb= 3 I=0 imm=CLR0
+  157  JALR  rd=31 ra= 0 rb= 0 I=1 imm=B5
+CLR1:
+  158  ST    rd= 0 ra=10 rb= 0 I=1 imm=180224
+  159  ADD   rd=10 ra=10 rb= 0 I=1 imm=1
+  160  BLT   rd= 0 ra=10 rb= 3 I=0 imm=CLR1
+B5:
+  161  ADD   rd=29 ra= 0 rb= 0 I=1 imm=3
+  162  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_5
+  163  ADD   rd=29 ra= 0 rb= 0 I=1 imm=5
+  164  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_5
+  165  ADD   rd=29 ra= 0 rb= 0 I=1 imm=10
+  166  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_5
+  167  JALR  rd=31 ra= 0 rb= 0 I=1 imm=B6
+IO_5:
+  168  JALR  rd=30 ra= 0 rb= 0 I=1 imm=ENGINE
+B6:
+  169  ADD   rd=29 ra= 0 rb= 0 I=1 imm=7
+  170  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_6
+  171  ADD   rd=29 ra= 0 rb= 0 I=1 imm=8
+  172  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_6
+  173  ADD   rd=29 ra= 0 rb= 0 I=1 imm=9
+  174  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_6
+  175  JALR  rd=31 ra= 0 rb= 0 I=1 imm=B7
+IO_6:
+  176  JALR  rd=30 ra= 0 rb= 0 I=1 imm=PRIOR
+B7:
+  177  ADD   rd=29 ra= 0 rb= 0 I=1 imm=10
+  178  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_7
+  179  ADD   rd=29 ra= 0 rb= 0 I=1 imm=12
+  180  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_7
+  181  JALR  rd=31 ra= 0 rb= 0 I=1 imm=B8
+IO_7:
+  182  JALR  rd=30 ra= 0 rb= 0 I=1 imm=BELIEF
+B8:
+  183  ADD   rd=29 ra= 0 rb= 0 I=1 imm=13
+  184  BEQ   rd= 0 ra= 1 rb=29 I=0 imm=IO_8
+  185  JALR  rd=31 ra= 0 rb= 0 I=1 imm=FIN
+IO_8:
+  186  ADD   rd=10 ra= 0 rb= 0 I=1 imm=0
+  187  ADD   rd=11 ra= 8 rb= 0 I=1 imm=0
+  188  BEQ   rd= 0 ra= 3 rb= 0 I=0 imm=FIN
+DMP:
+  189  SHL   rd=12 ra=10 rb= 0 I=1 imm=1
+  190  LD    rd=13 ra=12 rb= 0 I=1 imm=114688
+  191  LD    rd=14 ra=12 rb= 0 I=1 imm=114689
+  192  MTD   rd= 0 ra=13 rb= 0 I=1 imm=0
+  193  MTD   rd= 0 ra=14 rb= 0 I=1 imm=1
+  194  DST   rd= 0 ra=11 rb= 0 I=1 imm=0
+  195  ADD   rd=11 ra=11 rb= 0 I=1 imm=16
+  196  ADD   rd=10 ra=10 rb= 0 I=1 imm=1
+  197  BLT   rd= 0 ra=10 rb= 3 I=0 imm=DMP
+FIN:
+  198  ADD   rd=10 ra= 0 rb= 0 I=1 imm=512
+  199  OR    rd=10 ra=10 rb= 2 I=0 imm=0
+  200  SHL   rd=11 ra= 1 rb= 0 I=1 imm=16
+  201  OR    rd=10 ra=10 rb=11 I=0 imm=0
+  202  MTS   rd= 0 ra=10 rb= 0 I=1 imm=33
+  203  ADD   rd=12 ra= 0 rb= 0 I=1 imm=7
+  204  BEQ   rd= 0 ra= 1 rb=12 I=0 imm=W3
+  205  ADD   rd=12 ra= 0 rb= 0 I=1 imm=8
+  206  BNE   rd= 0 ra= 1 rb=12 I=0 imm=W1
+W3:
+  207  LD    rd=13 ra= 0 rb= 0 I=1 imm=76587
+  208  MTD   rd= 0 ra=13 rb= 0 I=1 imm=0
+  209  LD    rd=13 ra= 0 rb= 0 I=1 imm=76588
+  210  MTD   rd= 0 ra=13 rb= 0 I=1 imm=1
+  211  DST   rd= 0 ra= 6 rb= 0 I=1 imm=48
+  212  ADD   rd=12 ra= 0 rb= 0 I=1 imm=8
+  213  BNE   rd= 0 ra= 1 rb=12 I=0 imm=W1
+  214  LD    rd=13 ra= 0 rb= 0 I=1 imm=76589
+  215  MTD   rd= 0 ra=13 rb= 0 I=1 imm=0
+  216  LD    rd=13 ra= 0 rb= 0 I=1 imm=76590
+  217  MTD   rd= 0 ra=13 rb= 0 I=1 imm=1
+  218  DST   rd= 0 ra= 6 rb= 0 I=1 imm=32
+W1:
+  219  ADD   rd=12 ra= 0 rb= 0 I=1 imm=12
+  220  BNE   rd= 0 ra= 1 rb=12 I=0 imm=W0
+  221  LD    rd=13 ra= 0 rb= 0 I=1 imm=76585
+  222  MTD   rd= 0 ra=13 rb= 0 I=1 imm=0
+  223  LD    rd=13 ra= 0 rb= 0 I=1 imm=76586
+  224  MTD   rd= 0 ra=13 rb= 0 I=1 imm=1
+  225  DST   rd= 0 ra= 6 rb= 0 I=1 imm=16
+W0:
+  226  SHL   rd=11 ra= 3 rb= 0 I=1 imm=32
+  227  OR    rd=11 ra=11 rb=10 I=0 imm=0
+  228  MTD   rd= 0 ra=11 rb= 0 I=1 imm=0
+  229  LD    rd=13 ra= 0 rb= 0 I=1 imm=76584
+  230  MTD   rd= 0 ra=13 rb= 0 I=1 imm=1
+  231  DST   rd= 0 ra= 6 rb= 0 I=1 imm=0
+  232  HALT  rd= 0 ra= 0 rb= 0 I=0 imm=0
+LOAD:
+  233  BEQ   rd= 0 ra=12 rb= 0 I=0 imm=LDX
+LD1:
+  234  DLD   rd= 0 ra=10 rb= 0 I=1 imm=0
+  235  MFD   rd=13 ra= 0 rb= 0 I=1 imm=0
+  236  ST    rd= 0 ra=11 rb=13 I=1 imm=0
+  237  MFD   rd=13 ra= 0 rb= 0 I=1 imm=1
+  238  ST    rd= 0 ra=11 rb=13 I=1 imm=1
+  239  ADD   rd=10 ra=10 rb= 0 I=1 imm=16
+  240  ADD   rd=11 ra=11 rb= 0 I=1 imm=2
+  241  SUB   rd=12 ra=12 rb= 0 I=1 imm=1
+  242  BNE   rd= 0 ra=12 rb= 0 I=0 imm=LD1
+LDX:
+  243  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+GRIDA:
+  244  ADD   rd=10 ra= 0 rb= 0 I=1 imm=0
+  245  ADD   rd=13 ra= 0 rb= 0 I=1 imm=0
+  246  ADD   rd=16 ra= 4 rb= 0 I=1 imm=3
+  247  ADD   rd=17 ra= 5 rb= 0 I=1 imm=3
+  248  ADD   rd=12 ra= 0 rb= 0 I=1 imm=0
+  249  ADD   rd=18 ra= 0 rb= 0 I=1 imm=556283
+  250  SHL   rd=18 ra=18 rb= 0 I=1 imm=26
+  251  OR    rd=18 ra=18 rb= 0 I=1 imm=66035464
+  252  ADD   rd=19 ra= 0 rb= 0 I=1 imm=32
+  253  SHL   rd=19 ra=19 rb= 0 I=1 imm=26
+  254  OR    rd=19 ra=19 rb= 0 I=1 imm=58851328
+GA_I:
+  255  ADD   rd=11 ra= 0 rb= 0 I=1 imm=0
+  256  ADD   rd=14 ra= 0 rb= 0 I=1 imm=0
+  257  ADD   rd=15 ra= 0 rb= 0 I=1 imm=0
+GA_J:
+  258  ADD   rd=21 ra= 0 rb= 0 I=1 imm=0
+  259  BGE   rd= 0 ra=10 rb= 4 I=0 imm=GA_B
+  260  BGE   rd= 0 ra=11 rb= 5 I=0 imm=GA_B
+  261  ADD   rd=22 ra=12 rb=11 I=0 imm=0
+  262  SHR   rd=23 ra=22 rb= 0 I=1 imm=3
+  263  LD    rd=23 ra=23 rb= 0 I=1 imm=81920
+  264  AND   rd=22 ra=22 rb= 0 I=1 imm=7
+  265  SHL   rd=22 ra=22 rb= 0 I=1 imm=3
+  266  SHR   rd=23 ra=23 rb=22 I=0 imm=0
+  267  AND   rd=21 ra=23 rb= 0 I=1 imm=255
+GA_B:
+  268  AND   rd=22 ra=21 rb= 0 I=1 imm=15
+  269  SLT   rd=22 ra= 0 rb=22 I=0 imm=0
+  270  SHR   rd=23 ra=21 rb= 0 I=1 imm=4
+  271  SHR   rd=24 ra=23 rb= 0 I=1 imm=1
+  272  AND   rd=24 ra=24 rb= 0 I=1 imm=5
+  273  SUB   rd=23 ra=23 rb=24 I=0 imm=0
+  274  AND   rd=24 ra=23 rb= 0 I=1 imm=3
+  275  SHR   rd=23 ra=23 rb= 0 I=1 imm=2
+  276  ADD   rd=23 ra=23 rb=24 I=0 imm=0
+  277  SLT   rd=24 ra=23 rb= 0 I=1 imm=2
+  278  XOR   rd=24 ra=24 rb= 0 I=1 imm=1
+  279  SLT   rd=25 ra= 0 rb=22 I=0 imm=0
+  280  XOR   rd=25 ra=25 rb= 0 I=1 imm=1
+  281  AND   rd=24 ra=24 rb=25 I=0 imm=0
+  282  SLT   rd=25 ra= 0 rb=23 I=0 imm=0
+  283  ADD   rd=26 ra= 0 rb= 0 I=1 imm=0
+  284  BEQ   rd= 0 ra=10 rb= 0 I=0 imm=GA_H
+  285  LD    rd=26 ra=11 rb= 0 I=1 imm=76800
+GA_H:
+  286  AND   rd=27 ra=26 rb= 0 I=1 imm=63
+  287  SHL   rd=27 ra=27 rb= 0 I=1 imm=1
+  288  OR    rd=27 ra=27 rb=22 I=0 imm=0
+  289  SHR   rd=28 ra=26 rb= 0 I=1 imm=6
+  290  AND   rd=28 ra=28 rb= 0 I=1 imm=63
+  291  SHL   rd=28 ra=28 rb= 0 I=1 imm=2
+  292  SHL   rd=24 ra=24 rb= 0 I=1 imm=1
+  293  OR    rd=28 ra=28 rb=24 I=0 imm=0
+  294  OR    rd=28 ra=28 rb=25 I=0 imm=0
+  295  AND   rd=24 ra=27 rb= 0 I=1 imm=63
+  296  AND   rd=25 ra=28 rb= 0 I=1 imm=63
+  297  SHL   rd=25 ra=25 rb= 0 I=1 imm=6
+  298  OR    rd=24 ra=24 rb=25 I=0 imm=0
+  299  ST    rd= 0 ra=11 rb=24 I=1 imm=76800
+  300  SHR   rd=14 ra=14 rb= 0 I=1 imm=7
+  301  SHL   rd=24 ra=27 rb= 0 I=1 imm=42
+  302  OR    rd=14 ra=14 rb=24 I=0 imm=0
+  303  SHR   rd=15 ra=15 rb= 0 I=1 imm=2
+  304  SHR   rd=24 ra=28 rb= 0 I=1 imm=6
+  305  SHL   rd=24 ra=24 rb= 0 I=1 imm=6
+  306  OR    rd=15 ra=15 rb=24 I=0 imm=0
+  307  SLT   rd=24 ra=10 rb= 0 I=1 imm=3
+  308  BNE   rd= 0 ra=24 rb= 0 I=0 imm=GA_N
+  309  SLT   rd=24 ra=11 rb= 0 I=1 imm=3
+  310  BNE   rd= 0 ra=24 rb= 0 I=0 imm=GA_N
+  311  AND   rd=24 ra=14 rb=18 I=0 imm=0
+  312  SLT   rd=24 ra= 0 rb=24 I=0 imm=0
+  313  AND   rd=25 ra=14 rb=19 I=0 imm=0
+  314  SLT   rd=25 ra= 0 rb=25 I=0 imm=0
+  315  AND   rd=26 ra=15 rb= 0 I=1 imm=3
+  316  XOR   rd=25 ra=25 rb= 0 I=1 imm=1
+  317  AND   rd=27 ra=26 rb= 0 I=1 imm=1
+  318  AND   rd=25 ra=25 rb=27 I=0 imm=0
+  319  SHL   rd=25 ra=25 rb= 0 I=1 imm=15
+  320  SHR   rd=27 ra=26 rb= 0 I=1 imm=1
+  321  SHL   rd=27 ra=27 rb= 0 I=1 imm=14
+  322  OR    rd=25 ra=25 rb=27 I=0 imm=0
+  323  SHR   rd=27 ra=14 rb= 0 I=1 imm=24
+  324  AND   rd=27 ra=27 rb= 0 I=1 imm=1
+  325  XOR   rd=27 ra=27 rb= 0 I=1 imm=1
+  326  SHL   rd=27 ra=27 rb= 0 I=1 imm=16
+  327  OR    rd=25 ra=25 rb=27 I=0 imm=0
+  328  SHL   rd=24 ra=24 rb= 0 I=1 imm=17
+  329  OR    rd=25 ra=25 rb=24 I=0 imm=0
+  330  ST    rd= 0 ra=13 rb=25 I=1 imm=0
+  331  ADD   rd=13 ra=13 rb= 0 I=1 imm=1
+GA_N:
+  332  ADD   rd=11 ra=11 rb= 0 I=1 imm=1
+  333  BLT   rd= 0 ra=11 rb=17 I=0 imm=GA_J
+  334  ADD   rd=12 ra=12 rb= 5 I=0 imm=0
+  335  ADD   rd=10 ra=10 rb= 0 I=1 imm=1
+  336  BLT   rd= 0 ra=10 rb=16 I=0 imm=GA_I
+  337  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+GRIDB:
+  338  MUL   rd=11 ra= 4 rb= 5 I=0 imm=0
+  339  ADD   rd=10 ra= 0 rb= 0 I=1 imm=0
+  340  ADD   rd= 3 ra= 0 rb= 0 I=1 imm=0
+  341  ADD   rd=13 ra= 0 rb= 0 I=1 imm=8191
+  342  ADD   rd=14 ra= 0 rb= 0 I=1 imm=-16384
+  343  BEQ   rd= 0 ra=11 rb= 0 I=0 imm=GB_X
+GB_L:
+  344  LD    rd=12 ra=10 rb= 0 I=1 imm=131072
+  345  BEQ   rd= 0 ra=12 rb= 0 I=0 imm=GB_N
+  346  ST    rd= 0 ra=10 rb= 0 I=1 imm=131072
+  347  BGE   rd= 0 ra= 3 rb=13 I=0 imm=GB_O
+  348  LD    rd=15 ra=10 rb= 0 I=1 imm=0
+  349  AND   rd=15 ra=15 rb=14 I=0 imm=0
+  350  OR    rd=15 ra=15 rb= 3 I=0 imm=0
+  351  OR    rd=15 ra=15 rb= 0 I=1 imm=8192
+  352  ST    rd= 0 ra=10 rb=15 I=1 imm=0
+  353  ADD   rd= 3 ra= 3 rb= 0 I=1 imm=1
+  354  JALR  rd=31 ra= 0 rb= 0 I=1 imm=GB_N
+GB_O:
+  355  OR    rd= 2 ra= 2 rb= 0 I=1 imm=2
+GB_N:
+  356  ADD   rd=10 ra=10 rb= 0 I=1 imm=1
+  357  BLT   rd= 0 ra=10 rb=11 I=0 imm=GB_L
+GB_X:
+  358  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+COSTMAP:
+  359  ADD   rd=10 ra= 0 rb= 0 I=1 imm=0
+  360  ADD   rd=12 ra= 0 rb= 0 I=1 imm=0
+  361  ADD   rd=13 ra= 0 rb= 0 I=1 imm=0
+  362  ADD   rd=16 ra= 8 rb= 0 I=1 imm=0
+  363  ADD   rd=17 ra= 0 rb= 0 I=1 imm=200
+  364  ADD   rd=18 ra= 0 rb= 0 I=1 imm=254
+  365  SUB   rd=15 ra= 0 rb= 5 I=0 imm=0
+  366  ADD   rd=22 ra= 0 rb= 0 I=1 imm=0
+CM_R:
+  367  ADD   rd=11 ra= 0 rb= 0 I=1 imm=0
+CM_C:
+  368  ADD   rd=14 ra=18 rb= 0 I=1 imm=0
+  369  BEQ   rd= 0 ra=10 rb= 0 I=0 imm=CM_B
+  370  BEQ   rd= 0 ra=11 rb= 0 I=0 imm=CM_B
+  371  BLT   rd= 0 ra= 4 rb=10 I=0 imm=CM_B
+  372  BLT   rd= 0 ra= 5 rb=11 I=0 imm=CM_B
+  373  ADD   rd=19 ra=15 rb=11 I=0 imm=0
+  374  LD    rd=19 ra=19 rb= 0 I=1 imm=-1
+  375  SHR   rd=19 ra=19 rb= 0 I=1 imm=15
+  376  AND   rd=19 ra=19 rb= 0 I=1 imm=1
+  377  SEQ   rd=19 ra=19 rb= 0 I=1 imm=0
+  378  SEL   rd=14 ra=18 rb= 0 I=0 imm=0
+CM_B:
+  379  SHR   rd=12 ra=12 rb= 0 I=1 imm=8
+  380  SHL   rd=19 ra=13 rb= 0 I=1 imm=56
+  381  OR    rd=12 ra=12 rb=19 I=0 imm=0
+  382  SHR   rd=13 ra=13 rb= 0 I=1 imm=8
+  383  SHL   rd=19 ra=14 rb= 0 I=1 imm=56
+  384  OR    rd=13 ra=13 rb=19 I=0 imm=0
+  385  ADD   rd=22 ra=22 rb= 0 I=1 imm=1
+  386  AND   rd=19 ra=22 rb= 0 I=1 imm=15
+  387  BNE   rd= 0 ra=19 rb= 0 I=0 imm=CM_N
+  388  MTD   rd= 0 ra=12 rb= 0 I=1 imm=0
+  389  MTD   rd= 0 ra=13 rb= 0 I=1 imm=1
+  390  DST   rd= 0 ra=16 rb= 0 I=1 imm=0
+  391  ADD   rd=16 ra=16 rb= 0 I=1 imm=16
+CM_N:
+  392  ADD   rd=11 ra=11 rb= 0 I=1 imm=1
+  393  BLT   rd= 0 ra=11 rb=17 I=0 imm=CM_C
+  394  ADD   rd=15 ra=15 rb= 5 I=0 imm=0
+  395  ADD   rd=10 ra=10 rb= 0 I=1 imm=1
+  396  BLT   rd= 0 ra=10 rb=17 I=0 imm=CM_R
+  397  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+NBR:
+  398  ST    rd= 0 ra= 0 rb=30 I=1 imm=76594
+  399  ADD   rd=10 ra= 0 rb= 0 I=1 imm=0
+  400  ADD   rd=14 ra= 0 rb= 0 I=1 imm=0
+  401  ADD   rd=15 ra= 7 rb= 0 I=1 imm=0
+  402  ADD   rd=11 ra= 9 rb= 0 I=1 imm=0
+  403  ADD   rd=12 ra= 0 rb= 0 I=1 imm=11
+  404  BNE   rd= 0 ra= 1 rb=12 I=0 imm=NB0
+  405  ADD   rd=11 ra= 0 rb= 0 I=1 imm=1
+NB0:
+  406  ADD   rd=13 ra= 0 rb= 0 I=1 imm=1
+  407  ADD   rd=12 ra= 0 rb= 0 I=1 imm=5
+  408  ADD   rd=23 ra= 0 rb= 0 I=1 imm=3
+  409  BNE   rd= 0 ra= 1 rb=23 I=0 imm=NB1
+  410  ADD   rd=13 ra= 0 rb= 0 I=1 imm=0
+  411  ADD   rd=12 ra= 0 rb= 0 I=1 imm=3
+NB1:
+  412  BEQ   rd= 0 ra=11 rb= 0 I=0 imm=NB_X
+NB_J:
+  413  DLD   rd= 0 ra=15 rb= 0 I=1 imm=0
+  414  MFD   rd=23 ra= 0 rb= 0 I=1 imm=0
+  415  SHL   rd=16 ra=23 rb= 0 I=1 imm=40
+  416  SRA   rd=16 ra=16 rb= 0 I=1 imm=40
+  417  SHL   rd=17 ra=23 rb= 0 I=1 imm=16
+  418  SRA   rd=17 ra=17 rb= 0 I=1 imm=40
+  419  LD    rd=23 ra= 0 rb= 0 I=1 imm=76548
+  420  SHR   rd=24 ra=23 rb= 0 I=1 imm=48
+  421  SHL   rd=24 ra=24 rb= 0 I=1 imm=11
+  422  SUB   rd=18 ra=17 rb=24 I=0 imm=0
+  423  SHL   rd=18 ra=18 rb= 0 I=1 imm=39
+  424  SRA   rd=18 ra=18 rb= 0 I=1 imm=39
+  425  SRA   rd=18 ra=18 rb= 0 I=1 imm=12
+  426  SHR   rd=24 ra=23 rb= 0 I=1 imm=32
+  427  AND   rd=24 ra=24 rb= 0 I=1 imm=65535
+  428  SHL   rd=24 ra=24 rb= 0 I=1 imm=11
+  429  SUB   rd=19 ra=16 rb=24 I=0 imm=0
+  430  SHL   rd=19 ra=19 rb= 0 I=1 imm=39
+  431  SRA   rd=19 ra=19 rb= 0 I=1 imm=39
+  432  SRA   rd=19 ra=19 rb= 0 I=1 imm=12
+  433  ADD   rd=20 ra= 0 rb= 0 I=1 imm=63
+  434  ADD   rd=21 ra= 0 rb= 0 I=1 imm=0
+  435  ADD   rd=22 ra= 0 rb= 0 I=1 imm=0
+  436  SUB   rd=24 ra= 0 rb=12 I=0 imm=0
+NB_DI:
+  437  SUB   rd=25 ra= 0 rb=12 I=0 imm=0
+NB_DJ:
+  438  ADD   rd=26 ra=18 rb=24 I=0 imm=0
+  439  ADD   rd=27 ra=19 rb=25 I=0 imm=0
+  440  BLT   rd= 0 ra=26 rb= 0 I=0 imm=NB_N
+  441  BLT   rd= 0 ra=27 rb= 0 I=0 imm=NB_N
+  442  BGE   rd= 0 ra=26 rb= 4 I=0 imm=NB_N
+  443  BGE   rd= 0 ra=27 rb= 5 I=0 imm=NB_N
+  444  MUL   rd=28 ra=26 rb= 5 I=0 imm=0
+  445  ADD   rd=28 ra=28 rb=27 I=0 imm=0
+  446  LD    rd=29 ra=28 rb= 0 I=1 imm=0
+  447  BNE   rd= 0 ra=13 rb= 0 I=0 imm=NB_M1
+  448  SHR   rd=23 ra=29 rb= 0 I=1 imm=16
+  449  AND   rd=23 ra=23 rb= 0 I=1 imm=1
+  450  BEQ   rd= 0 ra=23 rb= 0 I=0 imm=NB_N
+  451  LD    rd=23 ra= 0 rb= 0 I=1 imm=76548
+  452  SHR   rd=23 ra=23 rb= 0 I=1 imm=32
+  453  AND   rd=23 ra=23 rb= 0 I=1 imm=65535
+  454  ADD   rd=23 ra=23 rb=27 I=0 imm=0
+  455  ADD   rd=23 ra=23 rb=27 I=0 imm=0
+  456  ADD   rd=23 ra=23 rb= 0 I=1 imm=1
+  457  SHL   rd=23 ra=23 rb= 0 I=1 imm=11
+  458  SUB   rd=23 ra=23 rb=16 I=0 imm=0
+  459  MUL   rd=23 ra=23 rb=23 I=0 imm=0
+  460  ST    rd= 0 ra= 0 rb=23 I=1 imm=76595
+  461  LD    rd=23 ra= 0 rb= 0 I=1 imm=76548
+  462  SHR   rd=23 ra=23 rb= 0 I=1 imm=48
+  463  ADD   rd=23 ra=23 rb=26 I=0 imm=0
+  464  ADD   rd=23 ra=23 rb=26 I=0 imm=0
+  465  ADD   rd=23 ra=23 rb= 0 I=1 imm=1
+  466  SHL   rd=23 ra=23 rb= 0 I=1 imm=11
+  467  SUB   rd=23 ra=23 rb=17 I=0 imm=0
+  468  MUL   rd=23 ra=23 rb=23 I=0 imm=0
+  469  LD    rd=30 ra= 0 rb= 0 I=1 imm=76595
+  470  ADD   rd=23 ra=23 rb=30 I=0 imm=0
+  471  LD    rd=30 ra= 0 rb= 0 I=1 imm=76553
+  472  SHL   rd=30 ra=30 rb= 0 I=1 imm=28
+  473  SHR   rd=30 ra=30 rb= 0 I=1 imm=28
+  474  BLT   rd= 0 ra=30 rb=23 I=0 imm=NB_N
+  475  OR    rd=29 ra=29 rb= 0 I=1 imm=32768
+  476  ST    rd= 0 ra=28 rb=29 I=1 imm=0
+  477  JALR  rd=31 ra= 0 rb= 0 I=1 imm=NB_N
+NB_M1:
+  478  SHR   rd=23 ra=29 rb= 0 I=1 imm=15
+  479  AND   rd=23 ra=23 rb= 0 I=1 imm=1
+  480  BEQ   rd= 0 ra=23 rb= 0 I=0 imm=NB_N
+  481  MUL   rd=23 ra=24 rb=24 I=0 imm=0
+  482  MUL   rd=30 ra=25 rb=25 I=0 imm=0
+  483  ADD   rd=23 ra=23 rb=30 I=0 imm=0
+  484  SLT   rd=30 ra=23 rb= 0 I=1 imm=26
+  485  BEQ   rd= 0 ra=30 rb= 0 I=0 imm=NB_N
+  486  BGE   rd= 0 ra=23 rb=20 I=0 imm=NB_N
+  487  ADD   rd=20 ra=23 rb= 0 I=1 imm=0
+  488  ADD   rd=21 ra=26 rb= 0 I=1 imm=0
+  489  ADD   rd=22 ra=27 rb= 0 I=1 imm=0
+NB_N:
+  490  ADD   rd=25 ra=25 rb= 0 I=1 imm=1
+  491  BGE   rd= 0 ra=12 rb=25 I=0 imm=NB_DJ
+  492  ADD   rd=24 ra=24 rb= 0 I=1 imm=1
+  493  BGE   rd= 0 ra=12 rb=24 I=0 imm=NB_DI
+  494  BEQ   rd= 0 ra=13 rb= 0 I=0 imm=NB_NX
+  495  ADD   rd=23 ra= 0 rb= 0 I=1 imm=0
+  496  ADD   rd=25 ra= 0 rb= 0 I=1 imm=63
+  497  BEQ   rd= 0 ra=20 rb=25 I=0 imm=NB_V
+  498  ADD   rd=23 ra= 0 rb= 0 I=1 imm=1
+  499  SHL   rd=23 ra=23 rb= 0 I=1 imm=32
+  500  AND   rd=21 ra=21 rb= 0 I=1 imm=255
+  501  SHL   rd=21 ra=21 rb= 0 I=1 imm=16
+  502  OR    rd=23 ra=23 rb=21 I=0 imm=0
+  503  AND   rd=22 ra=22 rb= 0 I=1 imm=255
+  504  OR    rd=23 ra=23 rb=22 I=0 imm=0
+NB_V:
+  505  AND   rd=25 ra=10 rb= 0 I=1 imm=1
+  506  BEQ   rd= 0 ra=25 rb= 0 I=0 imm=NB_E
+  507  MTD   rd= 0 ra=14 rb= 0 I=1 imm=0
+  508  MTD   rd= 0 ra=23 rb= 0 I=1 imm=1
+  509  SHR   rd=25 ra=10 rb= 0 I=1 imm=1
+  510  SHL   rd=25 ra=25 rb= 0 I=1 imm=4
+  511  ADD   rd=25 ra=25 rb= 6 I=0 imm=0
+  512  DST   rd= 0 ra=25 rb= 0 I=1 imm=128
+  513  JALR  rd=31 ra= 0 rb= 0 I=1 imm=NB_P
+NB_E:
+  514  ADD   rd=25 ra=10 rb= 0 I=1 imm=1
+  515  BNE   rd= 0 ra=25 rb=11 I=0 imm=NB_P
+  516  MTD   rd= 0 ra=23 rb= 0 I=1 imm=0
+  517  MTD   rd= 0 ra= 0 rb= 0 I=1 imm=1
+  518  SHR   rd=25 ra=10 rb= 0 I=1 imm=1
+  519  SHL   rd=25 ra=25 rb= 0 I=1 imm=4
+  520  ADD   rd=25 ra=25 rb= 6 I=0 imm=0
+  521  DST   rd= 0 ra=25 rb= 0 I=1 imm=128
+NB_P:
+  522  ADD   rd=14 ra=23 rb= 0 I=1 imm=0
+NB_NX:
+  523  ADD   rd=15 ra=15 rb= 0 I=1 imm=96
+  524  ADD   rd=10 ra=10 rb= 0 I=1 imm=1
+  525  BLT   rd= 0 ra=10 rb=11 I=0 imm=NB_J
+NB_X:
+  526  LD    rd=30 ra= 0 rb= 0 I=1 imm=76594
+  527  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+ENGINE:
+  528  ADD   rd=10 ra= 0 rb= 0 I=1 imm=2
+  529  ADD   rd=11 ra= 0 rb= 0 I=1 imm=1
+  530  ADD   rd=15 ra= 0 rb= 0 I=1 imm=31744
+  531  ADD   rd=16 ra= 0 rb= 0 I=1 imm=32767
+  532  ADD   rd=17 ra= 0 rb= 0 I=1 imm=10
+  533  BEQ   rd= 0 ra= 1 rb=17 I=0 imm=EN0
+  534  ADD   rd=11 ra= 9 rb= 0 I=1 imm=0
+  535  ADD   rd=15 ra= 0 rb= 0 I=1 imm=0
+  536  ADD   rd=16 ra= 0 rb= 0 I=1 imm=31743
+  537  ADD   rd=10 ra= 0 rb= 0 I=1 imm=1
+  538  ADD   rd=17 ra= 0 rb= 0 I=1 imm=5
+  539  BEQ   rd= 0 ra= 1 rb=17 I=0 imm=EN0
+  540  ADD   rd=10 ra= 0 rb= 0 I=1 imm=0
+EN0:
+  541  MTS   rd= 0 ra=15 rb= 0 I=1 imm=19
+  542  MTS   rd= 0 ra= 0 rb= 0 I=1 imm=20
+  543  MTS   rd= 0 ra=16 rb= 0 I=1 imm=21
+  544  MTS   rd= 0 ra= 2 rb= 0 I=1 imm=22
+  545  ADD   rd=12 ra= 0 rb= 0 I=1 imm=0
+  546  ADD   rd=13 ra= 7 rb= 0 I=1 imm=0
+  547  ADD   rd=14 ra= 0 rb= 0 I=1 imm=0
+  548  BEQ   rd= 0 ra=11 rb= 0 I=0 imm=EN_X
+EN_J:
+  549  DLD   rd= 0 ra=13 rb= 0 I=1 imm=0
+  550  MFD   rd=18 ra= 0 rb= 0 I=1 imm=0
+  551  MFD   rd=19 ra= 0 rb= 0 I=1 imm=1
+  552  MTS   rd= 0 ra=18 rb= 0 I=1 imm=15
+  553  MTS   rd= 0 ra=19 rb= 0 I=1 imm=16
+  554  SHR   rd=20 ra=18 rb= 0 I=1 imm=48
+  555  AND   rd=20 ra=20 rb= 0 I=1 imm=127
+  556  MUL   rd=20 ra=20 rb= 0 I=1 imm=40
+  557  SHL   rd=21 ra=19 rb= 0 I=1 imm=48
+  558  SRA   rd=21 ra=21 rb= 0 I=1 imm=48
+  559  SHL   rd=22 ra=19 rb= 0 I=1 imm=16
+  560  SRA   rd=22 ra=22 rb= 0 I=1 imm=48
+  561  SUB   rd=21 ra=21 rb=22 I=0 imm=0
+  562  ADD   rd=21 ra=21 rb=20 I=0 imm=0
+  563  AND   rd=21 ra=21 rb= 0 I=1 imm=8191
+  564  SHL   rd=22 ra=19 rb= 0 I=1 imm=32
+  565  SRA   rd=22 ra=22 rb= 0 I=1 imm=48
+  566  SHL   rd=23 ra=19 rb= 0 I=1 imm=0
+  567  SRA   rd=23 ra=23 rb= 0 I=1 imm=48
+  568  SUB   rd=22 ra=22 rb=23 I=0 imm=0
+  569  AND   rd=22 ra=22 rb= 0 I=1 imm=63
+  570  SHL   rd=22 ra=22 rb= 0 I=1 imm=16
+  571  OR    rd=21 ra=21 rb=22 I=0 imm=0
+  572  SHL   rd=20 ra=20 rb= 0 I=1 imm=32
+  573  OR    rd=21 ra=21 rb=20 I=0 imm=0
+  574  MTS   rd= 0 ra=21 rb= 0 I=1 imm=17
+  575  ADD   rd=17 ra= 0 rb= 0 I=1 imm=0
+  576  BEQ   rd= 0 ra=10 rb=17 I=0 imm=EN_S
+  577  DLD   rd= 0 ra=13 rb= 0 I=1 imm=16
+  578  MFD   rd=20 ra= 0 rb= 0 I=1 imm=0
+  579  MTS   rd= 0 ra=20 rb= 0 I=1 imm=23
+  580  MFD   rd=20 ra= 0 rb= 0 I=1 imm=1
+  581  MTS   rd= 0 ra=20 rb= 0 I=1 imm=24
+  582  DLD   rd= 0 ra=13 rb= 0 I=1 imm=32
+  583  MFD   rd=20 ra= 0 rb= 0 I=1 imm=0
+  584  MTS   rd= 0 ra=20 rb= 0 I=1 imm=23
+  585  MFD   rd=20 ra= 0 rb= 0 I=1 imm=1
+  586  MTS   rd= 0 ra=20 rb= 0 I=1 imm=25
+  587  DLD   rd= 0 ra=13 rb= 0 I=1 imm=48
+  588  MFD   rd=20 ra= 0 rb= 0 I=1 imm=0
+  589  MTS   rd= 0 ra=20 rb= 0 I=1 imm=23
+  590  MFD   rd=20 ra= 0 rb= 0 I=1 imm=1
+  591  MTS   rd= 0 ra=20 rb= 0 I=1 imm=26
+  592  DLD   rd= 0 ra=13 rb= 0 I=1 imm=64
+  593  MFD   rd=20 ra= 0 rb= 0 I=1 imm=0
+  594  MTS   rd= 0 ra=20 rb= 0 I=1 imm=23
+  595  MFD   rd=20 ra= 0 rb= 0 I=1 imm=1
+  596  MTS   rd= 0 ra=20 rb= 0 I=1 imm=27
+  597  DLD   rd= 0 ra=13 rb= 0 I=1 imm=80
+  598  MFD   rd=20 ra= 0 rb= 0 I=1 imm=0
+  599  MTS   rd= 0 ra=20 rb= 0 I=1 imm=23
+  600  MFD   rd=20 ra= 0 rb= 0 I=1 imm=1
+  601  MTS   rd= 0 ra=20 rb= 0 I=1 imm=28
+EN_S:
+  602  ADD   rd=20 ra=12 rb= 0 I=1 imm=1
+  603  SEQ   rd=20 ra=20 rb=11 I=0 imm=0
+  604  SHL   rd=20 ra=20 rb= 0 I=1 imm=2
+  605  OR    rd=20 ra=20 rb=10 I=0 imm=0
+  606  MTS   rd= 0 ra=20 rb= 0 I=1 imm=18
+  607  SCAN  rd= 0 ra= 0 rb= 0 I=0 imm=0
+  608  MFS   rd=20 ra= 0 rb= 0 I=1 imm=2
+  609  ADD   rd=14 ra=14 rb=20 I=0 imm=0
+  610  ADD   rd=13 ra=13 rb= 0 I=1 imm=96
+  611  ADD   rd=12 ra=12 rb= 0 I=1 imm=1
+  612  BLT   rd= 0 ra=12 rb=11 I=0 imm=EN_J
+EN_X:
+  613  MFS   rd= 2 ra= 0 rb= 0 I=1 imm=3
+  614  MFS   rd=20 ra= 0 rb= 0 I=1 imm=0
+  615  SHL   rd=21 ra=14 rb= 0 I=1 imm=32
+  616  OR    rd=21 ra=21 rb=20 I=0 imm=0
+  617  ST    rd= 0 ra= 0 rb=21 I=1 imm=76584
+  618  SUB   rd=20 ra=20 rb= 0 I=1 imm=31744
+  619  AND   rd=20 ra=20 rb= 0 I=1 imm=65535
+  620  ST    rd= 0 ra= 0 rb=20 I=1 imm=76591
+  621  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+PRIOR:
+  622  ST    rd= 0 ra= 0 rb=30 I=1 imm=76594
+  623  SUB   rd=13 ra= 1 rb= 0 I=1 imm=7
+  624  LD    rd=21 ra= 0 rb= 0 I=1 imm=76564
+  625  SHL   rd=17 ra=21 rb= 0 I=1 imm=32
+  626  SRA   rd=17 ra=17 rb= 0 I=1 imm=32
+  627  SHL   rd=18 ra=21 rb= 0 I=1 imm=0
+  628  SRA   rd=18 ra=18 rb= 0 I=1 imm=32
+  629  ADD   rd=14 ra= 0 rb= 0 I=1 imm=65535
+  630  SHL   rd=14 ra=14 rb= 0 I=1 imm=26
+  631  OR    rd=14 ra=14 rb= 0 I=1 imm=67108863
+  632  ADD   rd=15 ra= 0 rb= 0 I=1 imm=0
+  633  ADD   rd=16 ra= 0 rb= 0 I=1 imm=0
+  634  BNE   rd= 0 ra=13 rb= 0 I=0 imm=PR_0
+  635  JALR  rd=31 ra= 0 rb= 0 I=1 imm=PR_1
+PR_0:
+  636  ADD   rd=14 ra= 0 rb= 0 I=1 imm=0
+PR_1:
+  637  ADD   rd=10 ra= 0 rb= 0 I=1 imm=0
+  638  ADD   rd=12 ra= 0 rb= 0 I=1 imm=0
+  639  BEQ   rd= 0 ra= 4 rb= 0 I=0 imm=PR_X
+PR_I:
+  640  ADD   rd=11 ra= 0 rb= 0 I=1 imm=0
+PR_J:
+  641  LD    rd=21 ra=12 rb= 0 I=1 imm=0
+  642  SHR   rd=22 ra=21 rb= 0 I=1 imm=13
+  643  AND   rd=22 ra=22 rb= 0 I=1 imm=1
+  644  BEQ   rd= 0 ra=22 rb= 0 I=0 imm=PR_N
+  645  LD    rd=22 ra= 0 rb= 0 I=1 imm=76548
+  646  SHR   rd=23 ra=22 rb= 0 I=1 imm=32
+  647  AND   rd=23 ra=23 rb= 0 I=1 imm=65535
+  648  ADD   rd=23 ra=23 rb=11 I=0 imm=0
+  649  ADD   rd=23 ra=23 rb=11 I=0 imm=0
+  650  ADD   rd=23 ra=23 rb= 0 I=1 imm=1
+  651  SHL   rd=23 ra=23 rb= 0 I=1 imm=11
+  652  SUB   rd=23 ra=23 rb=17 I=0 imm=0
+  653  MUL   rd=23 ra=23 rb=23 I=0 imm=0
+  654  SHR   rd=24 ra=22 rb= 0 I=1 imm=48
+  655  ADD   rd=24 ra=24 rb=10 I=0 imm=0
+  656  ADD   rd=24 ra=24 rb=10 I=0 imm=0
+  657  ADD   rd=24 ra=24 rb= 0 I=1 imm=1
+  658  SHL   rd=24 ra=24 rb= 0 I=1 imm=11
+  659  SUB   rd=24 ra=24 rb=18 I=0 imm=0
+  660  MUL   rd=24 ra=24 rb=24 I=0 imm=0
+  661  ADD   rd=22 ra=23 rb=24 I=0 imm=0
+  662  BNE   rd= 0 ra=13 rb= 0 I=0 imm=PR_E
+  663  MIN   rd=14 ra=14 rb=22 I=0 imm=0
+  664  JALR  rd=31 ra= 0 rb= 0 I=1 imm=PR_N
+PR_E:
+  665  ST    rd= 0 ra= 0 rb=21 I=1 imm=76596
+  666  LD    rd=25 ra= 0 rb= 0 I=1 imm=76565
+  667  SHL   rd=25 ra=25 rb= 0 I=1 imm=32
+  668  SHR   rd=25 ra=25 rb= 0 I=1 imm=32
+  669  LD    rd=26 ra= 0 rb= 0 I=1 imm=76566
+  670  SHL   rd=26 ra=26 rb= 0 I=1 imm=32
+  671  SHR   rd=26 ra=26 rb= 0 I=1 imm=32
+  672  JALR  rd=30 ra= 0 rb= 0 I=1 imm=PEXP
+  673  ADD   rd=23 ra=27 rb= 0 I=1 imm=0
+  674  LD    rd=25 ra= 0 rb= 0 I=1 imm=76565
+  675  SHR   rd=25 ra=25 rb= 0 I=1 imm=32
+  676  LD    rd=26 ra= 0 rb= 0 I=1 imm=76566
+  677  SHR   rd=26 ra=26 rb= 0 I=1 imm=32
+  678  JALR  rd=30 ra= 0 rb= 0 I=1 imm=PEXP
+  679  ADD   rd=24 ra=27 rb= 0 I=1 imm=0
+  680  LD    rd=21 ra= 0 rb= 0 I=1 imm=76596
+  681  SHR   rd=25 ra=21 rb= 0 I=1 imm=17
+  682  AND   rd=25 ra=25 rb= 0 I=1 imm=1
+  683  ADD   rd=26 ra= 0 rb= 0 I=1 imm=1
+  684  BEQ   rd= 0 ra=13 rb=26 I=0 imm=PR_M1
+  685  BEQ   rd= 0 ra=25 rb= 0 I=0 imm=PR_2A
+  686  MUL   rd=23 ra=23 rb= 0 I=1 imm=3
+PR_2A:
+  687  LD    rd=26 ra= 0 rb= 0 I=1 imm=76567
+  688  SHR   rd=27 ra=26 rb= 0 I=1 imm=20
+  689  AND   rd=27 ra=27 rb= 0 I=1 imm=1048575
+  690  AND   rd=26 ra=26 rb= 0 I=1 imm=1048575
+  691  MUL   rd=27 ra=27 rb=23 I=0 imm=0
+  692  MUL   rd=26 ra=26 rb=23 I=0 imm=0
+  693  LD    rd=28 ra= 0 rb= 0 I=1 imm=76568
+  694  SHR   rd=29 ra=28 rb= 0 I=1 imm=20
+  695  AND   rd=29 ra=29 rb= 0 I=1 imm=1048575
+  696  AND   rd=28 ra=28 rb= 0 I=1 imm=1048575
+  697  MUL   rd=29 ra=29 rb=24 I=0 imm=0
+  698  MUL   rd=28 ra=28 rb=24 I=0 imm=0
+  699  ADD   rd=27 ra=27 rb=29 I=0 imm=0
+  700  ADD   rd=26 ra=26 rb=28 I=0 imm=0
+  701  SHR   rd=26 ra=26 rb= 0 I=1 imm=20
+  702  ADD   rd=27 ra=27 rb=26 I=0 imm=0
+  703  SHR   rd=27 ra=27 rb= 0 I=1 imm=4
+  704  LD    rd=26 ra= 0 rb= 0 I=1 imm=76569
+  705  SHL   rd=26 ra=26 rb= 0 I=1 imm=24
+  706  SHR   rd=26 ra=26 rb= 0 I=1 imm=24
+  707  ADD   rd=27 ra=27 rb=26 I=0 imm=0
+  708  BEQ   rd= 0 ra=25 rb= 0 I=0 imm=PR_2B
+  709  SHL   rd=26 ra=26 rb= 0 I=1 imm=1
+  710  ADD   rd=27 ra=27 rb=26 I=0 imm=0
+PR_2B:
+  711  LD    rd=26 ra= 0 rb= 0 I=1 imm=76570
+  712  SHL   rd=26 ra=26 rb= 0 I=1 imm=24
+  713  SHR   rd=26 ra=26 rb= 0 I=1 imm=24
+  714  ADD   rd=27 ra=27 rb=26 I=0 imm=0
+  715  SHL   rd=27 ra=27 rb= 0 I=1 imm=24
+  716  SHR   rd=27 ra=27 rb= 0 I=1 imm=24
+  717  AND   rd=21 ra=21 rb= 0 I=1 imm=8191
+  718  SHL   rd=21 ra=21 rb= 0 I=1 imm=1
+  719  LD    rd=26 ra=21 rb= 0 I=1 imm=114688
+  720  SHR   rd=26 ra=26 rb= 0 I=1 imm=40
+  721  SHL   rd=26 ra=26 rb= 0 I=1 imm=40
+  722  OR    rd=26 ra=26 rb=27 I=0 imm=0
+  723  ST    rd= 0 ra=21 rb=26 I=1 imm=114688
+  724  JALR  rd=31 ra= 0 rb= 0 I=1 imm=PR_N
+PR_M1:
+  725  ADD   rd=15 ra=15 rb=24 I=0 imm=0
+  726  ADD   rd=16 ra=16 rb= 0 I=1 imm=1
+  727  ADD   rd=14 ra=14 rb=23 I=0 imm=0
+  728  BEQ   rd= 0 ra=25 rb= 0 I=0 imm=PR_N
+  729  ADD   rd=16 ra=16 rb= 0 I=1 imm=2
+  730  SHL   rd=23 ra=23 rb= 0 I=1 imm=1
+  731  ADD   rd=14 ra=14 rb=23 I=0 imm=0
+PR_N:
+  732  ADD   rd=12 ra=12 rb= 0 I=1 imm=1
+  733  ADD   rd=11 ra=11 rb= 0 I=1 imm=1
+  734  BLT   rd= 0 ra=11 rb= 5 I=0 imm=PR_J
+  735  ADD   rd=10 ra=10 rb= 0 I=1 imm=1
+  736  BLT   rd= 0 ra=10 rb= 4 I=0 imm=PR_I
+PR_X:
+  737  LD    rd=30 ra= 0 rb= 0 I=1 imm=76594
+  738  BNE   rd= 0 ra=13 rb= 0 I=0 imm=PR_R1
+  739  ST    rd= 0 ra= 0 rb=14 I=1 imm=76588
+  740  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+PR_R1:
+  741  ST    rd= 0 ra= 0 rb=14 I=1 imm=76589
+  742  ST    rd= 0 ra= 0 rb=15 I=1 imm=76590
+  743  ST    rd= 0 ra= 0 rb=16 I=1 imm=76587
+  744  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+PEXP:
+  745  SHR   rd=27 ra=22 rb= 0 I=1 imm=10
+  746  MUL   rd=27 ra=27 rb=25 I=0 imm=0
+  747  SHR   rd=27 ra=27 rb= 0 I=1 imm=28
+  748  SHL   rd=26 ra=26 rb= 0 I=1 imm=16
+  749  SUB   rd=27 ra=27 rb=26 I=0 imm=0
+  750  MAX   rd=27 ra=27 rb= 0 I=0 imm=0
+  751  SHR   rd=28 ra=27 rb= 0 I=1 imm=16
+  752  AND   rd=27 ra=27 rb= 0 I=1 imm=65535
+  753  SHR   rd=29 ra=27 rb= 0 I=1 imm=7
+  754  LD    rd=29 ra=29 rb= 0 I=1 imm=77056
+  755  AND   rd=27 ra=27 rb= 0 I=1 imm=127
+  756  SHR   rd=26 ra=29 rb= 0 I=1 imm=32
+  757  AND   rd=26 ra=26 rb= 0 I=1 imm=33554431
+  758  AND   rd=29 ra=29 rb= 0 I=1 imm=33554431
+  759  SUB   rd=26 ra=29 rb=26 I=0 imm=0
+  760  MUL   rd=26 ra=26 rb=27 I=0 imm=0
+  761  SHR   rd=26 ra=26 rb= 0 I=1 imm=7
+  762  SUB   rd=29 ra=29 rb=26 I=0 imm=0
+  763  SLT   rd=26 ra=28 rb= 0 I=1 imm=25
+  764  BEQ   rd= 0 ra=26 rb= 0 I=0 imm=PE_Z
+  765  ADD   rd=26 ra= 0 rb= 0 I=1 imm=24
+  766  SUB   rd=26 ra=26 rb=28 I=0 imm=0
+  767  ADD   rd=27 ra= 0 rb= 0 I=1 imm=1
+  768  SHL   rd=27 ra=27 rb=26 I=0 imm=0
+  769  MUL   rd=27 ra=27 rb=29 I=0 imm=0
+  770  SHR   rd=27 ra=27 rb= 0 I=1 imm=24
+  771  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+PE_Z:
+  772  ADD   rd=27 ra= 0 rb= 0 I=1 imm=0
+  773  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+BELIEF:
+  774  ADD   rd=10 ra= 0 rb= 0 I=1 imm=10
+  775  BNE   rd= 0 ra= 1 rb=10 I=0 imm=BE_S
+  776  ADD   rd=11 ra= 0 rb= 0 I=1 imm=2
+  777  MTS   rd= 0 ra=11 rb= 0 I=1 imm=29
+  778  LD    rd=11 ra= 0 rb= 0 I=1 imm=76591
+  779  MTS   rd= 0 ra=11 rb= 0 I=1 imm=30
+  780  ADD   rd=11 ra= 0 rb= 0 I=1 imm=31744
+  781  MTS   rd= 0 ra=11 rb= 0 I=1 imm=31
+  782  MTS   rd= 0 ra= 0 rb= 0 I=1 imm=32
+  783  BEL   rd=12 ra= 0 rb= 0 I=0 imm=0
+  784  JALR  rd=31 ra=30 rb= 0 I=1 imm=0
+BE_S:
+  785  ADD   rd=11 ra= 0 rb= 0 I=1 imm=0
+  786  MTS   rd= 0 ra=11 rb= 0 I=1 imm=29
+  787  MTS   rd= 0 ra= 3 rb= 0 I=1 imm=30
+  788  MTS   rd= 0 ra= 0 rb= 0 I=1 imm=31
+  789  MTS   rd= 0 ra= 0 rb= 0 I=1 imm=32
+  790  BEL   rd=12 ra= 0 rb= 0 I=0 imm=0
+  791  MFS   rd=12 ra= 0 rb= 0 I=1 imm=6
+  792  ST    rd= 0 ra= 0 rb=12 I=1 imm=76585
+  793  MFS   rd=12 ra= 0 rb= 0 I=1 imm=7
+  794  ST    rd= 0 ra= 0 rb=12 I=1 imm=76586
+  795  ADD   rd=11 ra= 0 rb= 0 I=1 imm=1
+  796  MTS   rd= 0 ra=11 rb= 0 I=1 imm=29
+  797  LD    rd=11 ra= 0 rb= 0 I=1 imm=76592
+  798  MTS   rd= 0 ra=11 rb= 0 I=1 imm=30
+  799  MTS   rd= 0 ra= 0 rb= 0 I=1 imm=32
+  800  ADD   rd=13 ra= 6 rb= 0 I=1 imm=768
+BE_L:
+  801  BEL   rd=12 ra= 0 rb= 0 I=0 imm=0
+  802  BEQ   rd= 0 ra=12 rb= 0 I=0 imm=BE_X
+  803  MFS   rd=14 ra= 0 rb= 0 I=1 imm=6
+  804  MTD   rd= 0 ra=14 rb= 0 I=1 imm=0
+  805  MFS   rd=14 ra= 0 rb= 0 I=1 imm=7
+  806  MTD   rd= 0 ra=14 rb= 0 I=1 imm=1
+  807  DST   rd= 0 ra=13 rb= 0 I=1 imm=0
+  808  ADD   rd=13 ra=13 rb= 0 I=1 imm=16
+  809  JALR  rd=31 ra= 0 rb= 0 I=1 imm=BE_L
+BE_X:
+  810  JALR  rd=31 ra=30 rb= 0 I=1 imm=0

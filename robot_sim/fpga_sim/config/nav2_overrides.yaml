@@ -1,0 +1,136 @@
+# Overlay onto installed Humble nav2_bringup defaults, keeping its BT plugins.
+# Known architectural map + reference pose. NO AMCL/SLAM claimed by this launch.
+bt_navigator:
+  ros__parameters:
+    robot_base_frame: base_link
+    odom_topic: /odom
+controller_server:
+  ros__parameters:
+    controller_frequency: 10.0
+    min_y_velocity_threshold: 0.0
+    progress_checker:
+      required_movement_radius: 0.15
+      movement_time_allowance: 15.0
+    general_goal_checker:
+      plugin: nav2_controller::StoppedGoalChecker
+      rot_stopped_velocity: 0.03
+      trans_stopped_velocity: 0.01
+      stateful: false
+      # Re-observation needs camera framing, not merely coarse base arrival.
+      xy_goal_tolerance: 0.03
+      yaw_goal_tolerance: 0.03
+    FollowPath:
+      # DWB must not latch rotation outside the goal checker's position window.
+      xy_goal_tolerance: 0.03
+      max_vel_x: 0.25
+      max_speed_xy: 0.25
+      max_vel_theta: 0.6
+      acc_lim_x: 0.5
+      decel_lim_x: -0.5
+      acc_lim_theta: 1.0
+      decel_lim_theta: -1.0
+      trans_stopped_velocity: 0.05
+      vy_samples: 1
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      robot_base_frame: base_link
+      robot_radius: 0.30
+      width: 4
+      height: 4
+      plugins: [static_layer, obstacle_layer, inflation_layer]
+      static_layer:
+        plugin: nav2_costmap_2d::StaticLayer
+        map_subscribe_transient_local: true
+      obstacle_layer:
+        plugin: nav2_costmap_2d::ObstacleLayer
+        observation_sources: depth depth_clear
+        depth:
+          topic: /fpga/points
+          data_type: PointCloud2
+          marking: true
+          clearing: false
+          min_obstacle_height: 0.08
+          max_obstacle_height: 1.5
+          obstacle_min_range: 0.15
+          obstacle_max_range: 4.0
+          raytrace_min_range: 0.15
+          raytrace_max_range: 5.0
+          observation_persistence: 0.0
+          expected_update_rate: 0.5
+        # Ground returns must clear rays without being marked as obstacles.
+        # Humble filters observation height before BOTH marking and raytracing.
+        depth_clear:
+          topic: /fpga/points
+          data_type: PointCloud2
+          marking: false
+          clearing: true
+          min_obstacle_height: -0.05
+          max_obstacle_height: 1.5
+          obstacle_min_range: 0.15
+          obstacle_max_range: 4.0
+          raytrace_min_range: 0.15
+          raytrace_max_range: 5.0
+          observation_persistence: 0.0
+          expected_update_rate: 0.5
+      inflation_layer:
+        inflation_radius: 0.45
+        cost_scaling_factor: 3.0
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      robot_base_frame: base_link
+      robot_radius: 0.30
+      plugins: [static_layer, obstacle_layer, inflation_layer]
+      obstacle_layer:
+        plugin: nav2_costmap_2d::ObstacleLayer
+        observation_sources: depth depth_clear
+        depth:
+          topic: /fpga/points
+          data_type: PointCloud2
+          marking: true
+          clearing: false
+          min_obstacle_height: 0.08
+          max_obstacle_height: 1.5
+          obstacle_min_range: 0.15
+          obstacle_max_range: 4.0
+          raytrace_min_range: 0.15
+          raytrace_max_range: 5.0
+          observation_persistence: 0.0
+          expected_update_rate: 0.5
+        # Ground returns must clear rays without being marked as obstacles.
+        # Humble filters observation height before BOTH marking and raytracing.
+        depth_clear:
+          topic: /fpga/points
+          data_type: PointCloud2
+          marking: false
+          clearing: true
+          min_obstacle_height: -0.05
+          max_obstacle_height: 1.5
+          obstacle_min_range: 0.15
+          obstacle_max_range: 4.0
+          raytrace_min_range: 0.15
+          raytrace_max_range: 5.0
+          observation_persistence: 0.0
+          expected_update_rate: 0.5
+      inflation_layer:
+        inflation_radius: 0.45
+        cost_scaling_factor: 3.0
+planner_server:
+  ros__parameters:
+    GridBased:
+      tolerance: 0.15
+      allow_unknown: false
+behavior_server:
+  ros__parameters:
+    max_rotational_vel: 0.6
+    min_rotational_vel: 0.2
+    rotational_acc_lim: 1.0
+velocity_smoother:
+  ros__parameters:
+    odom_topic: /odom
+    max_velocity: [0.25, 0.0, 0.6]
+    min_velocity: [-0.15, 0.0, -0.6]
+    max_accel: [0.5, 0.0, 1.0]
+    max_decel: [-0.5, 0.0, -1.0]
+    velocity_timeout: 0.5

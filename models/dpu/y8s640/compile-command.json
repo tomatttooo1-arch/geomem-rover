@@ -1,0 +1,42 @@
+{
+  "started_utc": "2026-11-03T19:08:02.620231+00:00",
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--user",
+    "1020:1020",
+    "-v",
+    "${TRAIN_HOME}/geomem-training/nat-recog-quant4-20261103/quant/640/qat/epoch-1:/model:ro",
+    "-v",
+    "${TRAIN_HOME}/geomem-training/nat-recog-quant4-20261103:/target:ro",
+    "-v",
+    "${TRAIN_HOME}/geomem-training/nat-recog-quant4-20261103/quant/640/compiled-selected:/output",
+    "-v",
+    "${TRAIN_HOME}/geomem-training/nat-recog-quant4-20261103:/helpers:ro",
+    "--entrypoint",
+    "/bin/bash",
+    "xilinx/vitis-ai-pytorch-cpu:ubuntu2004-3.0.0.106",
+    "-c",
+    "source /opt/vitis_ai/conda/etc/profile.d/conda.sh && conda activate vitis-ai-pytorch && vai_c_xir -x \"$1\" -a \"$2\" -o /output -n \"$3\" && test -s \"/output/$3.xmodel\" && python /helpers/inspect_xmodel.py \"/output/$3.xmodel\" --output /output/subgraphs.json",
+    "compile",
+    "/model/QatYOLO_0_int.xmodel",
+    "/target/arch_b1024.json",
+    "q4_y8s_640_b1024"
+  ],
+  "quantized": "${TRAIN_HOME}/geomem-training/nat-recog-quant4-20261103/quant/640/qat/epoch-1/QatYOLO_0_int.xmodel",
+  "quantized_sha256": "3c7fcd421c619c21c878c22a82fc7166224da4faf71c93156e98f45132b08987",
+  "arch": "${TRAIN_HOME}/geomem-training/nat-recog-quant4-20261103/arch_b1024.json",
+  "arch_sha256": "ed24c89251024302f8990ba1f549e1294bcab2f11cdfd59053be8800401d4ea5",
+  "arch_content": {
+    "fingerprint": "0x101000056010402"
+  },
+  "image": "xilinx/vitis-ai-pytorch-cpu:ubuntu2004-3.0.0.106",
+  "image_digest": "sha256:f55bd069ffd56c6358cae29df19e6085f2bcf8ea5e045744aa412fd72db521ed",
+  "source_sha256": "53db7ad95961a99efacf45aed9619231170f11983d024ffad94236562897d2f7",
+  "training_started": false
+}

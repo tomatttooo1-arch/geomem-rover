@@ -1,0 +1,65 @@
+package m7_pl_m7s17 from ${FPGA_RUN}/M7S17/pkg_input at 2026-11-04T16:49:56+08:00; clk=100000000 Hz clk1=166664993 Hz
+
+
+****** Xilinx Bootgen v2022.2.0
+  **** Build date : Oct 13 2022-12:22:43
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+[INFO]   : Bootimage generated successfully
+
+bit.bin: 7797692 bytes (bit: 123)
+dtc -@ compile: OK (5117 bytes)
+shell.json: valid JSON, XRT_FLAT
+wrote ${FPGA_SRC}/hw/m7/pl/sw/m7pl_hls_regs.h.check
+wrote ${FPGA_SRC}/hw/m7/pl/sw/m7pl_addrmap.h.check
+wrote ${FPGA_SRC}/hw/m7/pl/sw/m7pl_detpost_regs.h.check
+wrote ${FPGA_SRC}/hw/m7/pl/sw/m7pl_memk_regs.h.check
+wrote ${FPGA_SRC}/hw/m7/pl/sw/m7pl_planner_regs.h.check
+wrote ${FPGA_SRC}/hw/m7/pl/sw/m7pl_prep_regs.h.check
+wrote ${FPGA_SRC}/hw/m7/pl/sw/m7pl_srch_regs.h.check
+no_ar: ar block, its slot 8 and irq bit 7 are expected ABSENT
+sysinfo   plan=0xa0000000 hwh=0xa0000000-0xa000ffff csv=0xa0000000 dtbo=0xa0000000/0x10000 spi=None irq_src=None -> OK
+frame     plan=0xa0010000 hwh=0xa0010000-0xa001ffff csv=0xa0010000 dtbo=0xa0010000/0x10000 spi=89 irq_src=frame -> OK
+permit    plan=0xa0060000 hwh=0xa0060000-0xa006ffff csv=0xa0060000 dtbo=0xa0060000/0x10000 spi=94 irq_src=permit -> OK
+roi       plan=0xa0090000 hwh=0xa0090000-0xa009ffff csv=0xa0090000 dtbo=0xa0090000/0x10000 spi=91 irq_src=roi -> OK
+rolling   plan=0xa0050000 hwh=0xa0050000-0xa005ffff csv=0xa0050000 dtbo=0xa0050000/0x10000 spi=93 irq_src=rolling -> OK
+detpost   plan=0xa00a0000 hwh=0xa00a0000-0xa00affff csv=0xa00a0000 dtbo=0xa00a0000/0x10000 spi=92 irq_src=detpost -> OK
+prep      plan=0xa00b0000 hwh=0xa00b0000-0xa00bffff csv=0xa00b0000 dtbo=0xa00b0000/0x10000 spi=95 irq_src=prep -> OK
+planner   plan=0xa00c0000 hwh=0xa00c0000-0xa00cffff csv=0xa00c0000 dtbo=0xa00c0000/0x10000 spi=90 irq_src=planner -> OK
+srch      plan=0xa00d0000 hwh=0xa00d0000-0xa00dffff csv=0xa00d0000 dtbo=0xa00d0000/0x10000 spi=104 irq_src=srch -> OK
+memk      plan=0xa00e0000 hwh=0xa00e0000-0xa00e0fff csv=0xa00e0000 dtbo=0xa00e0000/0x10000 spi=105 irq_src=memk -> OK
+dpu       plan=0x8f000000/0x1000000 csv=['0x8f000000/0x0001000000'] dtbo=0x8f000000/0x1000000 spi=96 irq_src(bit 7)=dpu -> OK
+dpu DMA spaces: ['DPU0_M_AXI_DATA0', 'DPU0_M_AXI_DATA1', 'DPU0_M_AXI_INSTR']
+dpu arch.json: {"fingerprint":"0x101000056010402"}
+overlay firmware-name=m7_pl_m7s17.bit.bin clock=100000000 clock1=166664993
+P1 planner masters: m_axi_map_mem aw ip=32 hwh=32; m_axi_field_mem aw ip=32 hwh=32 -> OK
+lpd: SAXIGP6 width 128; masters detpost/m_axi_gmem=S_AXI_LPD:LPD_DDR_LOW@0x0-0x7fffffff prep/m_axi_gmem=S_AXI_LPD:LPD_DDR_LOW@0x0-0x7fffffff planner/m_axi_map_mem=S_AXI_LPD:LPD_DDR_LOW@0x0-0x7fffffff planner/m_axi_field_mem=S_AXI_LPD:LPD_DDR_LOW@0x0-0x7fffffff -> OK
+SLOT_MAP hwh=0x7e63 expected=0x7e63 -> OK
+afi widths: hwh SAXIGP 0:128,1:128,2:32,3:32,4:128,5:64,6:128, overlay config-afi 0:0 1:0 2:0 3:0 4:2 5:2 6:2 7:2 8:0 9:0 10:1 11:1 12:0 13:0 -> OK
+N1 new cores present: srch=xilinx.com:hls:srch_top:1.0 memk=xilinx.com:hls:memk4_top:1.0 -> OK
+N2/N3 new masters: srch/m_axi_gmem=S_AXI_LPD:LPD_DDR_LOW@0x0-0x7fffffff srch:ctrl_aw=6 memk:ctrl_aw=4 -> OK
+N4 address windows: 12 PS-master ranges, overlap-free -> OK
+N5 pl_ps_irq1: 0:srch 1:memk 2:irq_zero 3:irq_zero 4:irq_zero 5:irq_zero 6:irq_zero 7:irq_zero -> OK
+N6 memk BRAM port: memk ctrl 0xa00e0000-0xa00e0fff, bc_memk 0xa00e8000-0xa00e9fff, bm_memk 2048x32 type 2, ports {'blk_PORTA': '32'} -> OK
+header m7pl_hls_regs.h up to date: True
+header m7pl_addrmap.h up to date: True
+header m7pl_detpost_regs.h up to date: True
+header m7pl_memk_regs.h up to date: True
+header m7pl_planner_regs.h up to date: True
+header m7pl_prep_regs.h up to date: True
+header m7pl_srch_regs.h up to date: True
+CHECK PASS
+expected sysinfo BUILD_ID on the board: 0x063ba99b (source commit 63ba99bf863d270160f82e221462f44acf339912)
+driver make check: PASS
+  RESULT PASS (0 failed checks)
+  RESULT PASS (0 failed checks)
+  RESULT FAIL (3 failed checks)
+  RESULT FAIL (1 failed checks)
+  RESULT FAIL (1 failed checks)
+  RESULT FAIL (1 failed checks)
+  RESULT PASS (0 failed checks)
+  RESULT FAIL (1 failed checks)
+${FPGA_RUN}/M7S17/pkg/m7pl_test: ELF 64-bit LSB executable, ARM aarch64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=d760e0e30fc0c0f0f1a10e0a38cbc79b1a138e6b, for GNU/Linux 3.7.0, not stripped
+dpu arch.json: {"fingerprint":"0x101000056010402"}
+writing SHA256SUMS over 14 files

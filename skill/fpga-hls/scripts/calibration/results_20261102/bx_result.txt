@@ -1,0 +1,20 @@
+### 1 baseline cosim (wrapc_pc) vs golden
+SAME     out.bin  (128 bytes, sha256 e32dbb01e5cd)
+SAME     out.txt  (534 bytes, sha256 c030cc261baf)
+RESULT BITEXACT: 2 golden files, 0 problem(s)
+rc=0
+### run rerun (TOY_FAULT=0) hls_run rc=0
+SAME     out.bin  (128 bytes, sha256 e32dbb01e5cd)
+SAME     out.txt  (534 bytes, sha256 c030cc261baf)
+RESULT BITEXACT: 2 golden files, 0 problem(s)
+rc=0
+### run f1 (TOY_FAULT=1) hls_run rc=0
+DIFF     out.bin  first difference at byte offset 74 (golden 0x0b vs candidate 0x0c)  element 37  sizes 128/128
+DIFF     out.txt  first difference at byte offset 306 (golden 0x35 vs candidate 0x36)  element 153, line 38  sizes 534/534
+RESULT MISMATCH: 2 golden files, 2 problem(s)
+rc=1
+### run f2 (TOY_FAULT=2) hls_run rc=0
+DIFF     out.bin  first difference at byte offset 11 (golden 0x96 vs candidate 0x16)  element 5  sizes 128/128
+DIFF     out.txt  first difference at byte offset 38 (golden 0x33 vs candidate 0x35)  element 19, line 6  sizes 534/528
+RESULT MISMATCH: 2 golden files, 2 problem(s)
+rc=1

@@ -1,0 +1,21 @@
+# Planner core: potential-field part before/after, path extraction, global map
+# Excerpts copied verbatim from the original files (line numbers of the original file given); numbers unchanged.
+
+## source: planner_v3_slim/SUMMARY.txt -- potential-field part, OOC routed, 100 MHz
+L7: At fixed100MHz: baseline same-pair min/avg/max244645/273465/302286→239545/267736/295928cycles; nominal2.39545/2.95928ms. Single scan II1/depth4, scheduled round14414cycles versus manual15200. Projected1/2/64rounds27544/41958/935626cycles; projections are not new measurements.
+L9: Actual routed resources: baseline4411LUT4829FF2DSP7RAMB36+4RAMB18(9eq)→3509LUT3538FF1DSP7RAMB36+1RAMB18(7.5eq),URAM0. Manual3690LUT4300FF0DSP7.5eq; deviations/stage sums documented. Formal same-DCP timing at10ns WNS2.114,TNS0,WHS0.047,THS0. Core target met; external98input/206output delays remain OOC integration work.
+
+## source: PLNPATH0/README.md -- in-core path extraction, OOC 10 ns, cosim cycles
+L14: | 项 | 改前（68b345d） | 改后 | 增量 | 手算预算 |
+L15: |---|---:|---:|---:|---:|
+L16: | LUT | 3,747 | **4,377** | +630 | +363（门 ≤ +600） |
+L17: | FF | 3,777 | 4,429 | +652 | +434 |
+L18: | DSP | 1 | 6 | +5 | +5 |
+L20: | WNS / TNS / WHS | +1.078 / 0 / +0.055 ns | **+1.790 / 0 / +0.055 ns** | — | ≥ 0 |
+L21: | 80 档压力例（16 轮），整次调用拍数 | 222,442 | 224,160 | +1,718（取路 78 点） | ≈ 21n+200 = 1,838 |
+L22: | 200 档教室例（6 轮），整次调用拍数 | 573,332 | 576,034 | +2,702（取路 127 点） | ≈ 2,867 |
+
+## source: GMAP2/README.md -- OOC export_design -flow impl, xck26, 100 MHz; global map merged into the planner core (v9 = whole-board IP)
+L85: | 版本 | 内容 | 整核 LUT | gmap_core | planner_df | 3 个 AXI 外壳 | BRAM18 计 | 布线后 ns |
+L87: | PLNPATH0 9bb45cb | 参照（无 gmap） | 4,377 | — | — | 1,581 | 94 | — |
+L94: | **g9 2378b21** | 行地址进 DSP、0x90/0x98 口窄到 1/3 位 | **5,619** | 1,762 | 2,645 | 1,190 | 98 | 9.45 |

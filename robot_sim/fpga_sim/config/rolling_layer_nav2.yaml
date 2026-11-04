@@ -1,0 +1,56 @@
+# Rolling-map local obstacle layer for Nav2 Humble (2026-09-27).
+# Overlay onto nav2_bringup defaults; see docs/design/ROLLING_NAV2_LAYER_20260927.md.
+# Checked by host/rolling_nav_layer.py:check_costmap_config (tests/test_rolling_nav_layer.py).
+# robot_radius is the value already used in nav2_overrides.yaml; replace it with the real car's.
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      global_frame: odom
+      robot_base_frame: base_link
+      rolling_window: true
+      width: 4
+      height: 4
+      resolution: 0.05            # must equal the rolling-map voxel
+      origin_x: 0.0               # keeps the costmap lattice on multiples of 0.05 m
+      origin_y: 0.0
+      update_frequency: 10.0
+      publish_frequency: 10.0
+      robot_radius: 0.30
+      footprint_padding: 0.0      # the bridge outline uses the bare radius (Nav2 default pads 1 cm)
+      track_unknown_space: true   # false would turn UNKNOWN (-1) into FREE_SPACE
+      trinary_costmap: true
+      lethal_cost_threshold: 100
+      unknown_cost_value: 255
+      use_maximum: false
+      # The rolling layer is the only map layer: no ObstacleLayer/VoxelLayer (they ray-clear
+      # obstacles and would bypass the 10-free-frame rule), no second StaticLayer (overwrite).
+      plugins: [rolling_layer, inflation_layer]
+      rolling_layer:
+        plugin: nav2_costmap_2d::StaticLayer
+        map_topic: /fpga/rolling_map/grid
+        map_subscribe_transient_local: true
+        subscribe_to_updates: false   # OccupancyGridUpdate cannot move the window origin
+        # Off: with it on, DWB's centre-only BaseObstacle let the car push its cleared
+        # footprint into UNKNOWN and through an obstacle it overlapped (smoke try6).
+        footprint_clearing_enabled: false
+        transform_tolerance: 0.1
+      inflation_layer:
+        plugin: nav2_costmap_2d::InflationLayer
+        inflation_radius: 0.45
+        cost_scaling_factor: 3.0
+        inflate_unknown: false
+controller_server:
+  ros__parameters:
+    FollowPath:
+      # DWB BaseObstacle rejects NO_INFORMATION; Humble RPP would drive through it.
+      plugin: dwb_core::DWBLocalPlanner
+      # ObstacleFootprint: the whole body outline, not only the centre, must stay out of
+      # LETHAL and NO_INFORMATION cells.
+      critics: [RotateToGoal, Oscillation, BaseObstacle, ObstacleFootprint, GoalAlign,
+                PathAlign, PathDist, GoalDist]
+      ObstacleFootprint.scale: 0.02
+planner_server:
+  ros__parameters:
+    GridBased:
+      allow_unknown: false
+      tolerance: 0.0   # 0.5 let NavFn report success next to an unreachable goal (smoke try5)

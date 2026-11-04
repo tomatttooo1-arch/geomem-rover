@@ -1,0 +1,5 @@
+{"_note": "NN-CAM2 KV-2 bench (car still): intrinsics come from the kv_cam ring header (SDK); camera 0.30 m above the odom origin looking along +x; goal 2 m ahead so the navigation core plans. Replace camera_to_world with the car's calibrated camera pose for a representative grid (timing barely depends on it).",
+ "camera_to_world": [[0.0, 0.0, 1.0, 0.0], [-1.0, 0.0, 0.0, 0.0], [0.0, -1.0, 0.0, 0.30], [0.0, 0.0, 0.0, 1.0]],
+ "identity": {"stream_instance": "kvcam", "clock_id": "kv_mono", "calibration_id": "kv2-bench", "pose_epoch": "0"},
+ "ground_z_m": 0.0, "grid_robot_height_m": 0.31,
+ "nav_goal": [2.0, 0.0, 0.0]}

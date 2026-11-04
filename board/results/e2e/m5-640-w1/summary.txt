@@ -1,0 +1,12 @@
+E2E0 summary  raw=.  warm=10s
+build_id.txt missing
+idle_all power nan W (n=None)   idle_cam nan W
+--- model y8s640
+1 camera->field  tick run (replan every tick): median/p95 n/a
+    product run (0.5 s replan)         : n/a
+    processing only (cam->GRID + plan_ms), tick: n/a
+    cam->geometry n/a | cam->GRID n/a | plan_ms n/a | depth rate n/a fps | skip n/a
+2 camera->boxes  main run: 165.1 / 180.8 ms (n=773) ; pipeline 6.84 fps
+    segments: arrive->read 19.7 / 34.0 ms (n=773) | PL prep 4.9 / 5.3 ms (n=773) | queue 0.7 / 0.9 ms (n=773) | DPU 133.7 / 133.9 ms (n=773) | CPU post 6.3 / 8.1 ms (n=773)
+3 power main run 5.825 W (n=1100, 110 s)  minus idle_all = +nan W
+  checks: depth frames None fail geo/fuse/grid None/None/None mono None order None | colour frames 773 fail 0 mono 0 order 0 | warnings dpu_rx 0 kv_server None | field None

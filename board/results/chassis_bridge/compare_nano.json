@@ -1,0 +1,144 @@
+{
+ "run_dir": "${FPGA_SRC}/runs/accept-20261026/20261026-150138-live",
+ "events": 155996,
+ "rx": 104281,
+ "tx": 51715,
+ "tx_enabled_in_recording": 51204,
+ "reencode_mismatch": 0,
+ "A_window": {
+  "first_event": 7011,
+  "events": 12000,
+  "t0_ns": 2794953149152,
+  "t1_ns": 2874912030592,
+  "tx_moving": 1330
+ },
+ "A_commands": {
+  "nano_frames": 3994,
+  "bridge_frames": 3994,
+  "equal_frames": 3994,
+  "differ": 0,
+  "first_diff": null,
+  "identical": true,
+  "enabled_frames_bridge": 3991
+ },
+ "A_negative_control_status2_off": {
+  "nano_frames": 3994,
+  "bridge_frames": 3994,
+  "equal_frames": 0,
+  "differ": 3994,
+  "first_diff": {
+   "i": 0,
+   "nano": "a55a010000000000052cc5",
+   "bridge": "a55a01000000000001a885"
+  },
+  "identical": false
+ },
+ "B_start_key": [
+  245,
+  1195430
+ ],
+ "B_odom": {
+  "compared": 103966,
+  "identical": 103966,
+  "nano_rows_without_bridge_row": 0,
+  "max_abs_diff": {
+   "x": 0.0,
+   "y": 0.0,
+   "yaw": 0.0,
+   "distance": 0.0,
+   "v": 0.0,
+   "w": 0.0
+  },
+  "first_diff": null,
+  "all_identical": true,
+  "args": "--heading wheel --wheel-diam-m 0.081 --counts-per-rev 1560 --track-m 0.394",
+  "bridge_last_pose": [
+   0.29287519328386824,
+   -3.037984265596138,
+   0.4711468951298572,
+   0.0,
+   0.0,
+   3788336340768
+  ],
+  "link_lost_ms": 100.0
+ },
+ "B_negative_control": {
+  "compared": 103966,
+  "identical": 5370,
+  "nano_rows_without_bridge_row": 0,
+  "max_abs_diff": {
+   "x": 0.12876203458974422,
+   "y": 0.044281127359202976,
+   "yaw": 0.059464699953745814,
+   "distance": 0.07855507118841398,
+   "v": 0.004908950636384968,
+   "w": 0.0326645078464054
+  },
+  "first_diff": {
+   "key": [
+    239,
+    1249130
+   ],
+   "nano": {
+    "x": 8.156057617665131e-05,
+    "y": 1.6883573286108344e-08,
+    "yaw": 0.0004140130888662847,
+    "distance": 8.156057850665809e-05,
+    "v": 0.011887079161127091,
+    "w": 0.06034050335597508,
+    "event": "ok"
+   },
+   "bridge": {
+    "x": 8.237618189111634e-05,
+    "y": 1.7222933087812643e-08,
+    "yaw": 0.0004181532197549475,
+    "distance": 8.237618429172466e-05,
+    "v": 0.01200594995273836,
+    "w": 0.060943908389534826,
+    "event": "ok"
+   }
+  },
+  "all_identical": false,
+  "args": "--heading wheel --wheel-diam-m 0.08181 --counts-per-rev 1560 --track-m 0.394"
+ },
+ "B_info_bridge_default_link_lost": {
+  "compared": 103966,
+  "identical": 23481,
+  "nano_rows_without_bridge_row": 0,
+  "max_abs_diff": {
+   "x": 0.021468351713710254,
+   "y": 0.009700770287803362,
+   "yaw": 0.012420392665989155,
+   "distance": 0.0008156057850676746,
+   "v": 0.00885684752673651,
+   "w": 0.04084614589539107
+  },
+  "first_diff": {
+   "key": [
+    144,
+    1212340
+   ],
+   "nano": {
+    "x": 0.0,
+    "y": 0.0,
+    "yaw": 0.0,
+    "distance": 0.0,
+    "v": 0.0,
+    "w": 0.0,
+    "event": "rebaseline"
+   },
+   "bridge": {
+    "x": 0.0,
+    "y": 0.0,
+    "yaw": 0.0,
+    "distance": 0.0,
+    "v": 0.0,
+    "w": 0.0,
+    "event": "ok"
+   }
+  },
+  "all_identical": false
+ },
+ "wall_s": 60.8,
+ "pass": true
+}

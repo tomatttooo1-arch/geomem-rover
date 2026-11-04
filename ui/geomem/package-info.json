@@ -1,0 +1,109 @@
+{
+  "node": "v24.19.0",
+  "build": "2026-10-15",
+  "platform": "Windows x64",
+  "name": "GeoMem M8",
+  "mode": "demo",
+  "files": [
+    {
+      "sha256": "F8D76499AF77EB24ADD4682D111FFC28677A098F783349AB4B548BB7D1C8A47F",
+      "path": "界面预览.png"
+    },
+    {
+      "sha256": "3B8DE44672B326EBE108DA04EDF7ACADD32A9F346F0AE1767BBBD23CBF1CD471",
+      "path": "start_demo.cmd"
+    },
+    {
+      "sha256": "7B55A17456A8303676466A036F058FAE5E67FFBE9D602819C95285558670BFC2",
+      "path": "vehicle_interface_protocol.md"
+    },
+    {
+      "sha256": "E33D3F399BA3C579ABF26ED68D419B08ED7C3D39AC29A64D004A647A8FB11382",
+      "path": "readme_first_zh.txt"
+    },
+    {
+      "sha256": "F3617B992DB73E810AB9A096D15049C348DDE9368A6B7EF8B64648DD2DB04080",
+      "path": "start.mjs"
+    },
+    {
+      "sha256": "4703D197F38EA90DB9BD2C813C203D36229770169DE71E49EE8F611580109716",
+      "path": "app\\index.html"
+    },
+    {
+      "sha256": "CDE60D2DF1835B375C07231F8341881416E9BBC0B30E8E7A691CEA3CB9B02761",
+      "path": "app\\manifest.webmanifest"
+    },
+    {
+      "sha256": "E34758A33B68DEA1AF5691171357BA6E0C4F23DA147FB825C45A7DE75527C3D1",
+      "path": "app\\server.mjs"
+    },
+    {
+      "sha256": "67DC8688563766ACB03B94C664195F13B1E0B67AA5F93770444F57C36B9BB9E0",
+      "path": "app\\styles.css"
+    },
+    {
+      "sha256": "6741FA0099B584F3AC65AFBD797DD9B5BCE5BC2B3049754F809A09DCDD8DDFE6",
+      "path": "app\\sw.js"
+    },
+    {
+      "sha256": "1BA954E77C2DA05E21531B7C42EBC33A2FCAE5E5AB56506F0D761689109B6C8D",
+      "path": "app\\assets\\icon-192.png"
+    },
+    {
+      "sha256": "625551EFC03C5D9D72624B5B76BD63DD98AD341B436837B454BD70989E874C90",
+      "path": "app\\assets\\icon-512.png"
+    },
+    {
+      "sha256": "EA8F6DE06FB64BC72B91D98B5FD90494CCA292119870A5CA467668544275A2AF",
+      "path": "app\\assets\\icon.svg"
+    },
+    {
+      "sha256": "2DBE21C32F8D2C0200C69C7F8DBF597F9B563480623FF146D3DC82173DBB2C54",
+      "path": "app\\src\\app.js"
+    },
+    {
+      "sha256": "9A44E3E42B822E3B3734BFA5AE81D74D4D255F51CF20D8E7B4524C027FAACE9D",
+      "path": "app\\src\\demo.js"
+    },
+    {
+      "sha256": "48D6EEFED04EC729D7601B258D2A02057AD0E4854287D6A9B9BB4647F639365F",
+      "path": "app\\src\\icons.js"
+    },
+    {
+      "sha256": "BB64F18DB00D7127B1B666038B38D069091579EABBB72E7149D9B7D7C34C4286",
+      "path": "app\\src\\model.js"
+    },
+    {
+      "sha256": "411624C9DF5878B1221955D62DB46E2755499C72321AE603A3E663D5D0CC403E",
+      "path": "app\\src\\scene.js"
+    },
+    {
+      "sha256": "D3D8514592D423D590D12C0930790A5481BAB2562D3DCFF1E1C5601F06C474F8",
+      "path": "app\\src\\transport.js"
+    },
+    {
+      "sha256": "B97879C748170BAADEB3FB84CEA1FFDF4674E283DC06042F34E2ACB95A76042C",
+      "path": "app\\vendor\\orbitcontrols.js"
+    },
+    {
+      "sha256": "BFE119EA4FD413F5F7CA3FCD63ADB0C4A073ED39DAA2FE7D3E6B769E21272601",
+      "path": "app\\vendor\\THREE-LICENSE.txt"
+    },
+    {
+      "sha256": "EB077D2417F61D3E6D9264C317CABC4EA35769ED6B0AB533067292A550784C20",
+      "path": "app\\vendor\\three.core.js"
+    },
+    {
+      "sha256": "C8211C69345D2E9949DC7A8AC969380497AA0600A5A8AC6A459C8CD02DD9CB8A",
+      "path": "app\\vendor\\three.module.js"
+    },
+    {
+      "sha256": "148EACF7863EF4329224A29398623077200A27194AA075569FAF4A0A85566CA5",
+      "path": "runtime\\NODE-LICENSE.txt"
+    },
+    {
+      "sha256": "3602F2BB1A10F2CBAB4C36886218A33C1AB3DB87290E73B033C46C77147D0237",
+      "path": "runtime\\node.exe"
+    }
+  ]
+}

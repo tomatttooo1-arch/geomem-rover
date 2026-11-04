@@ -1,0 +1,9 @@
+# Odometry calibration: p95 position error 0.301 m -> 0.140 m (long trip 032940)
+# Excerpts copied verbatim (line numbers of the original file given); numbers unchanged.
+
+## source: LOC0/results/SUMMARY.txt -- columns: p50 / p95 / max / last position error and heading
+L23: trip1/032940_nomatch                             p50 0.132 p95 0.301 max 0.508 last 0.506 m/14.14 deg  acc    0/0    
+L61: trip1_cal/032940_nomatch                         p50 0.090 p95 0.140 max 0.254 last 0.135 m/ 1.13 deg  acc    0/0    
+
+## source: LOC0/README.md -- cross-validated scale factors
+L101: | 长趟 032940 | s_pos 0.9981 / s_neg 1.0059（短趟拟合） | 0.090 / **0.140** / 0.255 m | **1.2°** | 0.132 / 0.301 / 0.508 m，14.1° |

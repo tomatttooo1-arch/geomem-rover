@@ -1,0 +1,5 @@
+const CACHE='geomem-m8-v16';
+const ASSETS=['./','./index.html','./styles.css','./src/app.js','./src/remote.js','./src/health-panel.js','./src/fpga-panel.js','./src/model.js','./src/demo.js','./src/transport.js','./src/scene.js','./src/car_model.js','./src/icons.js','./vendor/three.module.js','./vendor/three.core.js','./vendor/orbitcontrols.js','./assets/icon.svg','./assets/icon-192.png','./assets/icon-512.png','./manifest.webmanifest'];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('geomem-m8-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{const url=new URL(e.request.url);if(e.request.method!=='GET'||url.origin!==self.location.origin)return;const relative='./'+url.pathname.slice(new URL(self.registration.scope).pathname.length);if(!ASSETS.includes(relative))return;e.respondWith(fetch(e.request).catch(()=>caches.match(e.request).then(c=>c||Response.error())));});

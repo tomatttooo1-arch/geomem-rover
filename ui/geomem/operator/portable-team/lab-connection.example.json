@@ -1,0 +1,18 @@
+{
+  "configuration_confirmed": false,
+  "host": "198.18.200.1",
+  "port": 2222,
+  "user": "robot",
+  "identity_file": "~/.ssh/id_ed25519",
+  "server_repo": "${FPGA_SRC}",
+  "nano_host": "198.18.200.3",
+  "_instructions": [
+    "Copy this file to lab-connection.json, edit every connection field, then set configuration_confirmed to true.",
+    "Use your own authorized SSH key. Never copy the owner's private key or put passwords into this package.",
+    "The default server address needs the university network or a working VPN; it is not a public Internet address.",
+    "server_repo points to an existing operator deployment. It is not your development clone. Do not edit teammates' clones.",
+    "First connect manually with OpenSSH and verify the server fingerprint with the owner. The launcher requires a known host and key authentication.",
+    "This launcher attaches an already READY car stack. It does not start or stop the car stack, camera, mapping session, or motors.",
+    "nano_host is used only by Start-DirectConsole (direct campus-LAN / hotspot connection to the Nano). It is a DHCP address: if it changes, on the server run  ssh nano hostname -I ."
+  ]
+}

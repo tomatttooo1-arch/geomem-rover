@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.10)
+project(fpga_cam_probe CXX)
+set(CMAKE_CXX_STANDARD 11)
+find_package(OrbbecSDK REQUIRED)
+add_executable(fpga_cam_probe fpga_cam_probe.cpp)
+target_link_libraries(fpga_cam_probe ob::OrbbecSDK)

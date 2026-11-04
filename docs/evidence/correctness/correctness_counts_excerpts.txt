@@ -1,0 +1,12 @@
+# Correctness counts (Table 3-9)
+# Excerpts copied verbatim (line numbers of the original file given); numbers unchanged.
+
+## source: BOARD5/README.md -- fusion core replay
+L21: - 融合：grid_formal 1,239 条 0 失配，故障版（GRID 标志翻一位）必须报差；cosim_r10 73 条 0 失配。
+
+## source: GEO_FX1/README.md -- fixed-point geometry exhaustive ray check
+L42: 覆盖：rec30 上全部 201,840 条「参考与定点端点格不同」的射线、12 个漏检占据格对应的全部 317 条射线（含 3 个致命格），外加 2 万条随机抽样（种子 20261103）。
+L43: 结果：201,840 条全部「精确 = 定点 ≠ 参考」；317 条全部「精确 = 定点」；抽样 2 万条全部「精确 = 定点」（其中 83 条参考与精确不同格，0.42 %，与第一阶段 0.39 % 一致）。
+
+## source: GMAP0/README.md -- map operations replay
+L33:    - 两趟共 1,639 帧，每帧 160,000 格逐位相同；丢格计数每帧相同；粗图（增量的、扫描重建的）各 40,000 字节相同；扫描图像裁剪后与 export 写出的 pgm 逐字节相同，外接框相同。

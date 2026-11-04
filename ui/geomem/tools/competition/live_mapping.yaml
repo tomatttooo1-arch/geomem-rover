@@ -1,0 +1,11 @@
+/**:
+  ros__parameters:
+    regenerate_local_grids: true
+    Grid/3D: "true"
+    Grid/CellSize: "0.015"
+    Grid/Sensor: "1"
+    Grid/DepthDecimation: "4"
+    Grid/RangeMax: "3.0"
+    Grid/NormalsSegmentation: "false"
+    Grid/MaxObstacleHeight: "0.0"
+    Grid/MaxGroundHeight: "0.08"

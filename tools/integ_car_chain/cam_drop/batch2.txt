@@ -1,0 +1,20 @@
+# batch 2 (2026-10-14): replaces batch1.txt (kept as the history) after the host repro
+# segment, none with the 32 MB segment, lost in the publisher's segment write). Every light receiver now also
+# records the DDS message-lost count (rx_lite.py, 2026-10-14), so each arm separates a transport loss (counted)
+# from a receiver-side loss (not counted). Predictions and reading rules: INTEG_CAR_CHAIN_20261011.md, section
+# "真相机丢帧分层定位", sub-section "下一批（第 2 批）".
+# Run on the Nano (orin-nano + camera locks) with: bash $B/tools/seq.sh $B/tools/batch2.txt
+# 1st l_s1, 2nd l_b1 (the same two lines as in batch1.txt). r_shm32 / r_def2 dropped (the host repro answered
+# them on the same Fast DDS version); r_shm32 only if board time is left over.
+l_s1 DUR=90 WARM=15 RX=be:best_effort:5 CAM_DDS_PROFILE=/repo/tools/nano_ros2/fastdds_shm_localhost.xml
+l_b1 DUR=90 WARM=15 RX=be:best_effort:5+rel:reliable:30
+# 3rd l_chain32 is NOT a bx.sh arm: it is the morning chain (driver with the 32 MB segment -> producer -> KV260,
+# also needs the kv260 lock) plus one light receiver next to the producer and the driver's per-frame record:
+#   INTEG_W=<a worktree of main at or after 3cb0e1d> V8CAM_ORDER=l1 bash $INTEG_W/docs/design/integ_car_chain_v3_20261011/session_v3.sh v8cam
+# (INTEG_W: the session deploys THAT worktree's HEAD and its nano_v3.sh; the default is the integration worktree,
+# which has neither the l arm nor the RX_LITE hooks. 2026-10-14 night: the cam-drop-20261013 worktree named here
+# before is deleted (branch merged in 3cb0e1d); the run used runs/camdrop-batch2-20261014-worktree (main 9712320).
+# The worktree also needs the untracked cross-built AR helper tools/kv_link/ar_helper/build/aarch64/m7ar_present
+# with sha256 EXPECT_HELPER_SHA (cf8e362d..., copied from runs/input-drop-20261012-worktree).)
+# (arm l = arm f + RX_LITE=1 LIVE_DRV_LOG=1), readout: python3 tools/integ_car_chain/cam_drop/bx_readout.py
+# <run>/rig --json <out> (receivers rx_chain, cam_probe and the producer's input_log.csv).

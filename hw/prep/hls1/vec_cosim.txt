@@ -1,0 +1,3 @@
+# id infile fmt ups bypass w0 h0 stride tw th ow oh top left fp kset（gen_vec.py 生成）
+sq512_randA ${FPGA_RUN}/PREP1/vec/in/randA.raw 0 0 0 640 480 1920 512 512 512 384 64 0 7 0
+sq416_yuyv_fancy_rand1 ${FPGA_RUN}/PREP1/vec/in/sq416_yuyv_fancy_rand1.raw 2 1 0 640 480 1280 416 416 416 312 52 0 7 0

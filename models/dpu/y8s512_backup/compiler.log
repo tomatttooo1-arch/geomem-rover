@@ -1,0 +1,19 @@
+[UNILOG][INFO] Compile mode: dpu
+[UNILOG][INFO] Debug mode: null
+[UNILOG][INFO] Target architecture: DPUCZDX8G_ISA1_B1024
+[UNILOG][INFO] Graph name: RawYOLO, with op num: 488
+[UNILOG][INFO] Begin to compile...
+[UNILOG][INFO] Total device subgraph number 5, DPU subgraph number 1
+[UNILOG][INFO] Compile done.
+[UNILOG][INFO] The meta json is saved to "/output/meta.json"
+[UNILOG][INFO] The compiled xmodel is saved to "/output/y8s_six_512_b1024.xmodel"
+[UNILOG][INFO] The compiled xmodel's md5sum is 098fce2c33ad6f1485a747b74786135d, and has been saved to "/output/md5sum.txt"
+**************************************************
+* VITIS_AI Compilation - Xilinx Inc.
+**************************************************
+{
+  "model": "/output/y8s_six_512_b1024.xmodel",
+  "sha256": "67b7c328db081d8cd2a81416f4809ce52e56f02e9e565774414d11f5d6ab11b3",
+  "dpu_subgraph_count": 1,
+  "note": "CPU/USER input data nodes are listed separately; inspect their actual operation types before calling them compute fallback"
+}

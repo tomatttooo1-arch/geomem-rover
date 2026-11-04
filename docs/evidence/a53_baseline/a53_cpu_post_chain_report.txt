@@ -1,0 +1,4 @@
+[colour] frames 341 / camera offered 1496; camera 29.942 fps (device clock)
+  arrive -> prep     median  17.746  p95  25.031  p99  39.981 ms   out   6.808 fps  drop 0.7721
+  arrive -> dpu      median 152.467  p95 159.959  p99   175.1 ms   out   6.808 fps  drop 0.7721
+  arrive -> post     median 160.078  p95 167.141  p99 181.602 ms   out   6.808 fps  drop 0.7721

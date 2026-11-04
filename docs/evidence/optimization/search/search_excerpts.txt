@@ -1,0 +1,14 @@
+# Probabilistic search core
+# Excerpts copied verbatim from the original files (line numbers of the original file given); numbers unchanged.
+
+## source: SRCHK3/README.md -- first OOC-routed version c2: version | LUT | FF | DSP ; routed critical path
+L29 (part of line): | c2
+L29 (part of line):  | **11,612** | 14,613 | 142
+L29 (part of line): **CP 20.65 ns
+
+## source: SRCHK6/README.md -- whole-board version c8 and second version m17, OOC
+L12: | 版本 | 提交 | OOC LUT | FF | DSP | BRAM | URAM | 布线后周期 | 联仿 |
+L13: |---|---|---|---|---|---|---|---|---|
+L14: | c8（对照，SRCHK5） | 9d53224 | 9,683 | 13,012 | 79 | 2.5 RAMB36 | 13 | 9.667 ns | 71/71 |
+L16: | **m17（LUT 最低一版，推荐）** | `eeffd62` | **5,049** | 6,101 | 52 | 同上（8 RAMB18 当量） | 13 | 8.331 ns | **71/71 PASS** |
+L18: - 相对 c8：LUT −47%（9,683 → 5,141），FF −47%，DSP 79 → 52，URAM 不增，BRAM 4.0 RAMB36 当量正好压在门上（≤4）。

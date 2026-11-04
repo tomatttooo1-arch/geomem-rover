@@ -1,0 +1,33 @@
+[09/24 14:54:19.982643][warning][8179][PropertyServer.cpp:120] [AY6Z363013N] Not added to property map, property not found in OBPropertyBaseInfoMap, id=108
+[09/24 14:54:19.982935][warning][8179][PropertyServer.cpp:120] [AY6Z363013N] Not added to property map, property not found in OBPropertyBaseInfoMap, id=4035
+[09/24 14:54:19.982992][warning][8179][PropertyServer.cpp:120] [AY6Z363013N] Not added to property map, property not found in OBPropertyBaseInfoMap, id=5003
+{"device": "Orbbec Gemini 2", "serial": "AY6Z363013N", "firmware": "1.4.92", "hardware": "1.0", "connection": "USB2.0",
+ "sensors": [
+  {"type": "IR"[09/24 14:54:20.043263][warning][8179][SensorBase.cpp:153] [AY6Z363013N] Failed to update default stream profile for sensor due to no matching stream profile found
+, "profiles": ["1280x800@10:Y8", "1280x800@10:MJPG", "1280x800@5:Y8", "1280x800@5:MJPG", "640x400@30:Y8", "640x400@30:MJPG", "640x400@15:Y8", "640x400@15:MJPG", "640x400@10:Y8", "640x400@10:MJPG", "640x400@5:Y8", "640x400@5:MJPG", "320x200@30:Y8", "320x200@30:MJPG", "320x200@15:Y8", "320x200@15:MJPG", "320x200@10:Y8", "320x200@10:MJPG", "320x200@5:Y8", "320x200@5:MJPG"]},
+  {"type": "Color", "profiles": ["1280x720@30:MJPG", "1920x1080@30:RGB", "1920x1080@30:MJPG", "1920x1080@15:RGB", "1920x1080@15:MJPG", "1920x1080@10:RGB", "1920x1080@10:MJPG", "1920x1080@5:RGB", "1920x1080@5:MJPG", "1280x720@30:RGB", "1280x720@15:RGB", "1280x720@15:MJPG", "1280x720@15:YUYV", "1280x720@10:RGB", "1280x720@10:MJPG", "1280x720@10:YUYV", "1280x720@5:RGB", "1280x720@5:MJPG", "1280x720@5:YUYV", "640x480@30:RGB", "640x480@30:MJPG", "640x480@30:YUYV", "640x480@15:RGB", "640x480@15:MJPG", "640x480@15:YUYV", "640x480@10:RGB", "640x480@10:MJPG", "640x480@10:YUYV", "640x480@5:RGB", "640x480@5:MJPG", "640x480@5:YUYV", "640x360@30:RGB", "640x360@30:MJPG", "640x360@30:YUYV", "640x360@15:RGB", "640x360@15:MJPG", "640x360@15:YUYV", "640x360@10:RGB", "640x360@10:MJPG", "640x360@10:YUYV", "640x360@5:RGB", "640x360@5:MJPG", "640x360@5:YUYV"]},
+  {"type": "Depth"[09/24 14:54:20.080012][warning][8179][SensorBase.cpp:153] [AY6Z363013N] Failed to update default stream profile for sensor due to no matching stream profile found
+, "profiles": ["1280x800@10:Y14", "1280x800@10:Y16", "1280x800@10:RLE", "1280x800@5:Y14", "1280x800@5:Y16", "1280x800@5:RLE", "640x400@30:Y14", "640x400@30:Y16", "640x400@30:RLE", "640x400@15:Y14", "640x400@15:Y16", "640x400@15:RLE", "640x400@10:Y14", "640x400@10:Y16", "640x400@10:RLE", "640x400@5:Y14", "640x400@5:Y16", "640x400@5:RLE", "320x200@30:Y14", "320x200@30:Y16", "320x200@30:RLE", "320x200@15:Y14", "320x200@15:Y16", "320x200@15:RLE", "320x200@10:Y14", "320x200@10:Y16", "320x200@10:RLE", "320x200@5:Y14", "320x200@5:Y16", "320x200@5:RLE"]},
+  {"type": "Accel"},
+  {"type": "Gyro"}
+ ]}
+[09/24 14:55:20.372627][warning][8237][PropertyServer.cpp:120] [AY6Z363013N] Not added to property map, property not found in OBPropertyBaseInfoMap, id=108
+[09/24 14:55:20.372905][warning][8237][PropertyServer.cpp:120] [AY6Z363013N] Not added to property map, property not found in OBPropertyBaseInfoMap, id=4035
+[09/24 14:55:20.372968][warning][8237][PropertyServer.cpp:120] [AY6Z363013N] Not added to property map, property not found in OBPropertyBaseInfoMap, id=5003
+{"device": "Orbbec Gemini 2", "serial": "AY6Z363013N", "firmware": "1.4.92", "hardware": "1.0", "connection": "USB2.0"[09/24 14:55:20.438528][warning][8237][SensorBase.cpp:153] [AY6Z363013N] Failed to update default stream profile for sensor due to no matching stream profile found
+,
+ "request": {"depth": "640x400@30:Y16", "color": "off", "seconds": 15.0},
+  "depth": {"frames": 451, "size": "640x400", "format": "Y16", "index_gaps": 0, "missing_by_index": 0, "fps_device_ts": 30.022, "fps_host_ts": 30.021, "mbytes": 230.9},
+  "empty_waits_200ms": 0, "wall_s": 15.02, "proc_cpu_pct_of_one_core": 36.4, "system_cpu_busy_pct": 6.9, "cores": 6}
+[09/24 14:55:38.551916][warning][8313][PropertyServer.cpp:120] [AY6Z363013N] Not added to property map, property not found in OBPropertyBaseInfoMap, id=108
+[09/24 14:55:38.552187][warning][8313][PropertyServer.cpp:120] [AY6Z363013N] Not added to property map, property not found in OBPropertyBaseInfoMap, id=4035
+[09/24 14:55:38.552245][warning][8313][PropertyServer.cpp:120] [AY6Z363013N] Not added to property map, property not found in OBPropertyBaseInfoMap, id=5003
+{"device": "Orbbec Gemini 2", "serial": "AY6Z363013N", "firmware": "1.4.92", "hardware": "1.0", "connection": "USB2.0"[09/24 14:55:38.618906][warning][8313][SensorBase.cpp:153] [AY6Z363013N] Failed to update default stream profile for sensor due to no matching stream profile found
+[09/24 14:55:38.734493][warning][8341][VideoSensor.cpp:226] [AY6Z363013N] This frame will be dropped because the data size does not match the expectation! size=16372, expected=512000 @Depth
+[09/24 14:55:38.763760][warning][8313][Pipeline.cpp:335] [AY6Z363013N] Wait for frame timeout, you can try to increase the wait time! current timeout=100
+[09/24 14:55:41.734940][warning][8346][VideoSensor.cpp:226] [AY6Z363013N] This frame will be dropped because the data size does not match the expectation! size=16236, expected=512000 @Depth [**13 logs in 3000ms, last: 14:55:38.758079**]
+,
+ "request": {"depth": "640x400@30:Y16", "color": "1280x720@30:MJPG", "seconds": 15.0},
+  "depth": {"frames": 450, "size": "640x400", "format": "Y16", "index_gaps": 0, "missing_by_index": 0, "fps_device_ts": 29.940, "fps_host_ts": 29.939, "mbytes": 230.4},
+  "color": {"frames": 450, "size": "1280x720", "format": "MJPG", "index_gaps": 0, "missing_by_index": 0, "fps_device_ts": 29.940, "fps_host_ts": 29.939, "mbytes": 78.0},
+  "empty_waits_200ms": 0, "wall_s": 15.03, "proc_cpu_pct_of_one_core": 38.6, "system_cpu_busy_pct": 7.5, "cores": 6}

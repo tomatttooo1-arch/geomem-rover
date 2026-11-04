@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GeoMem 展台页：空间记忆三维地图（只读）">
+  <title>GeoMem · 展台</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="./kiosk.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body data-view="third">
+  <div id="fp-bg"></div>
+  <canvas id="kiosk-canvas" aria-label="三维地图"></canvas>
+  <div id="ui">
+    <div class="status" id="status"><div class="k"><span class="dot idle" id="status-dot"></span><span id="status-k">正在连接</span></div><div class="v" id="status-v">GeoMem</div><div class="s" id="status-s"></div></div>
+    <div class="notes" id="notes">
+      <div class="note" id="banner" hidden></div>
+      <div class="note third" id="basemap-note" hidden></div>
+    </div>
+    <div class="brand third"><b>GeoMem</b>基于几何语义空间记忆的智能寻物小车</div>
+    <div class="fpga third" id="fpga">
+      <div class="t" id="fpga-title">FPGA（KV260）实时</div>
+      <div class="row" id="fpga-geo"><span class="k">几何证据核每帧</span><span class="v na">—</span></div>
+      <div class="row" id="fpga-roi"><span class="k">本帧核对记忆物体</span><span class="v na">—</span></div>
+      <div class="row" id="fpga-ar" hidden><span class="k">车上 AR 屏刷新</span><span class="v na">—</span></div>
+      <div class="row" id="fpga-hb"><span class="k">停车心跳</span><span class="v na">—</span></div>
+    </div>
+    <div class="fp fp-cam" id="fp-cam"><span id="fp-cam-text">车载画面未接入</span></div>
+    <div class="fp fp-mini" id="fp-mini"><span>三维地图（小窗）</span></div>
+    <div class="hint third" id="hint">拖动旋转 · 滚轮缩放 · 右键平移</div>
+    <div class="dock" id="dock">
+      <div class="cams third" id="cams"><div class="pill small live"><button id="cam-overview" type="button">回到全景</button></div><div class="pill small live"><button id="cam-follow" type="button">跟随小车</button></div></div>
+      <div class="pill live" id="toggle"><button data-view="first" type="button">第一视角</button><button data-view="third" class="on" type="button">第三视角 · 三维地图</button></div>
+    </div>
+  </div>
+  <script type="module" src="./src/kiosk.js"></script>
+</body>
+</html>

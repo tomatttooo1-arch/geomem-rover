@@ -1,0 +1,20 @@
+# 联仿集：10 帧仿真 DPU 输出 + 3 帧手工已知答案 + 覆盖项（溢出、六类、非对齐 416 排列）
+f=${FPGA_RUN}/DETPOST1/frames/model/model_000.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_001.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_002.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_003.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_004.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_005.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_006.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_007.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_008.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_009.bin
+f=${FPGA_RUN}/DETPOST1/frames/ka/ka1_single_and_p5.bin
+f=${FPGA_RUN}/DETPOST1/frames/ka/ka2_overlap.bin
+f=${FPGA_RUN}/DETPOST1/frames/ka/ka3_two_labels_one_cell.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_000.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_000.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/layout/layout_52x26x13_nc6_000.bin nc=6 grid=52,26,13
+f=${FPGA_RUN}/DETPOST1/frames/model/model_031.bin shift=5
+f=${FPGA_RUN}/DETPOST1/frames/random/random_000.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_000.bin conf=0.0005

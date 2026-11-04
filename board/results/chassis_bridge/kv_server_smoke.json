@@ -1,0 +1,87 @@
+{
+ "off": {
+  "rc": 0,
+  "ready": true,
+  "summary_has_chassis": false,
+  "info_chassis": null,
+  "chassis": null,
+  "cmd_frames_seen": 0,
+  "enabled": 0,
+  "last3_enable": [],
+  "status2_all": null,
+  "warnings": []
+ },
+ "kv_missing_port": {
+  "rc": 0,
+  "ready": true,
+  "summary_has_chassis": true,
+  "info_chassis": null,
+  "chassis": {
+   "open": false,
+   "pose": null,
+   "counts": {
+    "cmd:no_nav": 6,
+    "open_failed": 2
+   },
+   "frames_by_type": {
+    "0x81": 0,
+    "0x82": 0
+   }
+  },
+  "cmd_frames_seen": 0,
+  "enabled": 0,
+  "last3_enable": [],
+  "status2_all": null,
+  "warnings": [
+   "{\"warning\": \"kv_chassis: cannot open /nonexistent/fpga_chassis ([Errno 2] No such file or directory: '/nonexistent/fpga_chassis'); pose falls back to static, retry every 2 s\"}"
+  ]
+ },
+ "kv_pty": {
+  "rc": 0,
+  "ready": true,
+  "summary_has_chassis": true,
+  "info_chassis": null,
+  "chassis": {
+   "open": false,
+   "pose": [
+    0.0799,
+    0.0,
+    0.0,
+    0.0408,
+    0.0
+   ],
+   "counts": {
+    "cmd:no_goal": 105,
+    "cmd:stale": 1,
+    "frames": 197,
+    "opened": 1,
+    "written": 106
+   },
+   "frames_by_type": {
+    "0x81": 0,
+    "0x82": 197
+   }
+  },
+  "cmd_frames_seen": 109,
+  "enabled": 0,
+  "last3_enable": [
+   false,
+   false,
+   false
+  ],
+  "status2_all": true,
+  "warnings": []
+ },
+ "nano": {
+  "rc": 0,
+  "ready": true,
+  "summary_has_chassis": false,
+  "info_chassis": null,
+  "chassis": null,
+  "cmd_frames_seen": 0,
+  "enabled": 0,
+  "last3_enable": [],
+  "status2_all": null,
+  "warnings": []
+ }
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#dce9f3"><meta name="description" content="GeoMem 智能寻物小车 · 空间记忆与寻物控制台">
+  <title>GeoMem · 空间记忆与寻物</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./src/remote-layout.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到工作区</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="GeoMem 首页"><span class="brand-mark">g<span></span></span><span>GeoMem<small>让物品，有迹可循</small></span></a>
+    <div class="nav-caption">工作空间</div>
+    <nav aria-label="主导航">
+      <button class="nav-item active" data-page="overview"><i data-icon="layout"></i>寻物工作台<span class="nav-dot"></span></button>
+      <button class="nav-item" data-page="remote"><i data-icon="robot"></i>比赛控制台</button>
+      <button class="nav-item" data-page="memory"><i data-icon="box"></i>空间记忆<span class="nav-count" id="memory-count">—</span></button>
+      <button class="nav-item" data-page="history"><i data-icon="history"></i>任务记录</button>
+      <button class="nav-item" data-page="device"><i data-icon="robot"></i>设备与连接</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="mini-rover"><i data-icon="robot"></i><span>GeoMem Rover<small id="side-status">等待实车连接</small></span><span class="status-dot"></span></div><div class="sidebar-foot">M8 · 交互控制台<span>v0.1</span></div></div>
+  </aside>
+  <main id="main-content" tabindex="-1">
+    <header class="topbar"><div class="breadcrumb">我的空间 <span>/</span> <strong id="breadcrumb">寻物工作台</strong></div><div class="top-actions"><button class="quiet-button remote-header-control" id="remote-release" disabled>解除急停</button><button class="danger-button remote-header-control" id="full-stop" disabled><i data-icon="shield"></i>急停 · 空格</button><span class="connection-pill" id="connection-pill"><span class="status-dot"></span>等待实车连接</span><button class="icon-button" id="help-button" aria-label="使用帮助"><i data-icon="help"></i></button><button class="icon-button" id="settings-button" aria-label="连接设置"><i data-icon="sliders"></i></button></div></header>
+    <div class="content">
+      <section class="page-heading"><div><h1 id="page-title">空间记忆控制台</h1><p id="page-subtitle">告诉小车你在找什么，剩下的路交给它。</p></div><button class="quiet-button" id="source-button"><i data-icon="sliders"></i>数据源与连接</button></section>
+      <div class="source-notice" id="source-notice"><span class="notice-dot"></span><span id="source-notice-text">正在连接真实相机和比赛转发桥。</span><button id="notice-connect">连接实车 <i data-icon="arrow"></i></button></div>
+      <div class="source-notice error car-notice" id="car-notice" role="alert" hidden><span class="notice-dot"></span><span id="car-notice-text"></span></div>
+      <div class="status-row"><details class="health-panel" id="car-health" role="status" aria-live="polite" hidden></details><details class="fpga-panel idle" id="fpga-panel" aria-label="FPGA 实时指标" hidden></details></div>
+      <section id="overview-page" class="page">
+        <div class="workspace-grid">
+          <section class="task-card" aria-label="寻物任务"><h2>你想找什么？</h2><p class="muted">从空间记忆中，找到它的踪迹。</p>
+            <form id="search-form"><label class="sr-only" for="search-input">物品名称</label><div class="search-input-wrap"><i data-icon="search"></i><input id="search-input" maxlength="60" placeholder="输入物品名称" autocomplete="off"><kbd>/</kbd></div><div class="suggestions"><button type="button" data-query="书包">书包</button><button type="button" data-query="水杯">水杯</button><button type="button" data-query="瓶子">瓶子</button><button type="button" data-query="香蕉">香蕉</button><button type="button" data-query="笔记本电脑">笔记本电脑</button></div><button class="primary-button" id="find-button" type="submit">查找物品<i data-icon="arrow"></i></button></form>
+            <div id="search-results" class="search-results" aria-live="polite"></div><p id="query-hint" class="action-hint"></p>
+            </section>
+          <section class="map-card" aria-label="空间地图">
+            <div class="card-heading"><div><h2 id="map-title">一间熟悉的房间 <span class="subtle-tag">演示空间</span></h2></div><button class="icon-button" id="fullscreen" aria-label="全屏地图"><i data-icon="expand"></i></button></div>
+            <div class="map-toolbar"><div class="segmented" role="group" aria-label="地图视图"><button class="selected" id="global-view" aria-pressed="true">全局记忆</button><button id="local-view" aria-pressed="false">局部三维</button></div><span class="map-frame" id="map-frame">map · 米</span></div>
+            <div class="map-stage" id="map-stage"><canvas id="map-canvas" aria-label="三维空间地图，可拖拽旋转、滚轮缩放。也可通过物品列表选择目标。"></canvas><div class="map-labels" id="map-labels"></div><div class="map-status"><span class="status-dot"></span><span id="map-status">演示地图 · 已载入</span></div><div class="map-tools"><button class="icon-button" id="zoom-in" aria-label="放大地图"><i data-icon="plus"></i></button><button class="icon-button" id="zoom-out" aria-label="缩小地图"><i data-icon="minus"></i></button><button class="icon-button" id="reset-view" aria-label="复位视角"><i data-icon="focus"></i></button></div><div class="map-scale"><b id="scale-line"></b><span>≈ 1 m · 视图中心</span></div><div class="map-hint" id="map-hint">拖动旋转 · 滚轮缩放 · 点击物品查看</div><div id="map-fallback" hidden>三维视图暂不可用，请启用浏览器硬件加速。物品列表和任务面板仍可使用。</div></div>
+            <div class="map-footer"><div class="legend"><span><b class="legend-rover"></b>小车</span><span><b class="legend-object"></b>物体记忆</span><span><b class="legend-path"></b>规划路径</span></div><button id="overview-memory" class="text-button">全部物体</button><button id="layers-button" class="text-button" aria-expanded="false" aria-controls="layers-panel"><i data-icon="layers"></i>图层</button></div>
+            <div id="layers-panel" class="layers-panel" hidden><label><input type="checkbox" id="layer-geometry" checked>几何点云</label><label><input type="checkbox" id="layer-objects" checked>物体记忆</label><label><input type="checkbox" id="layer-path" checked>导航路径</label></div>
+          </section>
+          <section class="mission-card" aria-label="当前任务进度"><div class="task-status-heading"><h2>当前任务</h2><span class="status-tag" id="task-state">待命</span></div>
+            <div id="task-empty" class="task-empty"><strong>下一次寻找，从这里出发</strong><p>先查询物品，确认目标后再开始寻物。</p></div>
+            <div id="task-active" hidden><div class="task-target" id="task-target"></div><ol class="task-steps" id="task-steps"></ol><p id="task-message" class="muted" aria-live="polite"></p></div><div class="task-controls" hidden><button class="quiet-button" id="pause-task">暂停</button><button class="danger-button" id="stop-task">停止任务</button></div>
+            <div class="task-footnote"><i data-icon="shield"></i><span>到达记忆位置后，还需现场确认物品。</span></div>
+          </section>
+        </div>
+        <div class="telemetry-strip"><div><span class="telemetry-icon"><i data-icon="robot"></i></span><span>小车状态<strong id="metric-robot">演示 · 待命</strong></span></div><div><span class="telemetry-icon"><i data-icon="pin"></i></span><span>当前位置<strong id="metric-position">—</strong></span></div><div><span class="telemetry-icon"><i data-icon="box"></i></span><span>记忆中的物品<strong id="metric-objects">—</strong></span></div><div><span class="telemetry-icon"><i data-icon="activity"></i></span><span>数据更新<strong id="metric-fresh">—</strong></span></div></div>
+      </section>
+      <section id="remote-page" class="page remote-page" hidden>
+        <div class="remote-grid">
+          <section class="camera-card panel" aria-label="小车第一视角">
+            <div class="card-heading"><div class="segmented remote-views" aria-label="小车视角"><button class="selected" data-remote-view="first" aria-pressed="true">第一视角</button><button data-remote-view="third" aria-pressed="false">三维地图</button><button data-remote-view="split" aria-pressed="false">双画面</button></div><span class="live-badge"><span class="status-dot"></span><span id="camera-status">未连接</span></span><button class="icon-button" id="remote-map-reset" aria-label="复位三维地图"><i data-icon="focus"></i></button></div>
+            <div class="remote-visuals" id="remote-visuals" data-view="first">
+            <div class="camera-stage" id="camera-stage">
+              <video id="first-person-video" playsinline muted hidden></video>
+              <img id="first-person-image" alt="小车第一视角实时画面" hidden>
+              <canvas id="fpv-boxes" class="fpv-boxes" aria-hidden="true"></canvas>
+              <div class="camera-placeholder" id="camera-placeholder"><i data-icon="robot"></i><strong>等待第一视角画面</strong><span id="camera-placeholder-text">正在通过 SSH 通道连接 Nano 彩色相机。</span></div>
+              <div class="camera-overlay"><span id="camera-source">未配置视频源</span><button class="icon-button" id="camera-fullscreen" aria-label="全屏第一视角"><i data-icon="expand"></i></button></div>
+            </div>
+            <div class="remote-map-stage" id="remote-map-stage"><canvas id="remote-map-canvas" aria-label="真实三维地图"></canvas><div id="remote-map-labels" class="map-labels"></div><button class="quiet-button remote-map-objects" id="remote-map-objects" aria-label="展开全部地图物体">地图物体</button><div class="remote-map-empty" id="remote-map-empty"><strong>等待车栈地图</strong><span>接通建图服务后，在这里查看真实三维空间。</span></div><span class="remote-map-caption" id="remote-map-caption">尚无地图数据</span><span class="remote-belief-note" id="remote-belief-note" hidden></span></div>
+            </div>
+            <div class="camera-footer"><span id="camera-time">画面状态：未连接</span><button class="text-button" id="camera-settings"><i data-icon="sliders"></i>连接详情</button></div>
+          </section>
+          <section class="drive-card panel" aria-label="小车运动控制">
+            <div class="card-heading"><h2>遥控小车</h2></div>
+            <div class="drive-status"><span class="status-dot"></span><span id="drive-status">连接实车后可用</span></div>
+            <div class="drive-pad" aria-label="方向控制">
+              <button class="drive-button drive-forward" data-drive="forward" aria-label="前进"><i data-icon="arrow"></i></button>
+              <button class="drive-button drive-left" data-drive="left" aria-label="左转"><i data-icon="arrow"></i></button>
+              <button class="drive-button drive-stop" data-drive="stop" aria-label="停止">停止</button>
+              <button class="drive-button drive-right" data-drive="right" aria-label="右转"><i data-icon="arrow"></i></button>
+              <button class="drive-button drive-backward" data-drive="backward" aria-label="后退"><i data-icon="arrow"></i></button>
+            </div>
+            <label class="speed-control" for="drive-speed"><span>速度上限</span><output id="drive-speed-value">25%</output><input id="drive-speed" type="range" min="10" max="100" value="25" step="5"></label>
+            <div class="drive-keyboard"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>按住驾驶，松开停止</span></div>
+            <span class="control-lock sr-only" id="control-lock">控制锁定</span>
+          </section>
+          <section class="remote-mission panel" aria-label="寻物任务"><div class="remote-mission-heading"><h2>寻找物品</h2><span class="status-tag" id="remote-task-state">未连接</span></div><form id="remote-find-form"><label class="sr-only" for="remote-query">目标描述</label><input id="remote-query" placeholder="例如：瓶子、杯子、书包" maxlength="64" required><button class="primary-button" id="remote-find" disabled>寻找<i data-icon="arrow"></i></button></form><p id="remote-task-message">等待车栈连接</p><div class="remote-task-actions"><button class="text-button" id="remote-candidates-open" disabled>选择候选 <span id="remote-candidate-count">0</span></button><button class="text-button" id="remote-cancel" disabled>撤销任务</button></div><p class="remote-map-reset-note" id="remote-map-reset-note" role="status" aria-live="polite" hidden></p><div class="remote-run-actions"><button class="quiet-button" id="remote-mapping-stop" disabled>结束建图</button><button class="quiet-button" id="remote-map-reset-open" disabled>重置地图</button><button class="quiet-button" data-remote-panel="flow">比赛流程<i data-icon="arrow"></i></button></div></section>
+        </div>
+        <section class="remote-telemetry panel" aria-label="实时遥测"><div><span>车辆<strong id="remote-robot-status">未知</strong></span></div><div><span>速度<strong id="remote-speed">—</strong></span></div><div><span>连接<strong id="remote-connection">未连接</strong></span></div><div><span>快照间隔<strong id="remote-link-stats" title="最近 60 秒快照到达间隔 p95 / 最大">—</strong></span></div><div><span>物体记忆<strong id="remote-memory-count">—</strong></span></div><button class="text-button" data-remote-panel="log">操作记录<i data-icon="history"></i></button></section>
+      </section>
+      <section id="memory-section"><div class="section-title-row"><div><h2>记忆里的物品 <span id="object-count">0</span></h2><p>每一件物品，都有一个上次见到的位置。</p></div><div class="memory-controls"><input type="search" id="memory-filter" placeholder="筛选名称或位置" aria-label="筛选记忆物品"><button class="text-button" id="all-memory">查看全部 <i data-icon="arrow"></i></button></div></div><div id="objects-grid" class="objects-grid"></div><div id="memory-empty" class="empty-state" hidden>没有匹配的记忆。试试其他名称，或等待新的物体观测。</div></section>
+      <section id="history-page" class="page panel" hidden><div class="section-title-row"><h2>寻物任务记录</h2><button class="quiet-button" id="export-history"><i data-icon="download"></i>导出记录</button></div><p class="muted">本机保存最近 50 条终态记录；演示和实车记录分别标注。</p><div id="history-list"></div></section>
+      <section id="device-page" class="page panel" hidden><div class="device-hero"><span class="large-rover"><i data-icon="robot"></i></span><div><h2>一份清晰的连接状态</h2><p class="muted">连接桥接服务后，显示小车实际回传的数据。</p></div></div><dl class="device-details" id="device-details"></dl><button class="primary-button" id="device-connect">配置数据连接<i data-icon="arrow"></i></button><p class="device-note">“停止任务”是软件取消请求，不代替底盘硬件急停。断线时无法保证取消请求已送达。</p></section>
+      <footer class="page-footer"><span><span class="tiny-brand">g</span> GeoMem · 让每一次寻找，都有方向。</span><span>几何语义空间记忆 / M8</span></footer>
+    </div>
+  </main>
+  <dialog id="detail-dialog" aria-label="物品详情与寻物确认"><div class="dialog-heading"><span class="dialog-title">物品详情</span><button class="icon-button close-dialog" aria-label="关闭物品详情"><i data-icon="close"></i></button></div><div id="detail-body"></div><div class="dialog-actions"><button class="quiet-button" id="focus-object">在地图中定位</button><button class="primary-button" id="start-task">开始寻物<i data-icon="arrow"></i></button></div><p id="start-hint" class="action-hint" role="status"></p><p class="dialog-note">小车将前往物品附近的可达停靠点，并重新观测确认。记忆位置不代表物品仍在原处。</p></dialog>
+  <dialog id="settings-dialog" aria-label="数据源与连接"><div class="dialog-heading"><h2>数据源与连接</h2><button class="icon-button close-dialog" aria-label="关闭连接设置"><i data-icon="close"></i></button></div><p class="muted">当前网站直接显示真实相机；比赛指令经过 v2 转发桥连接车栈。</p><div class="mode-cards"><label hidden><input type="radio" name="source" value="demo" disabled><strong>演示空间</strong></label><label><input type="radio" name="source" value="live" checked><strong>连接实车</strong><span>接收 Nano 回传并发送控制</span></label></div><form id="connection-form"><label class="field-label" for="endpoint">比赛转发桥地址</label><input class="full-input" id="endpoint" type="url" placeholder="ws://127.0.0.1:8788/bridge/ws" aria-describedby="endpoint-help"><p class="dialog-note" id="endpoint-help">桥接服务运行在服务器上，负责连接 Nano 与底盘；不要把原始 rosbridge 地址直接填在这里。</p><p class="dialog-note">远程驾驶页的视频通过本机 SSH 通道自动接入；此处仅配置寻物地图的数据源。</p><div class="dialog-actions"><button class="primary-button" type="submit">应用连接设置<i data-icon="arrow"></i></button></div><p id="connection-error" role="alert"></p><button id="settings-help" class="text-button" type="button"><i data-icon="help"></i>查看使用帮助</button></form></dialog>
+  <dialog id="help-dialog" aria-label="使用帮助"><div class="dialog-heading"><h2>让寻找更简单</h2><button class="icon-button close-dialog" aria-label="关闭帮助"><i data-icon="close"></i></button></div><ol class="help-steps"><li><strong>看看空间</strong><p>全局记忆查看房间、物品和路径；局部三维跟随小车查看附近点云。</p></li><li><strong>找到目标</strong><p>输入物品名称，或点击物品卡片。有多个同名物品时，请先选择具体实例。</p></li><li><strong>确认后出发</strong><p>检查最后观测时间与位置，再开始寻物。任务会展示检索、规划、行驶、现场确认的进度。</p></li></ol><p class="dialog-note">快捷键：/ 聚焦查找；Esc 关闭弹窗。地图支持触摸旋转和双指缩放。演示中的点云、识别分数和任务结果均为模拟值。</p></dialog>
+
+  <aside id="remote-drawer" class="remote-drawer panel" hidden aria-label="比赛辅助面板">
+    <div class="remote-drawer-heading"><h2 id="remote-drawer-title">比赛流程</h2><button class="icon-button" id="remote-drawer-close" aria-label="收起辅助面板"><i data-icon="close"></i></button></div>
+    <div class="remote-drawer-tabs"><button data-remote-panel="flow">流程</button><button data-remote-panel="connection">连接</button><button data-remote-panel="log">记录</button><button data-remote-panel="advanced">更多</button></div>
+    <section data-remote-content="objects" hidden><p class="muted remote-note">重叠标签自动收起。这里保留全部物体；点击只定位标记并填入目标，不启动寻找。</p><div id="remote-map-object-list" class="remote-candidates"></div></section>
+    <section data-remote-content="flow"><div class="remote-flow-tabs"><button data-flow="prepare">检查</button><button data-flow="mapping">建图</button><button data-flow="save">保存</button><button data-flow="demo">寻物</button><button data-flow="finish">收车</button></div><p id="remote-flow-guide"></p><div id="remote-flow-checks"></div><p class="muted remote-note">勾选是操作员记录，车辆执行以回执和现场状态为准。</p></section>
+    <section data-remote-content="connection" hidden><dl class="device-details" id="remote-device-details"></dl><form id="remote-bridge-form"><label class="field-label" for="remote-endpoint">比赛转发桥地址</label><input class="full-input" id="remote-endpoint" type="url" value="ws://127.0.0.1:8790/ws" required><button class="primary-button" type="submit">连接转发桥</button></form><p class="muted remote-note">当前相机经已有 SSH 通道接入。车栈启动后自动优先使用车栈预览，遥控与寻物统一经过转发桥。</p></section>
+    <section data-remote-content="log" hidden><button class="text-button" id="remote-export">导出本次记录<i data-icon="download"></i></button><ol id="remote-events"></ol></section>
+    <section data-remote-content="advanced" hidden><h3>相对目标</h3><form id="remote-goto-form"><label>前进 / m<input id="remote-forward" type="number" min="0" max="2" step="0.1" value="0.5" required></label><label>转角 / °<input id="remote-turn" type="number" min="-180" max="180" step="5" value="0" required></label><button class="quiet-button" id="remote-goto" disabled>发送目标</button></form><h3>第一趟资料</h3><label class="field-label">地图路径<input class="full-input" id="remote-map-path" placeholder="Nano 上的 .yaml 路径"></label><label class="field-label">记忆路径<input class="full-input" id="remote-memory-path" placeholder="Nano 上的 memory_final.json"></label><label class="field-label">地图 SHA256<input class="full-input" id="remote-map-sha" placeholder="建图库的完整 SHA256"></label></section>
+    <section data-remote-content="candidates" hidden><p>核对本次任务的候选物体，再选择目标。</p><div id="remote-candidates"></div></section>
+  </aside>
+  <dialog id="remote-release-dialog" aria-label="确认解除急停"><div class="dialog-heading"><h2>确认解除急停？</h2><button class="icon-button close-dialog" aria-label="关闭"><i data-icon="close"></i></button></div><p>确认车旁人员与场地安全后，小车才可以再次运动。</p><div class="dialog-actions"><button class="quiet-button close-dialog">保持急停</button><button class="primary-button" id="remote-release-confirm">确认解除</button></div></dialog>
+  <dialog id="remote-map-reset-dialog" aria-label="重置地图"><div class="dialog-heading"><h2>重置地图？</h2><button class="icon-button close-dialog" aria-label="关闭"><i data-icon="close"></i></button></div><p>将清空地图和记忆，车会停下。车栈不重启，完成后可以直接重新建图。</p><div class="dialog-actions"><button class="quiet-button close-dialog">取消</button><button class="primary-button" id="remote-map-reset-confirm">清空并重置</button></div></dialog>
+  <dialog id="remote-mapping-dialog" aria-label="结束建图"><div class="dialog-heading"><h2>保存并结束本趟建图？</h2><button class="icon-button close-dialog" aria-label="关闭"><i data-icon="close"></i></button></div><p>保存数据库、导出地图并请求换图。收到完成回执后再收车。</p><div class="dialog-actions"><button class="quiet-button close-dialog">继续建图</button><button class="primary-button" id="remote-mapping-confirm">保存并结束</button></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script type="module" src="./src/app.js"></script>
+</body></html>

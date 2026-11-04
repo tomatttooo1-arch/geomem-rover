@@ -1,0 +1,28 @@
+# Whole-board routed hierarchical utilization, m7 full-board bitstream (BUILD_ID 0x06661def)
+# Excerpts copied verbatim from the original files (line numbers of the original file given); numbers unchanged.
+
+## source: utilization_route_hier.rpt of the previous whole board 0x06661def (what bitstream_m7_fullboard/ held before the search core v2 swap; not shipped) -- columns: Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | URAM | DSP
+L3: | Tool Version : Vivado v.2022.2.2 (lin64) Build 3788238 Tue Feb 21 19:59:23 MST 2023
+L7: | Design       : m7_pl_wrapper
+L8: | Device       : xck26-sfvc784-2LV-c
+L10: | Design State : Routed
+L22: +--------------------+------------------------+------------+------------+---------+------+--------+--------+--------+------+------------+
+L23: |      Instance      |         Module         | Total LUTs | Logic LUTs | LUTRAMs | SRLs |   FFs  | RAMB36 | RAMB18 | URAM | DSP Blocks |
+L24: +--------------------+------------------------+------------+------------+---------+------+--------+--------+--------+------+------------+
+L25: | m7_pl_wrapper      |                  (top) |      89426 |      80913 |    4185 | 4328 | 113771 |    117 |     24 |   50 |        391 |
+L32: |     detpost        |        m7_pl_detpost_0 |       3732 |       3369 |     244 |  119 |   5399 |      5 |      1 |    0 |          6 |
+L33: |     dpu            |            m7_pl_dpu_0 |      33830 |      30341 |    2208 | 1281 |  45945 |      0 |      0 |   26 |        230 |
+L34: |     frame          |          m7_pl_frame_0 |      10423 |       9143 |      56 | 1224 |  11981 |     23 |      3 |    0 |         20 |
+L38: |     memk           |           m7_pl_memk_0 |       1452 |       1372 |      80 |    0 |    907 |      4 |      0 |    2 |          4 |
+L39: |     permit         |         m7_pl_permit_0 |        389 |        389 |       0 |    0 |    488 |      0 |      0 |    0 |          0 |
+L40: |     planner        |        m7_pl_planner_0 |       5708 |       5429 |      94 |  185 |   6395 |     45 |      8 |    0 |         18 |
+L41: |     prep           |           m7_pl_prep_0 |       3523 |       3235 |     122 |  166 |   6335 |      9 |      1 |    0 |         22 |
+L43: |     roi            |            m7_pl_roi_0 |       6151 |       6032 |      70 |   49 |   7634 |     12 |      1 |    0 |          9 |
+L44: |     rolling        |        m7_pl_rolling_0 |       8597 |       8074 |     348 |  175 |   7550 |      5 |      3 |    9 |          6 |
+L50: |     srch           |           m7_pl_srch_0 |       9754 |       8473 |     219 | 1062 |  13147 |      2 |      1 |   13 |         76 |
+
+## source: bitstream_m7_fullboard/README.md of the previous whole board 0x06661def (before the search core v2 swap) -- board smoke of the three extension cores and whole-system search result
+L32: | 记忆核 MEMK4（0xA00E_0000，BRAM 口 0xA00E_8000） | PASS | 录制调用序列的前 500 次，每次比较结果区 1,024 个字，共 512,000 字，0 次不一致 | 驱动整次调用中位数 2.50 ms（含 PS 侧 Python 逐字读写） |
+L33: | 规划核终版 GMAP3 v9（0xA00C_0000） | PASS | 两组势场输入（80×80、200×200）的势场与标志共 186,904 字节、带取路径 187,732 字节，0 字节不同；73 个地图操作每步比较整块地图区 1,173,088 字节，0 步不一致 | 势场 2.28 ms（80×80）/ 6.08 ms（200×200）；地图操作平均 0.88 ms |
+L34: | 搜索核 SRCHK5 c8（0xA00D_0000） | PASS | 测试轨迹全部 32 条记录按序执行，每条之后比较 0x60000 字节的 DDR 镜像，共 12,582,912 字节，0 条不一致 | 观测平均 245 µs，选点 261 µs |
+L48: | 搜索核 | 34 轮搜索全部在核上完成，一轮中位 2.18 s；首轮与 A53 软件结果一致（软件 9.6 s，核路径 2.7 s） |

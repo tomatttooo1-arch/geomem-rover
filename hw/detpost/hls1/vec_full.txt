@@ -1,0 +1,195 @@
+# 全集（csim 逐位用）。帧目录：runs/nationals-prelim-20261102/DETPOST1/frames（重生见 README）
+f=${FPGA_RUN}/DETPOST1/frames/model/model_000.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_001.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_002.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_003.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_004.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_005.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_006.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_007.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_008.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_009.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_010.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_011.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_012.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_013.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_014.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_015.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_016.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_017.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_018.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_019.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_020.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_021.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_022.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_023.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_024.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_025.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_026.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_027.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_028.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_029.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_030.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_031.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_032.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_033.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_034.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_035.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_036.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_037.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_038.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_039.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_040.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_041.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_042.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_043.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_044.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_045.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_046.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_047.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_048.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_049.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_050.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_051.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_052.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_053.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_054.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_055.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_056.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_057.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_058.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_059.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_000.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_001.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_002.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_003.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_004.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_005.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_006.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_007.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_008.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_009.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_010.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_011.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_012.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_013.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_014.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_015.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_016.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_017.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_018.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_019.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_020.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_021.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_022.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_023.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_024.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_025.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_026.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_027.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_028.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_029.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_030.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_031.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_032.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_033.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_034.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_035.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_036.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_037.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_038.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_039.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_040.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_041.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_042.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_043.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_044.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_045.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_046.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_047.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_048.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_049.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_050.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_051.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_052.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_053.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_054.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_055.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_056.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_057.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_058.bin
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_059.bin
+f=${FPGA_RUN}/DETPOST1/frames/ka/ka1_single_and_p5.bin
+f=${FPGA_RUN}/DETPOST1/frames/ka/ka2_overlap.bin
+f=${FPGA_RUN}/DETPOST1/frames/ka/ka3_two_labels_one_cell.bin
+f=${FPGA_RUN}/DETPOST1/frames/random/random_000.bin
+f=${FPGA_RUN}/DETPOST1/frames/random/random_001.bin
+f=${FPGA_RUN}/DETPOST1/frames/random/random_002.bin
+f=${FPGA_RUN}/DETPOST1/frames/model/model_000.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_001.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_002.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_003.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_004.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_005.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_006.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_007.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_008.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_009.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_010.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_011.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_012.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_013.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_014.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_015.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_016.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_017.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_018.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_019.bin min=24:0.35,0:0.5 en=0,2,5,7,24,26,30
+f=${FPGA_RUN}/DETPOST1/frames/model/model_020.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_021.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_022.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_023.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_024.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_025.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_026.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_027.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_028.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_029.bin md=5
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_000.bin md=128 iou=1/2 conf=0.1
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_001.bin md=128 iou=1/2 conf=0.1
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_002.bin md=128 iou=1/2 conf=0.1
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_003.bin md=128 iou=1/2 conf=0.1
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_004.bin md=128 iou=1/2 conf=0.1
+f=${FPGA_RUN}/DETPOST1/frames/model/model_030.bin shift=1
+f=${FPGA_RUN}/DETPOST1/frames/model/model_031.bin shift=3
+f=${FPGA_RUN}/DETPOST1/frames/model/model_032.bin shift=5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_033.bin shift=7
+f=${FPGA_RUN}/DETPOST1/frames/model/model_034.bin shift=8
+f=${FPGA_RUN}/DETPOST1/frames/model/model_035.bin shift=9
+f=${FPGA_RUN}/DETPOST1/frames/model/model_036.bin shift=11
+f=${FPGA_RUN}/DETPOST1/frames/model/model_037.bin shift=13
+f=${FPGA_RUN}/DETPOST1/frames/model/model_038.bin shift=15
+f=${FPGA_RUN}/DETPOST1/frames/model/model_039.bin shift=2
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_000.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_001.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_002.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_003.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_004.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_005.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_006.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_007.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_008.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_009.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_010.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/scene6/scene_011.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/random6/random_000.bin nc=6
+f=${FPGA_RUN}/DETPOST1/frames/layout/layout_52x26x13_nc6_000.bin nc=6 grid=52,26,13
+f=${FPGA_RUN}/DETPOST1/frames/layout/layout_52x26x13_nc6_001.bin nc=6 grid=52,26,13
+f=${FPGA_RUN}/DETPOST1/frames/layout/layout_52x26x13_nc6_002.bin nc=6 grid=52,26,13
+f=${FPGA_RUN}/DETPOST1/frames/layout/layout_52x26x13_nc33_000.bin nc=33 grid=52,26,13 shift=4
+f=${FPGA_RUN}/DETPOST1/frames/layout/layout_64x32x16_nc40_000.bin nc=40 grid=64,32,16 conf=0.5
+f=${FPGA_RUN}/DETPOST1/frames/model/model_040.bin fp=3 conf=0.3
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_000.bin conf=0.0005
+f=${FPGA_RUN}/DETPOST1/frames/scene/scene_001.bin conf=0.001
+f=${FPGA_RUN}/DETPOST1/frames/layout/layout_52x26x13_nc6_000.bin nc=6 grid=52,26,13 conf=0.001
+f=${FPGA_RUN}/DETPOST1/frames/ka/ka4_samelevel_overflow.bin

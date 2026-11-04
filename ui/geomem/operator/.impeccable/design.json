@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T14:17:19.0786150+08:00",
+  "title": "Design System: GeoMem M8",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "深蓝青操作色"
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "银白冰蓝环境"
+      },
+      "glass": {
+        "role": "neutral",
+        "displayName": "透光玻璃面板"
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-panel",
+        "value": "0 16px 35px rgba(62, 103, 133, .12), 0 2px 4px rgba(46, 90, 123, .08), inset 0 2px 1px rgba(255,255,255,.95), inset 0 -2px 1px rgba(109,155,181,.20)",
+        "purpose": "透光面板的柔和投影、顶部高光与底部厚度。"
+      },
+      {
+        "name": "dialog",
+        "value": "inset 0 2px #fff, inset 0 -2px #a4c5d566, 0 28px 80px #264c7050",
+        "purpose": "浮动弹窗。"
+      },
+      {
+        "value": "inset 0 1px 1px #ffffff, inset 0 -2px 1px #82aabd40, 0 3px 5px #365d7612, 0 6px 13px #365d7614",
+        "name": "glass-control",
+        "purpose": "玻璃按钮上沿、底部厚度与接触投影。"
+      },
+      {
+        "value": "inset 0 1px 1px #fff, inset 0 -2px 1px #6e9dbb44, 0 5px 7px #365d761c, 0 10px 20px #365d7629",
+        "name": "control-hover",
+        "purpose": "指针悬停时抬升的按钮。"
+      },
+      {
+        "value": "inset 0 2px 4px #305c7b26, inset 0 -1px 0 #ffffff88, 0 1px 2px #365d7626",
+        "name": "control-pressed",
+        "purpose": "按下时压入的按钮。"
+      }
+    ],
+    "motion": [
+      {
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "name": "ease",
+        "purpose": "图层菜单、提示与原有物品卡的缓出。"
+      },
+      {
+        "value": "cubic-bezier(.22,1,.36,1)",
+        "name": "ease-flow",
+        "purpose": "页面、玻璃选中层、弹窗进入与按钮抬升。"
+      },
+      {
+        "value": "cubic-bezier(.4,0,1,1)",
+        "name": "ease-exit",
+        "purpose": "页面与弹窗退出。"
+      },
+      {
+        "value": "480ms; delay 40ms",
+        "name": "page-enter",
+        "purpose": "按导航方向横移 32px、从 .985 缩放并淡入。"
+      },
+      {
+        "value": "220ms",
+        "name": "page-exit",
+        "purpose": "按导航反方向横移 16px、缩至 .992 并淡出。"
+      },
+      {
+        "value": "380ms; delay 70ms",
+        "name": "heading-enter",
+        "purpose": "页面标题与面包屑从下方 10px 回位。"
+      },
+      {
+        "value": "160ms ease-in",
+        "name": "heading-exit",
+        "purpose": "标题与面包屑上移 6px 并淡出。"
+      },
+      {
+        "value": "480ms",
+        "name": "selection-track",
+        "purpose": "导航共享玻璃层的 View Transition；全局/局部分段选中层的 Web Animations API 插值。"
+      },
+      {
+        "value": "150ms ease-in",
+        "name": "page-fallback-exit",
+        "purpose": "不支持 View Transitions 时，先将旧内容横移 12px 并淡出。"
+      },
+      {
+        "value": "440ms",
+        "name": "page-fallback-enter",
+        "purpose": "回退路径更新内容后，从方向对应的 24px 位置进入。"
+      },
+      {
+        "value": "360ms",
+        "name": "dialog-enter",
+        "purpose": "从下方 24px、缩放 .965 回位。"
+      },
+      {
+        "value": "190ms",
+        "name": "dialog-exit",
+        "purpose": "从当前视觉状态继续退出至下方 12px、缩放 .975，遮罩同步淡出。"
+      },
+      {
+        "value": "300ms ease-out",
+        "name": "backdrop-enter",
+        "purpose": "弹窗背板淡入。"
+      },
+      {
+        "value": "240ms",
+        "name": "button-hover",
+        "purpose": "精细指针悬停抬升 2px，接触阴影扩大。"
+      },
+      {
+        "value": "90ms",
+        "name": "button-press",
+        "purpose": "按下下沉 1px 并缩至 .98。"
+      },
+      {
+        "value": "720ms; 1 - (1 - progress) ** 4",
+        "name": "camera",
+        "purpose": "可被拖动打断的视角插值。"
+      },
+      {
+        "value": "950ms linear",
+        "name": "robot-demo",
+        "purpose": "演示位姿连续插值。"
+      },
+      {
+        "value": "200ms linear",
+        "name": "robot-live",
+        "purpose": "实时位姿短时插值；不改变收到的数据。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-max",
+        "value": "800px"
+      },
+      {
+        "name": "compact-sidebar-max",
+        "value": "1000px"
+      },
+      {
+        "name": "desktop-min",
+        "value": "1001px"
+      },
+      {
+        "name": "wide-desktop-min",
+        "value": "1700px"
+      },
+      {
+        "name": "compact-desktop-height-max",
+        "value": "940px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "寻物主按钮",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "具有上沿高光、底部厚度和接触阴影的主要操作按钮；悬停抬升，按下轻微下沉。",
+      "html": "<button class=\"primary\">开始寻物</button>",
+      "css": ".primary{position:relative;isolation:isolate;font:600 14px/1.5 'Segoe UI','Microsoft YaHei UI',sans-serif;min-height:44px;padding:10px 16px;border:1px solid #84c7da;border-radius:8px;background-color:#08617d;background-image:linear-gradient(155deg,#2b8ba7aa,#08617d22 55%,#03445a66);color:#fff;box-shadow:inset 0 1px 1px #d9f9ffb3,inset 0 -2px 1px #00384b99,0 4px 6px #16556e22,0 8px 16px #16556e2e;cursor:pointer;transition:transform 240ms cubic-bezier(.22,1,.36,1),box-shadow 240ms ease,background-color 200ms ease,color 200ms ease,border-color 200ms ease}.primary::before{content:'';position:absolute;inset:1px 2px auto;height:45%;border-radius:inherit;background:linear-gradient(180deg,#ffffff42,#ffffff00);pointer-events:none;opacity:.65;transition:opacity 220ms ease}.primary:hover:not(:disabled){background-color:#075772}.primary:focus-visible{outline:3px solid #08617d;outline-offset:3px}@media(hover:hover) and (pointer:fine){.primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:inset 0 1px 1px #fff,inset 0 -2px 1px #6e9dbb44,0 5px 7px #365d761c,0 10px 20px #365d7629}.primary:hover::before{opacity:1}}.primary:active:not(:disabled){transform:translateY(1px) scale(.98);transition-duration:90ms;box-shadow:inset 0 2px 4px #305c7b26,inset 0 -1px 0 #ffffff88,0 1px 2px #365d7626}.primary:disabled{background:#dbeaf3;color:#4b6478;border-color:#bacdd9;box-shadow:inset 0 1px #ffffff70;transform:none;cursor:not-allowed}.primary:disabled::before{opacity:0}@media(prefers-reduced-motion:reduce){.primary,.primary::before{transition:none}.primary:hover,.primary:active{transform:none!important}}"
+    },
+    {
+      "name": "玻璃面板",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "任务与信息区域的透光容器，银白冰蓝环境衬托高光与厚度。",
+      "html": "<div class=\"ambient\"><section class=\"panel\"><strong>任务状态</strong><p>选择目标后开始寻找</p></section></div>",
+      "css": ".ambient{padding:24px;background:radial-gradient(ellipse at 15% 0,#fff,transparent 65%),#dce9f3}.panel{padding:20px;border-radius:16px;border:1px solid rgba(255,255,255,.85);background:linear-gradient(135deg,rgba(255,255,255,.45),rgba(255,255,255,0) 48%,rgba(185,220,237,.16)),rgba(245,251,255,.48);color:#19354c;backdrop-filter:blur(24px) saturate(125%);box-shadow:0 16px 35px rgba(62,103,133,.12),0 2px 4px rgba(46,90,123,.08),inset 0 2px 1px rgba(255,255,255,.95),inset 0 -2px 1px rgba(109,155,181,.20);font:14px/1.5 'Segoe UI','Microsoft YaHei UI',sans-serif}.panel p{margin:8px 0 0;color:#4b6478}"
+    }
+  ],
+  "narrative": {
+    "northStar": "明亮玻璃、立体实物、自然流动",
+    "overview": "以用户确认的明亮、透光玻璃与实体质感为依据，优先适配电脑屏幕。银白冰蓝环境承托玻璃面板，深蓝文字保持可读，蓝青色强调操作；实体倒角、摄影棚环境反光与柔和阴影呈现三维空间。规范正文保留在 docs/DESIGN.md，令牌来源为 styles.css，运动与场景来源为 src/app.js 和 src/scene.js。",
+    "keyCharacteristics": [
+      "电脑宽屏优先",
+      "明亮透光玻璃与实体模型",
+      "高光边缘、厚度与接触阴影",
+      "按方向流动的页面和共享玻璃选中层",
+      "可打断的动画与持续可用的导航",
+      "明确区分演示和实车数据"
+    ],
+    "rules": [
+      {
+        "name": "可读的玻璃",
+        "body": "透明材质保留可辨认的文字、输入边界和操作状态。",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "尊重减弱动态偏好。",
+      "页面过渡快照不拦截导航点击；快速切换以最后一次选择为准。",
+      "任务进度内部滚动，固定控制按钮。",
+      "相机移动可被手动操作打断。"
+    ],
+    "donts": [
+      "不以大面积暗底或纯线框取代明亮玻璃与实体质感。",
+      "不添加持续闪烁或无信息作用的旋转。",
+      "不把演示场景冒充实测数据。"
+    ]
+  }
+}

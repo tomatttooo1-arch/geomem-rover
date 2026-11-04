@@ -1,0 +1,17 @@
+## P1: kv_cam --set-prop 3004:0 --set-prop 85:1 --dump-props
+A (no perf): window 30.0 s: user 0.368 cores, sys 0.100 cores, total 0.468 cores, sys share 0.21
+B (perf):    window 0.9 s: user 0.392 cores, sys 0.090 cores, total 0.482 cores, sys share 0.19
+kv_cam: prop 17 DEPTH_HOLEFILTER = 1
+kv_cam: prop 24 DEPTH_NOISE_REMOVAL_FILTER (soft filter) = 1
+kv_cam: prop 40 NOISE_REMOVAL_MAX_DIFF = 1
+kv_cam: prop 41 NOISE_REMOVAL_MAX_SPECKLE_SIZE = 1
+kv_cam: prop 85 DISPARITY_TO_DEPTH (hardware) = 1
+kv_cam: prop 3004 SDK_DISPARITY_TO_DEPTH (host software) = 0
+kv_cam: 30.0 sets/s, 0.469 cores, seq 421, restarts 0, alarms 0
+kv_cam: 29.9 sets/s, 0.468 cores, seq 720, restarts 0, alarms 0
+kv_cam: 30.0 sets/s, 0.468 cores, seq 1020, restarts 0, alarms 0
+kv_cam: 30.0 sets/s, 0.470 cores, seq 1320, restarts 0, alarms 0
+alarms: 0
+## top DSOs
+## top threads x DSO
+## top symbols

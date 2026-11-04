@@ -1,0 +1,6 @@
+# Frame grabbing 0.47 cores (product camera config with disparity-to-depth in camera)
+# Excerpts copied verbatim (line numbers of the original file given); numbers unchanged.
+
+## source: CAMKV1/README.md
+L16: - 产品配置（彩色 YUYV + 硬件对齐 + 同步，30 帧/秒）：**P0 1.018 核 → 换算交回相机（P1）0.47 核 → 再关去噪（P1b）0.335 核**。P1 比 P0 少 0.54–0.55 核，和 D3 的 0.557 一致（反向检验过）。
+L64: | P1 | P0 + 3004:0、85:1 | 0.366 / 0.109 / **0.475**（另一轮 0.468） | 0.23 | 无 perf | 0.475 | 30.0 | 2074 |

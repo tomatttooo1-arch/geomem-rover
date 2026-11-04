@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "q4_y8s_640_b1024.xmodel",
+    "kernel": [
+        "subgraph_QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_0__Conv2d_conv__input_3"
+    ],
+    "target": "DPUCZDX8G_ISA1_B1024"
+}

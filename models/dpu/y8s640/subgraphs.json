@@ -1,0 +1,1454 @@
+{
+  "model": "/output/q4_y8s_640_b1024.xmodel",
+  "sha256": "b04fd7c1c7862eb965cd13fce49663e308bdaa1e6409ab9aa027113be2b884cd",
+  "dpu_subgraph_count": 1,
+  "subgraphs": [
+    {
+      "name": "subgraph_QatYOLO__QatYOLO_QuantStub_quant__input_1",
+      "device": "USER",
+      "operations": [
+        {
+          "name": "QatYOLO__QatYOLO_QuantStub_quant__input_1",
+          "type": "data-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_0__Conv2d_conv__input_3",
+      "device": "DPU",
+      "operations": [
+        {
+          "name": "QatYOLO__QatYOLO_QuantStub_quant__input_1_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_0__Conv2d_conv__input_3",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_0__QatHardSwish_act__Hardsigmoid_gate__12020_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_0__QatHardSwish_act__Mul_product_op__input_7",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_16__Conv2d_conv__input_217",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_16__QatHardSwish_act__Hardsigmoid_gate__13296_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_16__QatHardSwish_act__Mul_product_op__13297",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_19__Conv2d_conv__input_247",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_19__QatHardSwish_act__Hardsigmoid_gate__13477_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_19__QatHardSwish_act__Mul_product_op__13478",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_1__Conv2d_conv__input_9",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_1__QatHardSwish_act__Hardsigmoid_gate__12047_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_1__QatHardSwish_act__Mul_product_op__input_13",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_3__Conv2d_conv__input_39",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_3__QatHardSwish_act__Hardsigmoid_gate__12227_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_3__QatHardSwish_act__Mul_product_op__input_43",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_5__Conv2d_conv__input_81",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_5__QatHardSwish_act__Hardsigmoid_gate__12463_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_5__QatHardSwish_act__Mul_product_op__input_85",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_7__Conv2d_conv__input_123",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_7__QatHardSwish_act__Hardsigmoid_gate__12699_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Conv_model__ModuleList_7__QatHardSwish_act__Mul_product_op__input_127",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__12992",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__13012",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__Cat_cat_op__input_183",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__Conv_cv1__Conv2d_conv__input_167",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12986_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__Conv_cv1__QatHardSwish_act__Mul_product_op__12987",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__Conv_cv2__Conv2d_conv__input_185",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__13110_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__Conv_cv2__QatHardSwish_act__Mul_product_op__input_189",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__QatBottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_173",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__13053_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Mul_product_op__input_177",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__QatBottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_179",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__13080_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_12__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Mul_product_op__13081",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__13151",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__13171",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__Cat_cat_op__input_209",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__Conv_cv1__Conv2d_conv__input_193",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__13145_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__Conv_cv1__QatHardSwish_act__Mul_product_op__13146",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__Conv_cv2__Conv2d_conv__input_211",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__13269_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__Conv_cv2__QatHardSwish_act__Mul_product_op__input_215",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__QatBottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_199",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__13212_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Mul_product_op__input_203",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__QatBottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_205",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__13239_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_15__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Mul_product_op__13240",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__13332",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__13352",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__Cat_cat_op__input_239",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__Conv_cv1__Conv2d_conv__input_223",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__13326_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__Conv_cv1__QatHardSwish_act__Mul_product_op__13327",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__Conv_cv2__Conv2d_conv__input_241",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__13450_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__Conv_cv2__QatHardSwish_act__Mul_product_op__input_245",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__QatBottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_229",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__13393_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Mul_product_op__input_233",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__QatBottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_235",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__13420_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_18__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Mul_product_op__13421",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__13513",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__13533",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__Cat_cat_op__input_269",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__Conv_cv1__Conv2d_conv__input_253",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__13507_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__Conv_cv1__QatHardSwish_act__Mul_product_op__13508",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__Conv_cv2__Conv2d_conv__input_271",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__13631_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__Conv_cv2__QatHardSwish_act__Mul_product_op__input_323",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__QatBottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_259",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__13574_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Mul_product_op__input_263",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__QatBottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_265",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__13601_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_21__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Mul_product_op__13602",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__12080",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__12100",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__Cat_cat_op__input_31",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__Conv_cv1__Conv2d_conv__input_15",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12074_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__Conv_cv1__QatHardSwish_act__Mul_product_op__12075",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__Conv_cv2__Conv2d_conv__input_33",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12200_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__Conv_cv2__QatHardSwish_act__Mul_product_op__input_37",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__QatBottleneck_m__ModuleList_0__Add_sum_op__12171",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__QatBottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_21",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12141_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Mul_product_op__input_25",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__QatBottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_27",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12168_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_2__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Mul_product_op__12169",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__12260",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__12280",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__Cat_cat_op__input_73",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__Conv_cv1__Conv2d_conv__input_45",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12254_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__Conv_cv1__QatHardSwish_act__Mul_product_op__12255",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__Conv_cv2__Conv2d_conv__input_75",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12436_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__Conv_cv2__QatHardSwish_act__Mul_product_op__input_79",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_0__Add_sum_op__input_61",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_51",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12321_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Mul_product_op__input_55",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_57",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12348_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Mul_product_op__12349",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_1__Add_sum_op__12407",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_1__Conv_cv1__Conv2d_conv__input_63",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_1__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12377_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_1__Conv_cv1__QatHardSwish_act__Mul_product_op__input_67",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_1__Conv_cv2__Conv2d_conv__input_69",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_1__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12404_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_4__QatBottleneck_m__ModuleList_1__Conv_cv2__QatHardSwish_act__Mul_product_op__12405",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__12496",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__12516",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__Cat_cat_op__input_115",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__Conv_cv1__Conv2d_conv__input_87",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12490_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__Conv_cv1__QatHardSwish_act__Mul_product_op__12491",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__Conv_cv2__Conv2d_conv__input_117",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12672_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__Conv_cv2__QatHardSwish_act__Mul_product_op__input_121",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_0__Add_sum_op__input_103",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_93",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12557_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Mul_product_op__input_97",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_99",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12584_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Mul_product_op__12585",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_1__Add_sum_op__12643",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_1__Conv_cv1__Conv2d_conv__input_105",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_1__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12613_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_1__Conv_cv1__QatHardSwish_act__Mul_product_op__input_109",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_1__Conv_cv2__Conv2d_conv__input_111",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_1__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12640_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_6__QatBottleneck_m__ModuleList_1__Conv_cv2__QatHardSwish_act__Mul_product_op__12641",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__12732",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__12752",
+          "type": "strided_slice-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__Cat_cat_op__input_145",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__Conv_cv1__Conv2d_conv__input_129",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12726_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__Conv_cv1__QatHardSwish_act__Mul_product_op__12727",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__Conv_cv2__Conv2d_conv__input_147",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12852_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__Conv_cv2__QatHardSwish_act__Mul_product_op__input_151",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__QatBottleneck_m__ModuleList_0__Add_sum_op__12823",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__QatBottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_135",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12793_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__QatBottleneck_m__ModuleList_0__Conv_cv1__QatHardSwish_act__Mul_product_op__input_139",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__QatBottleneck_m__ModuleList_0__Conv_cv2__Conv2d_conv__input_141",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12820_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatC2f_model__ModuleList_8__QatBottleneck_m__ModuleList_0__Conv_cv2__QatHardSwish_act__Mul_product_op__12821",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatConcat_model__ModuleList_11__Cat_cat_op__input_165",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatConcat_model__ModuleList_14__Cat_cat_op__input_191",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatConcat_model__ModuleList_17__Cat_cat_op__input_221",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatConcat_model__ModuleList_20__Cat_cat_op__input_251",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_0__inputs_3",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_0__inputs_3_download_0",
+          "type": "download"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_1__inputs_5",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_1__inputs_5_download_0",
+          "type": "download"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_2__inputs",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_2__inputs_download_0",
+          "type": "download"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv2d_2__13705",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv_0__Conv2d_conv__input_275",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv_0__QatHardSwish_act__Hardsigmoid_gate__13658_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv_0__QatHardSwish_act__Mul_product_op__input_279",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv_1__Conv2d_conv__input_281",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv_1__QatHardSwish_act__Hardsigmoid_gate__13685_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_0__Conv_1__QatHardSwish_act__Mul_product_op__input_285",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv2d_2__13854",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv_0__Conv2d_conv__input_299",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv_0__QatHardSwish_act__Hardsigmoid_gate__13807_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv_0__QatHardSwish_act__Mul_product_op__input_303",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv_1__Conv2d_conv__input_305",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv_1__QatHardSwish_act__Hardsigmoid_gate__13834_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_1__Conv_1__QatHardSwish_act__Mul_product_op__input_309",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv2d_2__14003",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv_0__Conv2d_conv__input_325",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv_0__QatHardSwish_act__Hardsigmoid_gate__13956_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv_0__QatHardSwish_act__Mul_product_op__input_329",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv_1__Conv2d_conv__input_331",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv_1__QatHardSwish_act__Hardsigmoid_gate__13983_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv2__ModuleList_2__Conv_1__QatHardSwish_act__Mul_product_op__input_335",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv2d_2__13778",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv_0__Conv2d_conv__input_287",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv_0__QatHardSwish_act__Hardsigmoid_gate__13731_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv_0__QatHardSwish_act__Mul_product_op__input_291",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv_1__Conv2d_conv__input_293",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv_1__QatHardSwish_act__Hardsigmoid_gate__13758_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_0__Conv_1__QatHardSwish_act__Mul_product_op__input_297",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv2d_2__13927",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv_0__Conv2d_conv__input_311",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv_0__QatHardSwish_act__Hardsigmoid_gate__13880_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv_0__QatHardSwish_act__Mul_product_op__input_315",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv_1__Conv2d_conv__input_317",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv_1__QatHardSwish_act__Hardsigmoid_gate__13907_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_1__Conv_1__QatHardSwish_act__Mul_product_op__input_321",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv2d_2__14076",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv_0__Conv2d_conv__input_337",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv_0__QatHardSwish_act__Hardsigmoid_gate__14029_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv_0__QatHardSwish_act__Mul_product_op__input_341",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv_1__Conv2d_conv__input_343",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv_1__QatHardSwish_act__Hardsigmoid_gate__14056_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Sequential_cv3__ModuleList_2__Conv_1__QatHardSwish_act__Mul_product_op__input",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__Cat_cat_op__input_157",
+          "type": "concat-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__Conv_cv1__Conv2d_conv__input_153",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__Conv_cv1__QatHardSwish_act__Hardsigmoid_gate__12879_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__Conv_cv1__QatHardSwish_act__Mul_product_op__12880",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__Conv_cv2__Conv2d_conv__input_159",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__Conv_cv2__QatHardSwish_act__Hardsigmoid_gate__12951_i0",
+          "type": "hard-sigmoid-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__Conv_cv2__QatHardSwish_act__Mul_product_op__input_163",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__MaxPool2d_pool1__12894_fix",
+          "type": "pool-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__MaxPool2d_pool2__12908_fix",
+          "type": "pool-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatSPPF_model__ModuleList_9__MaxPool2d_pool3__12922_fix",
+          "type": "pool-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Upsample_model__ModuleList_10__12957",
+          "type": "upsample-fix"
+        },
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__Upsample_model__ModuleList_13__13116",
+          "type": "upsample-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_12_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_12_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_12_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_12_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_12_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_12_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_12_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_12_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_15_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_15_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_15_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_15_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_15_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_15_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_15_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_15_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_16_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_16_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_18_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_18_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_18_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_18_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_18_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_18_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_18_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_18_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_19_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_19_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_21_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_21_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_21_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_21_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_21_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_21_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_21_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_21_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_0_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_0_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_0_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_0_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_0_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_0_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_1_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_1_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_1_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_1_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_1_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_1_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_2_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_2_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_2_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_2_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_2_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv2_2_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_0_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_0_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_0_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_0_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_0_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_0_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_1_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_1_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_1_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_1_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_1_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_1_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_2_0_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_2_0_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_2_1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_2_1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_2_2_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_22_cv3_2_2_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_2_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_2_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_2_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_2_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_2_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_2_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_2_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_2_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_3_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_3_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_m_1_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_m_1_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_m_1_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_4_m_1_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_5_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_5_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_m_1_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_m_1_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_m_1_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_6_m_1_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_7_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_7_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_8_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_8_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_8_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_8_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_8_m_0_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_8_m_0_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_8_m_0_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_8_m_0_cv2_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_9_cv1_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_9_cv1_conv_weight",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_9_cv2_conv_bias",
+          "type": "const-fix"
+        },
+        {
+          "name": "QatYOLO__body_model_9_cv2_conv_weight",
+          "type": "const-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_2__inputs_fix_",
+      "device": "CPU",
+      "operations": [
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_2__inputs_fix_",
+          "type": "fix2float"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_1__inputs_5_fix_",
+      "device": "CPU",
+      "operations": [
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_1__inputs_5_fix_",
+          "type": "fix2float"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_0__inputs_3_fix_",
+      "device": "CPU",
+      "operations": [
+        {
+          "name": "QatYOLO__QatYOLO_RawYOLO_body__QatHead_model__ModuleList_22__Cat_cat_ops__ModuleList_0__inputs_3_fix_",
+          "type": "fix2float"
+        }
+      ]
+    }
+  ],
+  "note": "CPU/USER input data nodes are listed separately; inspect their actual operation types before calling them compute fallback"
+}

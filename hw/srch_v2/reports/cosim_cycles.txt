@@ -1,0 +1,84 @@
+trace_v1.bin rec  0 INIT_MAP      3994944 cyc   39.949 ms
+trace_v1.bin rec  1 INIT_UNIV     2124919 cyc   21.249 ms
+trace_v1.bin rec  2 INIT_FINAL    5038471 cyc   50.385 ms
+trace_v1.bin rec  3 INIT_VIEWS   11119335 cyc  111.193 ms
+trace_v1.bin rec  4 RESET          126687 cyc    1.267 ms
+trace_v1.bin rec  5 PRIOR0         861999 cyc    8.620 ms
+trace_v1.bin rec  6 PRIOR1        2586647 cyc   25.866 ms
+trace_v1.bin rec  7 PRIOR2        3398935 cyc   33.989 ms
+trace_v1.bin rec  8 OBSERVE         80191 cyc    0.802 ms
+trace_v1.bin rec  9 OBSERVE         80559 cyc    0.806 ms
+trace_v1.bin rec 10 OBSERVE         79231 cyc    0.792 ms
+trace_v1.bin rec 11 OBSERVE         79783 cyc    0.798 ms
+trace_v1.bin rec 12 OBSERVE         77943 cyc    0.779 ms
+trace_v1.bin rec 13 CELLOF          18647 cyc    0.186 ms
+trace_v1.bin rec 14 SELECT         122039 cyc    1.220 ms
+trace_v1.bin rec 15 DUMP           282159 cyc    2.822 ms
+trace_v1.bin rec 16 OBSERVE         79007 cyc    0.790 ms
+trace_v1.bin rec 17 OBSERVE         79543 cyc    0.795 ms
+trace_v1.bin rec 18 OBSERVE         80719 cyc    0.807 ms
+trace_v1.bin rec 19 OBSERVE         81471 cyc    0.815 ms
+trace_v1.bin rec 20 OBSERVE         81239 cyc    0.812 ms
+trace_v1.bin rec 21 CELLOF          18983 cyc    0.190 ms
+trace_v1.bin rec 22 SELECT         122039 cyc    1.220 ms
+trace_v1.bin rec 23 DUMP           282159 cyc    2.822 ms
+trace_v1.bin rec 24 OBSERVE         80911 cyc    0.809 ms
+trace_v1.bin rec 25 OBSERVE         81895 cyc    0.819 ms
+trace_v1.bin rec 26 OBSERVE         81487 cyc    0.815 ms
+trace_v1.bin rec 27 OBSERVE         80407 cyc    0.804 ms
+trace_v1.bin rec 28 OBSERVE         79847 cyc    0.798 ms
+trace_v1.bin rec 29 CELLOF          18983 cyc    0.190 ms
+trace_v1.bin rec 30 SELECT         122039 cyc    1.220 ms
+trace_v1.bin rec 31 DUMP           282159 cyc    2.822 ms
+trace_v2.bin rec  0 INIT_MAP      1792527 cyc   17.925 ms
+trace_v2.bin rec  1 INIT_UNIV      555407 cyc    5.554 ms
+trace_v2.bin rec  2 INIT_FINAL    4202839 cyc   42.028 ms
+trace_v2.bin rec  3 INIT_VIEWS    2821311 cyc   28.213 ms
+trace_v2.bin rec  4 RESET           35807 cyc    0.358 ms
+trace_v2.bin rec  5 PRIOR1         742759 cyc    7.428 ms
+trace_v2.bin rec  6 PRIOR2         961487 cyc    9.615 ms
+trace_v2.bin rec  7 OBSERVE         71799 cyc    0.718 ms
+trace_v2.bin rec  8 OBSERVE         71567 cyc    0.716 ms
+trace_v2.bin rec  9 OBSERVE         71775 cyc    0.718 ms
+trace_v2.bin rec 10 OBSERVE         72079 cyc    0.721 ms
+trace_v2.bin rec 11 OBSERVE         72079 cyc    0.721 ms
+trace_v2.bin rec 12 CELLOF          18199 cyc    0.182 ms
+trace_v2.bin rec 13 SELECT          28655 cyc    0.287 ms
+trace_v2.bin rec 14 DUMP            77679 cyc    0.777 ms
+trace_v2.bin rec 15 OBSERVE         71903 cyc    0.719 ms
+trace_v2.bin rec 16 OBSERVE         71615 cyc    0.716 ms
+trace_v2.bin rec 17 OBSERVE         71263 cyc    0.713 ms
+trace_v2.bin rec 18 OBSERVE         71399 cyc    0.714 ms
+trace_v2.bin rec 19 OBSERVE         71015 cyc    0.710 ms
+trace_v2.bin rec 20 CELLOF          18199 cyc    0.182 ms
+trace_v2.bin rec 21 SELECT          28655 cyc    0.287 ms
+trace_v2.bin rec 22 DUMP            77679 cyc    0.777 ms
+trace_v2.bin rec 23 OBSERVE         71119 cyc    0.711 ms
+trace_v2.bin rec 24 OBSERVE         70951 cyc    0.710 ms
+trace_v2.bin rec 25 OBSERVE         70903 cyc    0.709 ms
+trace_v2.bin rec 26 OBSERVE         70599 cyc    0.706 ms
+trace_v2.bin rec 27 OBSERVE         70471 cyc    0.705 ms
+trace_v2.bin rec 28 CELLOF          18199 cyc    0.182 ms
+trace_v2.bin rec 29 SELECT          28655 cyc    0.287 ms
+trace_v2.bin rec 30 DUMP            77679 cyc    0.777 ms
+trace_v2.bin rec 31 OBSERVE         70575 cyc    0.706 ms
+trace_v2.bin rec 32 OBSERVE         70831 cyc    0.708 ms
+trace_v2.bin rec 33 OBSERVE         70543 cyc    0.705 ms
+trace_v2.bin rec 34 OBSERVE         70879 cyc    0.709 ms
+trace_v2.bin rec 35 OBSERVE         71063 cyc    0.711 ms
+trace_v2.bin rec 36 CELLOF          18199 cyc    0.182 ms
+trace_v2.bin rec 37 SELECT          28655 cyc    0.287 ms
+trace_v2.bin rec 38 DUMP            77679 cyc    0.777 ms
+--- per op: n, max cycles, max ms
+INIT_MAP   n= 2 max    3994944 cyc =   39.949 ms  mean   28.937 ms
+INIT_UNIV  n= 2 max    2124919 cyc =   21.249 ms  mean   13.402 ms
+INIT_FINAL n= 2 max    5038471 cyc =   50.385 ms  mean   46.207 ms
+INIT_VIEWS n= 2 max   11119335 cyc =  111.193 ms  mean   69.703 ms
+RESET      n= 2 max     126687 cyc =    1.267 ms  mean    0.812 ms
+PRIOR0     n= 1 max     861999 cyc =    8.620 ms  mean    8.620 ms
+PRIOR1     n= 2 max    2586647 cyc =   25.866 ms  mean   16.647 ms
+PRIOR2     n= 2 max    3398935 cyc =   33.989 ms  mean   21.802 ms
+OBSERVE    n=35 max      81895 cyc =    0.819 ms  mean    0.751 ms
+CELLOF     n= 7 max      18983 cyc =    0.190 ms  mean    0.185 ms
+SELECT     n= 7 max     122039 cyc =    1.220 ms  mean    0.687 ms
+DUMP       n= 7 max     282159 cyc =    2.822 ms  mean    1.653 ms

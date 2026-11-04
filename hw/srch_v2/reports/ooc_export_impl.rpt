@@ -1,0 +1,367 @@
+================================================================
+== Vivado Place & Route Results
+================================================================
++ General Information:
+    * Date:            Wed Nov 04 06:26:58 UTC 2026
+    * Version:         2022.2 (Build 3779808 on Feb 17 2023)
+    * Project:         m17
+    * Solution:        sol1 (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * Place & Route target clock:  10 ns
+    * C-Synthesis target clock:    10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Place & Route Options:
+    * config_export -vivado_impl_strategy:  default
+    * config_export -vivado_phys_opt:       none
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== Place & Route Resource Summary
+================================================================
+LUT:              5049
+FF:               6101
+DSP:              52
+BRAM:             8
+URAM:             13
+SRL:              40
+
+
+================================================================
+== Place & Route Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 6.908       |
+| Post-Route     | 8.331       |
++----------------+-------------+
+
+
+================================================================
+== Place & Route Resources
+================================================================
++--------------------------------------------------+------+------+-----+------+------+-----+--------+--------+---------+-------------+-------------------------------------------------------------------------------+
+| Name                                             | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl   | Latency | Variable    | Source                                                                        |
++--------------------------------------------------+------+------+-----+------+------+-----+--------+--------+---------+-------------+-------------------------------------------------------------------------------+
+| inst                                             | 5049 | 6101 | 52  | 8    | 13   |     |        |        |         |             |                                                                               |
+|   (inst)                                         | 19   | 68   |     |      |      |     |        |        |         |             |                                                                               |
+|   control_s_axi_U                                | 99   | 152  |     |      |      |     |        |        |         |             |                                                                               |
+|   gmem_m_axi_U                                   | 559  | 1267 |     |      |      |     |        |        |         |             |                                                                               |
+|   grp_seq_fu_157                                 | 4375 | 4614 | 52  | 8    | 13   |     |        |        |         |             |                                                                               |
+|     (grp_seq_fu_157)                             | 820  | 1740 | 2   | 3    |      |     |        |        |         |             |                                                                               |
+|     CF_V_U                                       | 56   | 92   |     |      |      |     |        |        |         |             |                                                                               |
+|       bind_storage ram_1p                        |      |      |     |      |      |     | pragma | lutram | 1       | CF_V        | :0                                                                            |
+|     ENTRY_V_U                                    | 236  | 2    |     |      | 4    |     |        |        |         |             |                                                                               |
+|       bind_storage ram_2p                        |      |      |     |      |      |     | pragma | uram   | 1       | ENTRY_V     | :0                                                                            |
+|     GRIDM_V_U                                    | 181  | 2    |     |      | 3    |     |        |        |         |             |                                                                               |
+|       bind_storage ram_2p                        |      |      |     |      |      |     | pragma | uram   | 1       | GRIDM_V     | :0                                                                            |
+|     OCC_V_U                                      | 19   |      |     |      | 1    |     |        |        |         |             |                                                                               |
+|       bind_storage ram_2p                        |      |      |     |      |      |     | pragma | uram   | 1       | OCC_V       | :0                                                                            |
+|     PST_V_U                                      | 188  | 4    |     |      | 4    |     |        |        |         |             |                                                                               |
+|       bind_storage ram_2p                        |      |      |     |      |      |     | pragma | uram   | 1       | PST_V       | :0                                                                            |
+|     QT_V_U                                       | 46   | 64   |     |      |      |     |        |        |         |             |                                                                               |
+|       bind_storage ram_1p                        |      |      |     |      |      |     | pragma | lutram | 1       | QT_V        | :0                                                                            |
+|     RA_V_U                                       | 64   | 64   |     |      |      |     |        |        |         |             |                                                                               |
+|       bind_storage ram_2p                        |      |      |     |      |      |     | pragma | lutram | 1       | RA_V        | :0                                                                            |
+|     RB_V_U                                       | 136  | 64   |     |      |      |     |        |        |         |             |                                                                               |
+|       bind_storage ram_2p                        |      |      |     |      |      |     | pragma | lutram | 1       | RB_V        | :0                                                                            |
+|     REACH_V_U                                    | 7    |      |     | 1    |      |     |        |        |         |             |                                                                               |
+|       bind_storage ram_2p                        |      |      |     |      |      |     | pragma | bram   | 1       | REACH_V     | :0                                                                            |
+|     SEEN_V_U                                     | 7    |      |     | 4    |      |     |        |        |         |             |                                                                               |
+|       bind_storage ram_2p                        |      |      |     |      |      |     | pragma | bram   | 1       | SEEN_V      | :0                                                                            |
+|     SUBT_U                                       | 1    | 1    |     |      |      |     |        |        |         |             |                                                                               |
+|       bind_storage rom_1p                        |      |      |     |      |      |     |        | auto   | 1       | SUBT        |                                                                               |
+|     WRT_U                                        | 2    | 1    |     |      |      |     |        |        |         |             |                                                                               |
+|       bind_storage rom_1p                        |      |      |     |      |      |     |        | auto   | 1       | WRT         |                                                                               |
+|     grp_bel_unit_fu_980                          | 916  | 1246 | 10  |      |      |     |        |        |         |             |                                                                               |
+|       (grp_bel_unit_fu_980)                      | 464  | 1178 | 1   |      |      |     |        |        |         |             |                                                                               |
+|       am_submul_16s_16s_34_4_1_U4                | 16   |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op sub                              |      |      |     |      |      |     |        | dsp48  | 3       | ret_V_37    | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:1496 |
+|         bind_op mul                              |      |      |     |      |      |     |        | dsp48  | 3       | sdy_V       | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:297  |
+|       ama_submuladd_16s_16s_34s_34_4_1_U5        | 149  |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op sub                              |      |      |     |      |      |     |        | dsp48  | 3       | ret_V_36    | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:1496 |
+|         bind_op mul                              |      |      |     |      |      |     |        | dsp48  | 3       | sdx_V       | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:296  |
+|         bind_op add                              |      |      |     |      |      |     |        | dsp48  | 3       | add_ln186   | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|       mul_31ns_24ns_54_1_1_U1                    |      |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     |        | auto   | 0       | pm1_V       | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|       mul_31ns_24ns_54_1_1_U2                    | 168  |      | 2   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     |        | auto   | 0       | pm2_V       | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|       mul_40ns_31ns_71_4_1_U3                    | 122  | 68   | 4   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     | yes    | dsp    | 0       | ret_V_38    | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|     grp_scan_unit_fu_930                         | 1572 | 1334 | 38  |      | 1    |     |        |        |         |             |                                                                               |
+|       (grp_scan_unit_fu_930)                     | 389  | 736  |     |      |      |     |        |        |         |             |                                                                               |
+|       VISW_V_U                                   | 132  |      |     |      | 1    |     |        |        |         |             |                                                                               |
+|         bind_storage ram_2p                      |      |      |     |      |      |     | pragma | uram   | 1       | VISW_V      | :0                                                                            |
+|       ama_addmuladd_16s_6ns_8ns_16ns_16_4_1_U71  | 38   | 6    | 1   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op add                              |      |      |     |      |      |     |        | dsp48  | 3       | add_ln186_5 | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|         bind_op mul                              |      |      |     |      |      |     |        | dsp48  | 3       | mul_ln186   | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|         bind_op add                              |      |      |     |      |      |     |        | dsp48  | 3       | cell_V      | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|       grp_scan_unit_Pipeline_CONE_fu_709         | 269  | 224  | 10  |      |      |     |        |        |         |             |                                                                               |
+|         (grp_scan_unit_Pipeline_CONE_fu_709)     | 67   | 222  |     |      |      |     |        |        |         |             |                                                                               |
+|         mac_muladd_18s_18s_36s_36_4_1_U34        | 52   |      | 2   |      |      |     |        |        |         |             |                                                                               |
+|           bind_op mul                            |      |      |     |      |      |     |        | dsp48  | 3       | pax_V       | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:185  |
+|           bind_op add                            |      |      |     |      |      |     |        | dsp48  | 3       | add_ln187   | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:187  |
+|         mac_mulsub_18s_18s_36s_36_4_1_U35        | 1    |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|           bind_op mul                            |      |      |     |      |      |     |        | dsp48  | 3       | pay_V       | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:186  |
+|           bind_op sub                            |      |      |     |      |      |     |        | dsp48  | 3       | sub_ln188   | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:188  |
+|         mul_29s_18ns_47_1_1_U30                  | 33   |      | 2   |      |      |     |        |        |         |             |                                                                               |
+|           bind_op mul                            |      |      |     |      |      |     |        | auto   | 0       | nGp_V       | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:191  |
+|         mul_29s_18ns_47_1_1_U31                  | 71   |      | 2   |      |      |     |        |        |         |             |                                                                               |
+|           bind_op mul                            |      |      |     |      |      |     |        | auto   | 0       | nG_V        | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:190  |
+|         mul_mul_18s_18s_36_4_1_U33               |      |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|           bind_op mul                            |      |      |     |      |      |     |        | dsp48  | 3       | pbx_V       | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:186  |
+|         mul_mul_25s_12ns_37_4_1_U36              |      |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|           bind_op mul                            |      |      |     |      |      |     |        | dsp48  | 3       | ra_V        | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:192  |
+|         mul_mul_25s_12ns_37_4_1_U37              | 37   |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|           bind_op mul                            |      |      |     |      |      |     |        | dsp48  | 3       | rb_V        | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:193  |
+|       grp_scan_unit_Pipeline_QOF_fu_699          | 58   | 81   |     |      |      |     |        |        |         |             |                                                                               |
+|         (grp_scan_unit_Pipeline_QOF_fu_699)      | 37   | 79   |     |      |      |     |        |        |         |             |                                                                               |
+|         flow_control_loop_pipe_sequential_init_U | 21   | 2    |     |      |      |     |        |        |         |             |                                                                               |
+|       grp_scan_unit_Pipeline_RAY_fu_720          | 132  | 104  | 2   |      |      |     |        |        |         |             |                                                                               |
+|         (grp_scan_unit_Pipeline_RAY_fu_720)      | 60   | 102  |     |      |      |     |        |        |         |             |                                                                               |
+|         flow_control_loop_pipe_sequential_init_U | 28   | 2    |     |      |      |     |        |        |         |             |                                                                               |
+|         mul_mul_26s_11ns_37_4_1_U49              | 23   |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|           bind_op mul                            |      |      |     |      |      |     |        | dsp48  | 3       | ret_V       | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:1494 |
+|         mul_mul_26s_11ns_37_4_1_U50              | 23   |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|           bind_op mul                            |      |      |     |      |      |     |        | dsp48  | 3       | ret_V_5     | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:1494 |
+|       mac_muladd_18s_18s_36s_36_4_1_U73          | 146  |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     |        | dsp48  | 3       | dx2_V       | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:164  |
+|         bind_op add                              |      |      |     |      |      |     |        | dsp48  | 3       | X_V         | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|       mul_32ns_32ns_63_4_1_U64                   | 46   | 18   | 4   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     | yes    | dsp    | 0       | ret_V_28    | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|       mul_32ns_32ns_64_4_1_U65                   | 82   | 52   | 4   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     | yes    | dsp    | 0       | ret_V_29    | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|       mul_34ns_32ns_64_4_1_U66                   | 115  | 50   | 4   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     | yes    | dsp    | 0       | ret_V_30    | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|       mul_37ns_18s_50_4_1_U69                    |      |      | 2   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     | yes    | dsp    | 0       | ret_V_32    | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:90   |
+|       mul_37ns_18s_50_4_1_U70                    | 17   |      | 2   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     | yes    | dsp    | 0       | ret_V_33    | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:92   |
+|       mul_37ns_36ns_66_4_1_U67                   | 72   | 36   | 5   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     | yes    | dsp    | 0       | ret_V_31    | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:186  |
+|       mul_8ns_9ns_16_1_1_U68                     |      |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     |        | auto   | 0       | ret_V       | /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:1494 |
+|       mul_mul_18s_18s_36_4_1_U72                 | 37   |      | 1   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     |        | dsp48  | 3       | dy2_V       | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:165  |
+|       mul_mul_23s_19s_40_4_1_U74                 | 46   | 27   | 1   |      |      |     |        |        |         |             |                                                                               |
+|         bind_op mul                              |      |      |     |      |      |     |        | dsp48  | 3       | mul_ln117   | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:117  |
+|     mul_36s_36s_64_1_1_U107                      | 144  |      | 2   |      |      |     |        |        |         |             |                                                                               |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto   | 0       | mul_V       | ${TRAIN_HOME}/dev1_fpga_offload/builds/srchk6/m17_src/srch6_core.cpp:406  |
++--------------------------------------------------+------+------+-----+------+------+-----+--------+--------+---------+-------------+-------------------------------------------------------------------------------+
+
+
+================================================================
+== Place & Route Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 4.31%  | OK     |
+| FD                                                        | 50%       | 2.60%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.34%  | OK     |
+| CARRY8                                                    | 25%       | 1.67%  | OK     |
+| MUXF7                                                     | 15%       | 0.04%  | OK     |
+| DSP                                                       | 80%       | 4.17%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 2.78%  | OK     |
+| URAM                                                      | 80%       | 20.31% | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 9.09%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 150    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== Place & Route Timing Paths
+================================================================
+* Timing was met
++-------+-------+-----------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                                            | ENDPOINT PIN                                                                                    | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                                           |                                                                                                 |              |            |                |          DELAY |        DELAY |
++-------+-------+-----------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 1.669 | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]/C | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/buff0_reg/DSP_A_B_DATA_INST/B[12]    |           20 |         32 |          7.801 |          5.034 |        2.767 |
+| Path2 | 1.786 | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]/C | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/buff0_reg__0/DSP_A_B_DATA_INST/B[12] |           20 |         32 |          7.684 |          5.034 |        2.650 |
+| Path3 | 1.803 | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]/C | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/buff0_reg/DSP_A_B_DATA_INST/B[4]     |           19 |         32 |          7.661 |          4.969 |        2.692 |
+| Path4 | 1.824 | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]/C | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/buff0_reg/DSP_A_B_DATA_INST/B[11]    |           20 |         32 |          7.635 |          4.992 |        2.643 |
+| Path5 | 1.824 | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]/C | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/tmp_product/DSP_A_B_DATA_INST/B[15]  |           18 |         32 |          7.663 |          4.914 |        2.749 |
++-------+-------+-----------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +----------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                            | Primitive Type         |
+    +----------------------------------------------------------------------------------------+------------------------+
+    | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]                                | REGISTER.SDR.FDRE      |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_45                   | CLB.LUT.LUT1           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_20                   | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_19                   | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_A_B_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_PREADD_DATA_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_MULTIPLIER_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_M_DATA_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_ALU_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_OUTPUT_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_ALU_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_OUTPUT_INST     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_120           | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_58            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_55            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_54            | CLB.LUT.LUT6           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_29__1         | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_4__3          | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_3__3          | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_2__2          | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/buff0_reg_i_1__1            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/buff0_reg/DSP_A_B_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    +----------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                               | Primitive Type         |
+    +-------------------------------------------------------------------------------------------+------------------------+
+    | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]                                   | REGISTER.SDR.FDRE      |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_45                      | CLB.LUT.LUT1           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_20                      | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_19                      | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_A_B_DATA_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_PREADD_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_MULTIPLIER_INST       | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_M_DATA_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_ALU_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_OUTPUT_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_ALU_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_OUTPUT_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_120              | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_58               | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_55               | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_54               | CLB.LUT.LUT6           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_29__1            | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_4__3             | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_3__3             | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_2__2             | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/buff0_reg_i_1__1               | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/buff0_reg__0/DSP_A_B_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    +-------------------------------------------------------------------------------------------+------------------------+
+
+    +----------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                            | Primitive Type         |
+    +----------------------------------------------------------------------------------------+------------------------+
+    | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]                                | REGISTER.SDR.FDRE      |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_45                   | CLB.LUT.LUT1           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_20                   | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_19                   | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_A_B_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_PREADD_DATA_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_MULTIPLIER_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_M_DATA_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_ALU_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_OUTPUT_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_ALU_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_OUTPUT_INST     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_120           | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_58            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_55            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_54            | CLB.LUT.LUT6           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_29__1         | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_4__3          | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_3__3          | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_2__2          | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/buff0_reg/DSP_A_B_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    +----------------------------------------------------------------------------------------+------------------------+
+
+    +----------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                            | Primitive Type         |
+    +----------------------------------------------------------------------------------------+------------------------+
+    | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]                                | REGISTER.SDR.FDRE      |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_45                   | CLB.LUT.LUT1           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_20                   | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_19                   | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_A_B_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_PREADD_DATA_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_MULTIPLIER_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_M_DATA_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_ALU_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_OUTPUT_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_ALU_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_OUTPUT_INST     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_120           | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_58            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_55            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_54            | CLB.LUT.LUT6           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_29__1         | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_4__3          | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_3__3          | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_2__2          | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/buff0_reg_i_1__1            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/buff0_reg/DSP_A_B_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    +----------------------------------------------------------------------------------------+------------------------+
+
+    +------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                              | Primitive Type         |
+    +------------------------------------------------------------------------------------------+------------------------+
+    | grp_seq_fu_157/grp_bel_unit_fu_980/qq_V_reg_1584_reg[1]                                  | REGISTER.SDR.FDRE      |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_45                     | CLB.LUT.LUT1           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_20                     | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout_i_19                     | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_A_B_DATA_INST        | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_PREADD_DATA_INST     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_MULTIPLIER_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_M_DATA_INST          | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_ALU_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout/DSP_OUTPUT_INST          | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_ALU_INST          | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/dout__0/DSP_OUTPUT_INST       | ARITHMETIC.DSP.DSP48E2 |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_120             | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_58              | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_55              | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_54              | CLB.LUT.LUT6           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_29__1           | CLB.LUT.LUT4           |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_4__3            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_31ns_24ns_54_1_1_U2/tmp_product_i_3__3            | CLB.CARRY.CARRY8       |
+    | grp_seq_fu_157/grp_bel_unit_fu_980/mul_40ns_31ns_71_4_1_U3/tmp_product/DSP_A_B_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    +------------------------------------------------------------------------------------------+------------------------+
+
+
+================================================================
+== Place & Route Vivado Reports
+================================================================
++--------------------------+------------------------------------------------------------------+
+| Report Type              | Report Location                                                  |
++--------------------------+------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/srch_top_design_analysis_routed.rpt          |
+| failfast                 | impl/verilog/report/srch_top_failfast_routed.rpt                 |
+| status                   | impl/verilog/report/srch_top_status_routed.rpt                   |
+| timing                   | impl/verilog/report/srch_top_timing_routed.rpt                   |
+| timing_paths             | impl/verilog/report/srch_top_timing_paths_routed.rpt             |
+| utilization              | impl/verilog/report/srch_top_utilization_routed.rpt              |
+| utilization_hierarchical | impl/verilog/report/srch_top_utilization_hierarchical_routed.rpt |
++--------------------------+------------------------------------------------------------------+
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Fast DDS 2.6 (ROS 2 Humble default RMW) profile for large images between processes on one host.
+     Default setup sends 640x480 RGB-D frames (~2.1 MB per pair) over UDP fragments; on the Nano in a
+     container this dropped ~80 % of frames. A 32 MB shared-memory segment carries whole frames.
+     When EVERY participant of a container carries this profile, the container /dev/shm must be larger than the
+     64 MB Docker default (docker run with the shm-size 1g option, or the ipc host option). When only the image
+     publisher carries it (rig_inner.sh CAM_DDS_PROFILE, 2026-10-12) one 32 MB segment fits the default.
+     No double hyphen inside this comment: XML forbids it (a strict parser rejects the whole file). -->
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <transport_descriptors>
+    <transport_descriptor>
+      <transport_id>fpga_shm</transport_id>
+      <type>SHM</type>
+      <segment_size>33554432</segment_size>
+    </transport_descriptor>
+    <transport_descriptor>
+      <transport_id>fpga_udp</transport_id>
+      <type>UDPv4</type>
+    </transport_descriptor>
+  </transport_descriptors>
+  <participant profile_name="fpga_default" is_default_profile="true">
+    <rtps>
+      <userTransports>
+        <transport_id>fpga_shm</transport_id>
+        <transport_id>fpga_udp</transport_id>
+      </userTransports>
+      <useBuiltinTransports>false</useBuiltinTransports>
+    </rtps>
+  </participant>
+</profiles>

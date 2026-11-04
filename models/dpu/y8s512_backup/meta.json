@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "y8s_six_512_b1024.xmodel",
+    "kernel": [
+        "subgraph_RawYOLO__RawYOLO_C2f_model__ModuleList_12__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__input_173"
+    ],
+    "target": "DPUCZDX8G_ISA1_B1024"
+}

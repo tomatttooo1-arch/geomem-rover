@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "provenance": "modelled_sim",
+  "frames": {
+    "base": "base_link",
+    "tracked": "camera_link",
+    "optical": "camera_optical_frame"
+  },
+  "base_to_tracked": {
+    "xyz": [0.13, 0, 0.35],
+    "rpy": [0, 0.471238898, 0]
+  },
+  "tracked_to_optical": {
+    "xyz": [0, 0, 0],
+    "rpy": [-1.5707963267948966, 0, -1.5707963267948966]
+  },
+  "convention": "xyz in metres; rpy is REP-103 fixed-axis roll-pitch-yaw in radians, the argument order tf2_ros static_transform_publisher takes as --roll --pitch --yaw",
+  "sources": [
+    "robot_sim/fpga_sim/launch/navigation.launch.py:86 static_tf(\"base_to_camera\", \"base_link\", \"camera_link\", xyz=(0.13, 0, 0.35), rpy=(0, 0.471238898, 0))",
+    "robot_sim/fpga_sim/launch/navigation.launch.py:87-88 static_tf(\"camera_to_optical\", \"camera_link\", \"camera_optical_frame\", rpy=(-1.5707963267948966, 0, -1.5707963267948966))",
+    "robot_sim/fpga_sim/worlds/room_carmount.sdf:368 <sensor name=\"rgbd\"> <pose>0.13 0 0.35 0 0.471238898 0</pose>",
+    "robot_sim/fpga_sim/worlds/room_carmount.sdf:348,356 camera_collision / camera_visual <pose>0.13 0 0.35 0 0.471238898 0</pose>",
+    "car mount 0.13/0/0.35 m, 27 deg down: tools/car_geo_producer/common.py base_camera (sil-assess-20261014 smoke 3); was 0.18/0/0.95, pitch 0.25 (room.sdf mast) until 2026-10-14"
+  ],
+  "note": "modelled simulation values, not a measurement; replace with a measured manifest (provenance=measured) on the real robot"
+}

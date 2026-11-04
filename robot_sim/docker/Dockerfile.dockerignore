@@ -1,0 +1,9 @@
+**
+!robot_sim/
+!robot_sim/fpga_sim/
+!robot_sim/fpga_sim/**
+!robot_sim/docker/
+!robot_sim/docker/Dockerfile
+!robot_sim/docker/entrypoint.sh
+**/__pycache__/
+**/*.pyc

@@ -1,0 +1,42 @@
+{
+ "_note": "CHASSIS0 first lifted-wheel test (owner present, wheels off the ground): params_car_bench.json with the goal 0.3 m ahead instead of 2 m.",
+ "camera_to_world": [
+  [
+   0.0,
+   0.0,
+   1.0,
+   0.0
+  ],
+  [
+   -1.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   -1.0,
+   0.0,
+   0.3
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "identity": {
+  "stream_instance": "kvcam",
+  "clock_id": "kv_mono",
+  "calibration_id": "kv2-bench-lift",
+  "pose_epoch": "0"
+ },
+ "ground_z_m": 0.0,
+ "grid_robot_height_m": 0.31,
+ "nav_goal": [
+  0.3,
+  0.0,
+  0.0
+ ]
+}

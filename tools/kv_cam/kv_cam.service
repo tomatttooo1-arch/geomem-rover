@@ -1,0 +1,21 @@
+# kv_cam systemd unit TEMPLATE (NN-CAM1, 2026-11-04). Not installed by anything in this branch; the board
+# integration package (NN-INT1) decides where it goes. Layout = the camkv0 deploy package: <root>/bin/kv_cam,
+# <root>/lib/{libOrbbecSDK.so*,extensions/}, <root>/OrbbecSDKConfig.xml.
+# Runs as root: the ring must not belong to the ubuntu user (RemoveIPC deletes its /dev/shm files at logout), and
+# root needs no udev rule for the camera. Restart=always is the outer loop: kv_cam itself already retries the
+# camera forever (alarm + restart, never a refusal), the unit only covers a crash of the process.
+[Unit]
+Description=kv_cam: Orbbec Gemini 2 -> shared-memory frame ring (/dev/shm/kv_cam_v1)
+After=local-fs.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/kv_cam
+ExecStart=/opt/kv_cam/bin/kv_cam --cpu 1 --nice -5 --alarm-log /var/log/kv_cam/alarms.jsonl --sdk-log /var/log/kv_cam/sdk
+ExecStartPre=/bin/mkdir -p /var/log/kv_cam/sdk
+Restart=always
+RestartSec=2
+# leave the ring in place on stop: readers keep their mapping; the next kv_cam reuses it (epoch + 1)
+
+[Install]
+WantedBy=multi-user.target

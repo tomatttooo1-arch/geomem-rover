@@ -1,0 +1,20 @@
+# Fusion and cost-map core (rolling): before/after
+# Excerpts copied verbatim from the original files (line numbers of the original file given); numbers unchanged.
+
+## source: SLIM_FUSE2/README.md -- same-flow OOC synthesis incl. GRID; INTEGRATE cosim cycles median / max
+L23 (part of line): 注意：审计 §2 的 9,517 LUT 是 v3fc2 整板**布线后、不含 GRID** 的数字；本表全部是 **OOC 综合后、含 GRID**，
+L27: | `b0_base`（改前） | — | 11,646 | 9,127 | 12 | 19.5（17 + 5） | 9 | 6.651 ns | 53,307 / 92,348 |
+L32: | **`b7_final`（终版）** | 1–7 | **10,818** | **8,899** | **6** | **6.5（5 + 3）** | 9 | 5.891 ns | **5,985 / 29,694** |
+L77: | `b7_final`（终版） | cosim_r10 | PASS，0 失配 | INTEGRATE 5,985 / 29,694（与 b6 只差一帧 26 拍） |
+
+## source: FUSE_SLIM3/README.md -- further trimming; whole-board IP is c3
+L45: | 构建 | 综合后 LUT / FF | 综合后关键路径 | 10 ns 布线 LUT / FF / 控制集 / WNS / WHS | 7 ns 布线 LUT / FF / 控制集 / WNS / WHS | 三条联仿（cosim_r10 / grid_cosim / stress80） |
+L47: | b7_final（改前） | 10,818 / 8,899 | 5.891 ns | 10,365 / 8,899 / 281 / +2.480 / +0.046 | 10,404 / 8,899 / 281 / +0.058 / +0.055 | 全 PASS 0 失配（SLIM_FUSE2） |
+L50: | c3 核顶层 | 9,075 / 7,664 | 6.025 ns | 8,671 / 7,664 / 249 / +1.868 / +0.040 | 8,699 / 7,664 / 249 / +0.267 / +0.038 | 全 PASS 0 失配 |
+L51: | c3b 静态写回 | **8,898 / 7,616** | 5.891 ns | **8,506 / 7,616 / 252 / +2.267 / +0.048** | 8,530 / 7,616 / 252 / +0.140 / +0.036 | 全 PASS 0 失配 |
+L53: - 增量（10 ns 布线 LUT）：c1 −477，c2 −122，c3 −1,095，c3b −165；合计 10,365 → 8,506，**−1,859（−17.9%）**；FF 8,899 → 7,616（−1,283，−14.4%）；控制集 281 → 252。综合后口径 10,818 → 8,898（−17.7%）。DSP 6、BRAM、URAM 9 全程不变。
+L55 (part of line): c3b grid_cosim 104,136、stress80 966,914、cosim_r10 661,822 拍，与 c3（104,136 / 966,836 / 661,770）和改前（104,162 / 967,382 / 662,108）基本相同，差 < 0.1%。
+
+## source: BOARD4/README.md -- board device time per INTEGRATE, cosim_r10 trace
+L32: | 3 每帧融合设备时间 | 预注册：新 0.05–0.09 ms、旧 0.50–0.58 ms | **兑现**：新 0.0668 ms、旧（m2）0.5391 ms、旧（v3fc2）0.5400 ms |
+L53: | **每帧融合 INTEGRATE（cosim_r10，状态 0 的 48 条）中位 / p95 / 最大** | 0.540 / 0.549 / 0.932 | 0.539 / 0.548 / 0.932（本包同工具同轨迹测） | **0.0668 / 0.302 / 0.303** | **−87.6%，8.1 倍** |

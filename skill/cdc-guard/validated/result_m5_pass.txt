@@ -1,0 +1,3 @@
+PAIR clk_pl_0 -> clk_dpu_m7_pl_clk_wiz_dpu_0 paths=209
+PAIR clk_dpu_m7_pl_clk_wiz_dpu_0 -> clk_pl_0 paths=27
+CDC_GUARD PASS (all clk_pl_0<->clk_dpu paths inside m7_pl_i/dpu)

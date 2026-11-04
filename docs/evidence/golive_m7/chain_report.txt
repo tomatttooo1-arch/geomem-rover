@@ -1,0 +1,9 @@
+[depth] frames 6774 / camera offered 7709; camera 29.94 fps (device clock)
+  arrive -> geometry median  12.794  p95  17.012  p99  24.187 ms   out  26.303 fps  drop 0.1213
+  arrive -> grid     median  17.988  p95  23.974  p99  33.059 ms   out  26.302 fps  drop 0.1213
+  arrive -> field    median  46.354  p95  65.117  p99  70.948 ms   out   1.899 fps  drop None
+  field refresh 1.899 Hz; grid -> field median 29.323 ms
+[colour] frames 1829 / camera offered 7699; camera 29.942 fps (device clock)
+  arrive -> prep     median  23.633  p95  41.928  p99  44.033 ms   out   7.107 fps  drop 0.7624
+  arrive -> dpu      median   158.7  p95 176.694  p99  179.11 ms   out   7.107 fps  drop 0.7624
+  arrive -> post     median  159.15  p95 177.135  p99 179.605 ms   out   7.107 fps  drop 0.7624

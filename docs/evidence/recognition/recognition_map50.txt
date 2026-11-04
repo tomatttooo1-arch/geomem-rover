@@ -1,0 +1,5 @@
+# Recognition accuracy (overall mAP50 only)
+# Excerpts copied verbatim (line numbers of the original file given); numbers unchanged.
+
+## source: RECOG640/README.md -- 640 INT8 model, main vehicle set 391 images
+L62: | 车载主集 mAP50 | 75.85% | 84.77%（<team> 第四轮 640 INT8，主 391 张） |

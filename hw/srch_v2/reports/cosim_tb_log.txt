@@ -1,0 +1,5 @@
+C/RTL co-simulation (Vitis HLS 2022.2, xsim, Verilog), testbench hw/srch/srch_tb.cpp, vectors trace_v1.bin / trace_v2.bin
+TB trace_v1.bin: 32 records, 0 mismatching
+TB trace_v2.bin: 39 records, 0 mismatching
+TB PASS
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***

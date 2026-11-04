@@ -1,0 +1,4 @@
+PAIR clk_pl_0 -> clk_dpu_m7_pl_clk_wiz_dpu_0 paths=210
+  OUTSIDE_DPU from=m7_pl_i/sysinfo/inst/cycles_hi_latched_reg[0]/C to=m7_pl_i/merge10_negctl_ff/D
+PAIR clk_dpu_m7_pl_clk_wiz_dpu_0 -> clk_pl_0 paths=27
+CDC_GUARD FAIL outside=1

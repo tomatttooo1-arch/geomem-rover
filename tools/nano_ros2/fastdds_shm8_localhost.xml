@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 8 MB variant (heartbeat-gap T2, 2026-10-16) of fastdds_shm_localhost.xml. Board 10-16: given to the camera driver
+     through ros2 launch, the 32 MB file makes BOTH the launch process and the driver node (component_container) create
+     a 32 MB segment; Fast DDS fills its segment at creation, so the first one takes half of the stack container's
+     64 MB /dev/shm and the driver node's own fails (Failed to create segment, host repro) and falls back to the 512 KB
+     default. With 8 MB both fit. Everything below is the original comment.
+     Fast DDS 2.6 (ROS 2 Humble) profile for ONE image publisher inside a chain whose other participants run
+     with ROS_LOCALHOST_ONLY=1 and no profile (rig_inner.sh CAM_DDS_PROFILE, 2026-10-12).
+     Same 32 MB shared-memory segment as fastdds_shm.xml (the 512 KB default is smaller than one RGB+depth tick),
+     but the UDP transport is restricted to the loopback interface, as rmw_fastrtps does for every participant
+     under ROS_LOCALHOST_ONLY=1. fastdds_shm.xml has a UDP transport on all interfaces: carried by the publisher
+     alone on a machine with several interfaces, the loopback-only participants never match it (board run
+     2026-10-12: the producer received 0 frames in 180 s). When EVERY participant carries the profile and the
+     chain is not loopback-only, use fastdds_shm.xml. No double hyphen inside this comment (XML forbids it). -->
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <transport_descriptors>
+    <transport_descriptor>
+      <transport_id>fpga_shm</transport_id>
+      <type>SHM</type>
+      <segment_size>8388608</segment_size>
+    </transport_descriptor>
+    <transport_descriptor>
+      <transport_id>fpga_udp_lo</transport_id>
+      <type>UDPv4</type>
+      <interfaceWhiteList>
+        <address>127.0.0.1</address>
+      </interfaceWhiteList>
+    </transport_descriptor>
+  </transport_descriptors>
+  <participant profile_name="fpga_default" is_default_profile="true">
+    <rtps>
+      <userTransports>
+        <transport_id>fpga_shm</transport_id>
+        <transport_id>fpga_udp_lo</transport_id>
+      </userTransports>
+      <useBuiltinTransports>false</useBuiltinTransports>
+    </rtps>
+  </participant>
+</profiles>

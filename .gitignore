@@ -1,0 +1,126 @@
+# fpga 团队共享仓 —— git 忽略规则
+#
+# 原则：构建产物、模型权重、录制数据一律不进 git；进 git 的只有源码、脚本、文档和清单（MANIFEST）。
+# 大文件的正确去处是 ${FPGA_SHARED}/{data,models,artifacts}/，
+# 仓里只留一份文本清单和指针。
+#
+# 两个刻意的例外，别顺手加上：
+#   *.log —— 不全局忽略。docs/ 里可能有正当的 .log 说明文件；实验日志放 runs/ 下，
+#            已经被下面的 /runs/** 覆盖，不需要再来一条全局规则。
+#   *.bin —— 不全局忽略。U19 包里 binary_container_1.bin 就是正当文件，
+#            全局忽略会误伤所有同名文件。
+
+# ---- Vivado / Vitis / HLS 产物 ----
+*.xclbin
+*.bit
+*.xsa
+*.hwh
+*.ltx
+*.dcp
+.Xil/
+*.jou
+*.str
+_x/
+.ipcache/
+*.backup.jou
+*.backup.log
+hls_prj/
+*_prj/
+.apPlan/
+.autopilot/
+solution*/
+
+# ---- AI 模型权重 ----
+*.xmodel
+*.gguf
+*.onnx
+*.engine
+*.pth
+*.pt
+*.tflite
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# ---- ROS ----
+build/
+devel/
+install/
+log/
+.catkin_tools/
+
+# ---- 录制 / 数据文件 ----
+*.bag
+*.mcap
+*.svo
+*.pcd
+*.ply
+*.mp4
+*.avi
+
+# ---- 三个大目录：内容整体忽略 ----
+# 开头的 / 是【根锚定】，只对仓根下的这三个目录生效。
+# 教训：不带 / 锚定的排除规则会命中目录树里所有同名目录，曾经因此误删过整个包。
+/data/**
+/models/**
+/runs/**
+
+# ---- 反向豁免：指针与清单必须进 git ----
+# 限制：git 不会走进一个被忽略的目录，所以 data/models/runs 的【子目录】里的
+#       README / MANIFEST 是救不回来的。请把清单放在这三个目录的第一层。
+!**/README.md
+!**/MANIFEST*
+!**/*.sha256
+
+# 公共展示根的基础设施；必须放在反向豁免之后。
+/work/
+/shared/
+/locks/
+/repo.git/
+/.workspace/
+/main/
+
+# GitHub release: curated final-package assets are intentional.
+!/models/
+!/models/**
+!/bitstream/**/*.hwh
+!/bitstream_m7_fullboard/**/*.hwh
+
+# Keep local credentials and runtime/private data out of future commits.
+.env
+.env.*
+!.env.example
+!.env.sample
+.secrets/
+.ssh/
+.aws/
+.github-auth/
+github-auth/
+auth.json
+credentials.json
+*credentials*.json
+id_rsa
+id_ed25519
+*.pem
+*.p12
+*.pfx
+*.key
+**/session.json
+**/lab-connection.json
+**/known_hosts
+*.sqlite
+*.sqlite3
+*.db
+*.zip
+*.tar.gz
+*.tgz
+.DS_Store
+Thumbs.db
+
+# Preserve final-package rebuild entry points.
+!/scripts/build/
+!/scripts/build/**

@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(rtabmap_pair_probe24 LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(RTABMap REQUIRED COMPONENTS core)
+add_executable(rtabmap_pair_probe24 main.cpp)
+target_link_libraries(rtabmap_pair_probe24 PRIVATE rtabmap::core)
+target_compile_options(rtabmap_pair_probe24 PRIVATE -Wall -Wextra)

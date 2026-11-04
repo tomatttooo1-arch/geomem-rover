@@ -1,0 +1,228 @@
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2022.2.2 (lin64) Build 3788238 Tue Feb 21 19:59:23 MST 2023
+| Date              : Wed Nov  4 08:38:58 2026
+| Host              : build-host running 64-bit Ubuntu 24.04.4 LTS
+| Command           : report_timing_summary -max_paths 20 -report_unconstrained -file ${REMOTE_BUILD}/builds/impl-m6a-mk4-setp-m7s17-63ba99b/timing_route.rpt
+| Design            : m7_pl_wrapper
+| Device            : xck26-sfvc784
+| Speed File        : -2LV  PRODUCTION 1.30 05-15-2022
+| Temperature Grade : C
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (0)
+6. checking no_output_delay (1)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (0)
+------------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (1)
+-------------------------------
+ There are 0 ports with no output delay specified.
+
+ There is 1 port with no output delay but user has a false path constraint (MEDIUM)
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.016        0.000                      0               340961        0.009        0.000                      0               340781        0.071        0.000                       0                120066  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                          Waveform(ns)         Period(ns)      Frequency(MHz)
+-----                          ------------         ----------      --------------
+clk_pl_0                       {0.000 5.000}        10.000          100.000         
+  clk_dpu_m7_pl_clk_wiz_dpu_0  {0.000 1.667}        3.333           300.000         
+  clk_dsp_m7_pl_clk_wiz_dpu_0  {0.000 0.833}        1.667           600.000         
+clk_pl_1                       {0.000 3.000}        6.000           166.667         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                              WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                              -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_pl_0                             0.422        0.000                      0               130935        0.009        0.000                      0               130935        2.000        0.000                       0                 44571  
+  clk_dpu_m7_pl_clk_wiz_dpu_0        0.069        0.000                      0               107794        0.010        0.000                      0               107794        0.167        0.000                       0                 41662  
+  clk_dsp_m7_pl_clk_wiz_dpu_0        0.016        0.000                      0                38476        0.010        0.000                      0                38476        0.071        0.000                       0                 10911  
+clk_pl_1                             0.195        0.000                      0                61024        0.010        0.000                      0                61024        1.500        0.000                       0                 22922  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock                   To Clock                         WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------                   --------                         -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+clk_pl_1                     clk_pl_0                          28.382        0.000                      0                   64                                                                        
+clk_dsp_m7_pl_clk_wiz_dpu_0  clk_dpu_m7_pl_clk_wiz_dpu_0        0.195        0.000                      0                 1216        0.075        0.000                      0                 1216  
+clk_dpu_m7_pl_clk_wiz_dpu_0  clk_dsp_m7_pl_clk_wiz_dpu_0        0.332        0.000                      0                 1027        0.068        0.000                      0                 1027  
+clk_pl_0                     clk_pl_1                           5.103        0.000                      0                  116                                                                        
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group         From Clock         To Clock               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------         ----------         --------               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+**async_default**  clk_pl_0           clk_pl_0                 7.882        0.000                      0                  310        0.149        0.000                      0                  310  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group                   From Clock                   To Clock                   
+----------                   ----------                   --------                   
+(none)                       clk_pl_0                                                  
+(none)                                                    clk_dpu_m7_pl_clk_wiz_dpu_0  
+(none)                       clk_dpu_m7_pl_clk_wiz_dpu_0  clk_dpu_m7_pl_clk_wiz_dpu_0  
+(none)                       clk_pl_0                     clk_dpu_m7_pl_clk_wiz_dpu_0  
+(none)                                                    clk_pl_0                     
+(none)                       clk_dpu_m7_pl_clk_wiz_dpu_0  clk_pl_0                     
+(none)                       clk_pl_0                     clk_pl_0                     
+(none)                       clk_pl_1                     clk_pl_0                     
+(none)                                                    clk_pl_1                     
+(none)                       clk_pl_0                     clk_pl_1                     
+(none)                       clk_pl_1                     clk_pl_1                     
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group                   From Clock                   To Clock                   
+----------                   ----------                   --------                   
+(none)                                                    clk_dpu_m7_pl_clk_wiz_dpu_0  
+(none)                                                    clk_pl_0                     
+(none)                                                    clk_pl_1                     
+
+
+
+(Path details omitted; full report available from the build directory.)

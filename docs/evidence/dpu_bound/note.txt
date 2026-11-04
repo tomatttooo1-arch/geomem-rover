@@ -1,0 +1,1 @@
+# 1 thread FPS= 7.23671 -> 1000/7.23671 = 138.2 ms per frame (DPU only, 640 model, xdputil benchmark, 60 s)

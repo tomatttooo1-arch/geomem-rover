@@ -1,0 +1,5 @@
+Nav2 Humble source commit: 3c3db59d6969d8ecee8e68468693d006397f4a0c
+Source: https://github.com/ros-navigation/navigation2/tree/3c3db59d6969d8ecee8e68468693d006397f4a0c/nav2_navfn_planner
+navfn.cpp and navfn.hpp are unmodified BSD licensed upstream files.
+navfn_planner_reference.cpp.txt is the Apache-2.0 wrapper reference; not compiled.
+rclcpp shim suppresses log calls only.

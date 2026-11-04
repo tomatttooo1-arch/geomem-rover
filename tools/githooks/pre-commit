@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# tools/githooks/pre-commit —— 提交前检查完整索引准入
+# 通过 core.hooksPath=tools/githooks 生效（每个 clone 由 tools/new_clone.sh 设好）。
+set -euo pipefail
+exec bash "$(git rev-parse --show-toplevel)/tools/workspace.sh" check-index

@@ -1,0 +1,15 @@
+import { launch, snap, wait, ctl } from './lib.mjs';
+const [app, shots] = process.argv.slice(2); const c = ctl('http://127.0.0.1:19191');
+const { browser, page } = await launch();
+await page.goto(`${app}/?source=live&ws=ws://127.0.0.1:19190/ws`, { waitUntil: 'networkidle' }); await wait(2500);
+console.log(JSON.stringify(await snap(page)));
+console.log('cards:', await page.locator('#objects-grid').innerText());
+await page.screenshot({ path: `${shots}/live_smoke_1.png` });
+await page.fill('#search-input', '杯子'); await page.click('#find-button'); await wait(300); await page.click('[data-find]'); await wait(1200);
+console.log(JSON.stringify(await snap(page)));
+console.log('cands:', await page.locator('#task-candidates').innerText());
+await page.screenshot({ path: `${shots}/live_smoke_2.png` });
+await page.click('[data-candidate="object-0002"]'); await wait(1500);
+console.log(JSON.stringify(await snap(page)));
+await page.click('#stop-task'); await wait(1000); console.log(JSON.stringify(await snap(page)));
+await browser.close();

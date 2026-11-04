@@ -1,0 +1,22 @@
+# Module-level latency (Table 3-5)
+# Excerpts copied verbatim (line numbers of the original file given); numbers unchanged.
+
+## source: BOARD5/README.md -- fusion INTEGRATE 0.0670 ms, GRID 0.2245 ms (board, m4_166)
+L106: | 融合 INTEGRATE（cosim_r10，状态 0 的 48 条）中位 / p95 | — | 0.5401 / 0.5489 | **0.0670 / 0.3029**（8.06 倍） | — |
+L107: | 融合 INTEGRATE（grid_formal，状态 0 的 391 条）中位 / p95 | — | 0.2831 / 0.5440 | **0.0391 / 0.0792**（7.25 倍） | — |
+L108: | GRID 每次设备时间中位（750 条） | — | 0.2268 | **0.2245**（−1.0%） | — |
+
+## source: PLNPATH0/README.md -- planner whole-call cycles @100 MHz: 222,442 = 2.22 ms (80x80, 16 iterations), 573,332 = 5.73 ms (200x200, 6 iterations)
+L21: | 80 档压力例（16 轮），整次调用拍数 | 222,442 | 224,160 | +1,718（取路 78 点） | ≈ 21n+200 = 1,838 |
+L22: | 200 档教室例（6 轮），整次调用拍数 | 573,332 | 576,034 | +2,702（取路 127 点） | ≈ 2,867 |
+
+## source: PREP1/README.md -- pre-processing core cosim cycles
+L16:   联仿 2 帧（方 512 的 RGB 随机图、方 416 的 YUYV 随机图）逐字节一致，拍数 322,900（方 512）/ 318,390（YUYV→416），比设计 §2.2 的手算少约 2%。
+
+## source: MEMK4/README.md -- memory core per-frame time
+L15: 3. **拍数满足"典型帧 ≤1 ms"。** 实车 D2 每帧中位约 0.42 ms、最坏约 0.81 ms；压力流 D3 最坏一帧约 1.4 ms（第 4 节）。
+L75: | D2 实车 | 851 / 7,787 / 8,590 条 → 43 µs / 0.39 ms / 0.43 ms | 8,383 / 8,647 / 16,112 条 → **0.42 ms / 0.43 ms / 0.81 ms** |
+L76: | D3 压力流 | 2,453 / 16,840 / 24,325 条 → 0.12 / 0.84 / 1.22 ms | 5,480 / 19,805 / 27,808 条 → 0.27 / 0.99 / **1.39 ms** |
+
+## source: SRCHK5/README.md -- search core SELECT cycles
+L50: | SELECT | 28,194（0.28 ms） | 6,706 |

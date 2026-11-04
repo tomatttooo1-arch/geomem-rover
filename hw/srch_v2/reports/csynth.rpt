@@ -1,0 +1,300 @@
+
+
+================================================================
+== Synthesis Summary Report of 'srch_top'
+================================================================
++ General Information: 
+    * Date:           Wed Nov  4 06:22:35 2026
+    * Version:        2022.2.2 (Build 3779808 on Feb 17 2023)
+    * Project:        m17
+    * Solution:       sol1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------+------+------+---------+-----------+----------+---------+-------+----------+---------+----------+------------+-----------+----------+
+    |             Modules            | Issue|      | Latency |  Latency  | Iteration|         |  Trip |          |         |          |            |           |          |
+    |             & Loops            | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined|  BRAM   |    DSP   |     FF     |    LUT    |   URAM   |
+    +--------------------------------+------+------+---------+-----------+----------+---------+-------+----------+---------+----------+------------+-----------+----------+
+    |+ srch_top                      |     -|  0.00|        -|          -|         -|        -|      -|        no|  24 (8%)|   45 (3%)|   7406 (3%)|  9069 (7%)|  13 (20%)|
+    | + seq                          |     -|  0.00|        -|          -|         -|        -|      -|        no|   8 (2%)|   45 (3%)|   6287 (2%)|  7903 (6%)|  13 (20%)|
+    |  o SEQ                         |     -|  7.30|        -|          -|    184008|        -|      -|        no|        -|         -|           -|          -|         -|
+    |   + scan_unit                  |     -|  1.27|   184001|  1.840e+06|         -|   184001|      -|        no|        -|   32 (2%)|  1914 (~0%)|  4022 (3%)|    1 (1%)|
+    |    o SCAN_IT                   |     -|  7.30|   184000|  1.840e+06|       115|        -|   1600|        no|        -|         -|           -|          -|         -|
+    |     + scan_unit_Pipeline_QOF   |     -|  4.72|       20|    200.000|         -|       20|      -|        no|        -|         -|    80 (~0%)|  255 (~0%)|         -|
+    |      o QOF                     |    II|  7.30|       18|    180.000|         3|        2|      9|       yes|        -|         -|           -|          -|         -|
+    |     + scan_unit_Pipeline_CONE  |     -|  2.65|       20|    200.000|         -|       20|      -|        no|        -|  10 (~0%)|   538 (~0%)|  647 (~0%)|         -|
+    |      o CONE                    |     -|  7.30|       18|    180.000|        10|        2|      5|       yes|        -|         -|           -|          -|         -|
+    |     + scan_unit_Pipeline_RAY   |     -|  4.10|       45|    450.000|         -|       45|      -|        no|        -|   2 (~0%)|   180 (~0%)|  342 (~0%)|         -|
+    |      o RAY                     |     -|  7.30|       43|    430.000|         5|        1|     40|       yes|        -|         -|           -|          -|         -|
+    |   + bel_unit                   |     -|  0.57|   128013|  1.280e+06|         -|   128013|      -|        no|        -|  10 (~0%)|  1670 (~0%)|  1685 (1%)|         -|
+    |    o BEL_L                     |     -|  7.30|   128011|  1.280e+06|        12|        4|  32000|       yes|        -|         -|           -|          -|         -|
+    +--------------------------------+------+------+---------+-----------+----------+---------+-------+----------+---------+----------+------------+-----------+----------+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface  | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem | 128 -> 128 | 32            | 1       | off    | 0        | 0         | 1            | 1            | 1           | 1           | BRAM=16           |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register    | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL        | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER        | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER      | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR      | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | prm_1       | 0x10   | 32    | W      | Data signal of prm               |                                                                      |
+| s_axi_control | prm_2       | 0x14   | 32    | W      | Data signal of prm               |                                                                      |
+| s_axi_control | status      | 0x1c   | 32    | R      | Data signal of status            |                                                                      |
+| s_axi_control | status_ctrl | 0x20   | 32    | R      | Control signal of status         | 0=status_ap_vld                                                      |
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------+
+| Argument | Direction | Datatype      |
++----------+-----------+---------------+
+| gmem     | inout     | ap_uint<128>* |
+| prm      | in        | ap_uint<64>   |
+| status   | out       | ap_uint<32>&  |
++----------+-----------+---------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+---------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Info                               |
++----------+---------------+-----------+---------------------------------------+
+| gmem     | m_axi_gmem    | interface |                                       |
+| prm      | s_axi_control | register  | name=prm_1 offset=0x10 range=32       |
+| prm      | s_axi_control | register  | name=prm_2 offset=0x14 range=32       |
+| status   | s_axi_control | register  | name=status offset=0x1c range=32      |
+| status   | s_axi_control | register  | name=status_ctrl offset=0x20 range=32 |
++----------+---------------+-----------+---------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------------+-----+--------+--------------+-----+--------+---------+
+| Name                                          | DSP | Pragma | Variable     | Op  | Impl   | Latency |
++-----------------------------------------------+-----+--------+--------------+-----+--------+---------+
+| + srch_top                                    | 45  |        |              |     |        |         |
+|  + seq                                        | 45  |        |              |     |        |         |
+|    s65_V_fu_1254_p2                           | -   |        | s65_V        | add | fabric | 0       |
+|    mul_36s_36s_64_1_1_U107                    | 3   |        | mul_V        | mul | auto   | 0       |
+|    ret_V_4_fu_3471_p2                         | -   |        | ret_V_4      | add | fabric | 0       |
+|    npc_V_fu_3493_p2                           | -   |        | npc_V        | add | fabric | 0       |
+|    add_ln457_fu_3750_p2                       | -   |        | add_ln457    | add | fabric | 0       |
+|   + scan_unit                                 | 32  |        |              |     |        |         |
+|     t_end_V_fu_956_p2                         | -   |        | t_end_V      | add | fabric | 0       |
+|     n_it_V_fu_974_p2                          | -   |        | n_it_V       | add | fabric | 0       |
+|     add_ln840_fu_1178_p2                      | -   |        | add_ln840    | add | fabric | 0       |
+|     ret_V_24_fu_1217_p2                       | -   |        | ret_V_24     | add | fabric | 0       |
+|     ret_V_25_fu_1230_p2                       | -   |        | ret_V_25     | add | fabric | 0       |
+|     ama_addmuladd_16s_6ns_8ns_16ns_16_4_1_U71 | 1   |        | add_ln186_5  | add | dsp48  | 3       |
+|     ama_addmuladd_16s_6ns_8ns_16ns_16_4_1_U71 | 1   |        | mul_ln186    | mul | dsp48  | 3       |
+|     add_ln186_6_fu_1265_p2                    | -   |        | add_ln186_6  | add | fabric | 0       |
+|     ama_addmuladd_16s_6ns_8ns_16ns_16_4_1_U71 | 1   |        | cell_V       | add | dsp48  | 3       |
+|     add_ln160_fu_1295_p2                      | -   |        | add_ln160    | add | fabric | 0       |
+|     add_ln160_1_fu_1318_p2                    | -   |        | add_ln160_1  | add | fabric | 0       |
+|     cxp_V_fu_1332_p2                          | -   |        | cxp_V        | add | fabric | 0       |
+|     add_ln160_3_fu_1345_p2                    | -   |        | add_ln160_3  | add | fabric | 0       |
+|     add_ln160_4_fu_1368_p2                    | -   |        | add_ln160_4  | add | fabric | 0       |
+|     cyp_V_fu_1382_p2                          | -   |        | cyp_V        | add | fabric | 0       |
+|     ret_V_26_fu_1392_p2                       | -   |        | ret_V_26     | sub | fabric | 0       |
+|     ret_V_27_fu_1401_p2                       | -   |        | ret_V_27     | sub | fabric | 0       |
+|     add_ln162_fu_1406_p2                      | -   |        | add_ln162    | add | fabric | 0       |
+|     mac_muladd_18s_18s_36s_36_4_1_U73         | 1   |        | dx2_V        | mul | dsp48  | 3       |
+|     mul_mul_18s_18s_36_4_1_U72                | 1   |        | dy2_V        | mul | dsp48  | 3       |
+|     mac_muladd_18s_18s_36s_36_4_1_U73         | 1   |        | X_V          | add | dsp48  | 3       |
+|     ix_V_fu_1835_p2                           | -   |        | ix_V         | add | fabric | 0       |
+|     idx_V_fu_1849_p2                          | -   |        | idx_V        | add | fabric | 0       |
+|     mul_32ns_32ns_63_4_1_U64                  | 3   | yes    | ret_V_28     | mul | dsp    | 0       |
+|     mul_32ns_32ns_64_4_1_U65                  | 3   | yes    | ret_V_29     | mul | dsp    | 0       |
+|     fac_V_fu_1928_p2                          | -   |        | fac_V        | sub | fabric | 0       |
+|     mul_34ns_32ns_64_4_1_U66                  | 3   | yes    | ret_V_30     | mul | dsp    | 0       |
+|     sub_ln455_fu_1961_p2                      | -   |        | sub_ln455    | sub | fabric | 0       |
+|     mul_37ns_36ns_66_4_1_U67                  | 3   | yes    | ret_V_31     | mul | dsp    | 0       |
+|     mul_37ns_18s_50_4_1_U69                   | 2   | yes    | ret_V_32     | mul | dsp    | 0       |
+|     mul_37ns_18s_50_4_1_U70                   | 2   | yes    | ret_V_33     | mul | dsp    | 0       |
+|     dn_V_fu_2137_p2                           | -   |        | dn_V         | sub | fabric | 0       |
+|     mul_mul_23s_19s_40_4_1_U74                | 1   |        | mul_ln117    | mul | dsp48  | 3       |
+|     q_V_fu_2202_p2                            | -   |        | q_V          | add | fabric | 0       |
+|     add_ln186_10_fu_2216_p2                   | -   |        | add_ln186_10 | add | fabric | 0       |
+|     add_ln186_fu_2028_p2                      | -   |        | add_ln186    | add | fabric | 0       |
+|     mul_8ns_9ns_16_1_1_U68                    | -   |        | ret_V        | mul | auto   | 0       |
+|     K_V_fu_2064_p2                            | -   |        | K_V          | add | fabric | 0       |
+|     add_ln186_2_fu_2277_p2                    | -   |        | add_ln186_2  | add | fabric | 0       |
+|     ret_V_35_fu_2290_p2                       | -   |        | ret_V_35     | add | fabric | 0       |
+|     add_ln186_12_fu_2301_p2                   | -   |        | add_ln186_12 | add | fabric | 0       |
+|     nent_V_1_fu_2360_p2                       | -   |        | nent_V_1     | add | fabric | 0       |
+|     grp_fu_770_p2                             | -   |        | row_V_1      | add | fabric | 0       |
+|     grp_fu_776_p2                             | -   |        | col_V        | add | fabric | 0       |
+|     add_ln186_3_fu_2413_p2                    | -   |        | add_ln186_3  | add | fabric | 0       |
+|     grp_fu_770_p2                             | -   |        | add_ln840_5  | add | fabric | 0       |
+|     grp_fu_776_p2                             | -   |        | add_ln840_6  | add | fabric | 0       |
+|     ptr_V_1_fu_2525_p2                        | -   |        | ptr_V_1      | add | fabric | 0       |
+|    + scan_unit_Pipeline_QOF                   | 0   |        |              |     |        |         |
+|      i_V_fu_143_p2                            | -   |        | i_V          | add | fabric | 0       |
+|      ix_V_fu_190_p2                           | -   |        | ix_V         | add | fabric | 0       |
+|      cnt_V_1_fu_209_p2                        | -   |        | cnt_V_1      | add | fabric | 0       |
+|    + scan_unit_Pipeline_CONE                  | 10  |        |              |     |        |         |
+|      add_ln840_fu_167_p2                      | -   |        | add_ln840    | add | fabric | 0       |
+|      mac_muladd_18s_18s_36s_36_4_1_U34        | 1   |        | pax_V        | mul | dsp48  | 3       |
+|      mul_mul_18s_18s_36_4_1_U32               | 1   |        | pby_V        | mul | dsp48  | 3       |
+|      mul_mul_18s_18s_36_4_1_U33               | 1   |        | pbx_V        | mul | dsp48  | 3       |
+|      mac_mulsub_18s_18s_36s_36_4_1_U35        | 1   |        | pay_V        | mul | dsp48  | 3       |
+|      mac_muladd_18s_18s_36s_36_4_1_U34        | 1   |        | add_ln187    | add | dsp48  | 3       |
+|      mac_mulsub_18s_18s_36s_36_4_1_U35        | 1   |        | sub_ln188    | sub | dsp48  | 3       |
+|      ret_V_fu_249_p2                          | -   |        | ret_V        | add | fabric | 0       |
+|      ret_V_8_fu_258_p2                        | -   |        | ret_V_8      | add | fabric | 0       |
+|      mul_29s_18ns_47_1_1_U31                  | 2   |        | nG_V         | mul | auto   | 0       |
+|      mul_29s_18ns_47_1_1_U30                  | 2   |        | nGp_V        | mul | auto   | 0       |
+|      mul_mul_25s_12ns_37_4_1_U36              | 1   |        | ra_V         | mul | dsp48  | 3       |
+|      mul_mul_25s_12ns_37_4_1_U37              | 1   |        | rb_V         | mul | dsp48  | 3       |
+|      sub_ln195_fu_290_p2                      | -   |        | sub_ln195    | sub | fabric | 0       |
+|      sub_ln195_1_fu_299_p2                    | -   |        | sub_ln195_1  | sub | fabric | 0       |
+|      add_ln195_fu_305_p2                      | -   |        | add_ln195    | add | fabric | 0       |
+|      add_ln195_1_fu_311_p2                    | -   |        | add_ln195_1  | add | fabric | 0       |
+|    + scan_unit_Pipeline_RAY                   | 2   |        |              |     |        |         |
+|      kk_V_2_fu_241_p2                         | -   |        | kk_V_2       | add | fabric | 0       |
+|      mul_mul_26s_11ns_37_4_1_U49              | 1   |        | ret_V        | mul | dsp48  | 3       |
+|      px_V_fu_301_p2                           | -   |        | px_V         | add | fabric | 0       |
+|      mul_mul_26s_11ns_37_4_1_U50              | 1   |        | ret_V_5      | mul | dsp48  | 3       |
+|      py_V_fu_319_p2                           | -   |        | py_V         | add | fabric | 0       |
+|      wu_V_fu_390_p2                           | -   |        | wu_V         | sub | fabric | 0       |
+|      wv_V_fu_395_p2                           | -   |        | wv_V         | sub | fabric | 0       |
+|   + bel_unit                                  | 10  |        |              |     |        |         |
+|     sl_V_fu_482_p2                            | -   |        | sl_V         | add | fabric | 0       |
+|     sub_ln186_fu_766_p2                       | -   |        | sub_ln186    | sub | fabric | 0       |
+|     mul_31ns_24ns_54_1_1_U1                   | 2   |        | pm1_V        | mul | auto   | 0       |
+|     ama_submuladd_16s_16s_34s_34_4_1_U5       | 1   |        | ret_V_36     | sub | dsp48  | 3       |
+|     am_submul_16s_16s_34_4_1_U4               | 1   |        | ret_V_37     | sub | dsp48  | 3       |
+|     ama_submuladd_16s_16s_34s_34_4_1_U5       | 1   |        | sdx_V        | mul | dsp48  | 3       |
+|     am_submul_16s_16s_34_4_1_U4               | 1   |        | sdy_V        | mul | dsp48  | 3       |
+|     ama_submuladd_16s_16s_34s_34_4_1_U5       | 1   |        | add_ln186    | add | dsp48  | 3       |
+|     sub_ln186_1_fu_1014_p2                    | -   |        | sub_ln186_1  | sub | fabric | 0       |
+|     mul_31ns_24ns_54_1_1_U2                   | 2   |        | pm2_V        | mul | auto   | 0       |
+|     dm_V_fu_1054_p2                           | -   |        | dm_V         | sub | fabric | 0       |
+|     mul_40ns_31ns_71_4_1_U3                   | 4   | yes    | ret_V_38     | mul | dsp    | 0       |
+|     t_V_6_fu_838_p2                           | -   |        | t_V_6        | add | fabric | 0       |
+|     acc_V_5_fu_1203_p2                        | -   |        | acc_V_5      | add | fabric | 0       |
+|     acc2_V_5_fu_1179_p2                       | -   |        | acc2_V_5     | add | fabric | 0       |
++-----------------------------------------------+-----+--------+--------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++---------------+------+------+--------+----------+---------+--------+---------+
+| Name          | BRAM | URAM | Pragma | Variable | Storage | Impl   | Latency |
++---------------+------+------+--------+----------+---------+--------+---------+
+| + srch_top    | 24   | 13   |        |          |         |        |         |
+|  + seq        | 8    | 13   |        |          |         |        |         |
+|    UROM_V_U   | 3    | -    |        | UROM_V   | rom_1p  | auto   | 1       |
+|    RA_V_U     | -    | -    | pragma | RA_V     | ram_2p  | lutram | 1       |
+|    RB_V_U     | -    | -    | pragma | RB_V     | ram_2p  | lutram | 1       |
+|    SUBT_U     | -    | -    |        | SUBT     | rom_1p  | auto   | 1       |
+|    GRIDM_V_U  | -    | 3    | pragma | GRIDM_V  | ram_2p  | uram   | 1       |
+|    ENTRY_V_U  | -    | 4    | pragma | ENTRY_V  | ram_2p  | uram   | 1       |
+|    PST_V_U    | -    | 4    | pragma | PST_V    | ram_2p  | uram   | 1       |
+|    SEEN_V_U   | 4    | -    | pragma | SEEN_V   | ram_2p  | bram   | 1       |
+|    OCC_V_U    | -    | 1    | pragma | OCC_V    | ram_2p  | uram   | 1       |
+|    REACH_V_U  | 1    | -    | pragma | REACH_V  | ram_2p  | bram   | 1       |
+|    QT_V_U     | -    | -    | pragma | QT_V     | ram_1p  | lutram | 1       |
+|    CF_V_U     | -    | -    | pragma | CF_V     | ram_1p  | lutram | 1       |
+|    WRT_U      | -    | -    |        | WRT      | rom_1p  | auto   | 1       |
+|   + scan_unit | 0    | 1    |        |          |         |        |         |
+|     VISW_V_U  | -    | 1    | pragma | VISW_V   | ram_2p  | uram   | 1       |
++---------------+------+------+--------+----------+---------+--------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+| Type           | Options                                                                                                                                                      | Location                                       |
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+| inline         |                                                                                                                                                              | m17_src/srch6_core.cpp:47 in sxt               |
+| inline         |                                                                                                                                                              | m17_src/srch6_core.cpp:51 in lane_get          |
+| inline         |                                                                                                                                                              | m17_src/srch6_core.cpp:56 in lane_set          |
+| inline         |                                                                                                                                                              | m17_src/srch6_core.cpp:67 in geom              |
+| bind_op        | variable=yy op=mul impl=dsp latency=3                                                                                                                        | m17_src/srch6_core.cpp:77 in geom, yy          |
+| bind_op        | variable=mu op=mul impl=dsp latency=3                                                                                                                        | m17_src/srch6_core.cpp:80 in geom, mu          |
+| bind_op        | variable=yf op=mul impl=dsp latency=3                                                                                                                        | m17_src/srch6_core.cpp:84 in geom, yf          |
+| bind_op        | variable=xr op=mul impl=dsp latency=3                                                                                                                        | m17_src/srch6_core.cpp:89 in geom, xr          |
+| bind_op        | variable=dxr op=mul impl=dsp latency=3                                                                                                                       | m17_src/srch6_core.cpp:91 in geom, dxr         |
+| bind_op        | variable=dyr op=mul impl=dsp latency=3                                                                                                                       | m17_src/srch6_core.cpp:93 in geom, dyr         |
+| inline         |                                                                                                                                                              | m17_src/srch6_core.cpp:100 in qofn             |
+| pipeline       | II=1                                                                                                                                                         | m17_src/srch6_core.cpp:106 in qofn             |
+| inline         | off                                                                                                                                                          | m17_src/srch6_core.cpp:124 in scan_unit        |
+| loop_tripcount | min=1090 max=1600                                                                                                                                            | m17_src/srch6_core.cpp:148 in scan_unit        |
+| pipeline       | II=2                                                                                                                                                         | m17_src/srch6_core.cpp:181 in scan_unit        |
+| pipeline       | II=1                                                                                                                                                         | m17_src/srch6_core.cpp:200 in scan_unit        |
+| loop_tripcount | min=0 max=40                                                                                                                                                 | m17_src/srch6_core.cpp:201 in scan_unit        |
+| inline         | off                                                                                                                                                          | m17_src/srch6_core.cpp:255 in bel_unit         |
+| pipeline       | II=4                                                                                                                                                         | m17_src/srch6_core.cpp:266 in bel_unit         |
+| dependence     | variable=PST inter false                                                                                                                                     | m17_src/srch6_core.cpp:267 in bel_unit, PST    |
+| loop_tripcount | min=1 max=32000                                                                                                                                              | m17_src/srch6_core.cpp:268 in bel_unit         |
+| bind_op        | variable=pdm op=mul impl=dsp latency=3                                                                                                                       | m17_src/srch6_core.cpp:307 in bel_unit, pdm    |
+| inline         | off                                                                                                                                                          | m17_src/srch6_core.cpp:351 in seq              |
+| pipeline       | off                                                                                                                                                          | m17_src/srch6_core.cpp:360 in seq              |
+| unroll         |                                                                                                                                                              | m17_src/srch6_core.cpp:387 in seq              |
+| unroll         |                                                                                                                                                              | m17_src/srch6_core.cpp:394 in seq              |
+| unroll         |                                                                                                                                                              | m17_src/srch6_core.cpp:401 in seq              |
+| interface      | m_axi port=gmem offset=off bundle=gmem depth=24576 max_read_burst_length=1 max_write_burst_length=1 num_read_outstanding=1 num_write_outstanding=1 latency=1 | m17_src/srch6_core.cpp:505 in srch_top, gmem   |
+| interface      | s_axilite port=prm                                                                                                                                           | m17_src/srch6_core.cpp:506 in srch_top, prm    |
+| interface      | s_axilite port=status                                                                                                                                        | m17_src/srch6_core.cpp:507 in srch_top, status |
+| interface      | s_axilite port=return                                                                                                                                        | m17_src/srch6_core.cpp:508 in srch_top, return |
+| bind_storage   | variable=GRIDM type=ram_2p impl=uram                                                                                                                         | m17_src/srch6_core.cpp:509 in srch_top, GRIDM  |
+| bind_storage   | variable=OCC type=ram_2p impl=uram                                                                                                                           | m17_src/srch6_core.cpp:510 in srch_top, OCC    |
+| bind_storage   | variable=VISW type=ram_2p impl=uram                                                                                                                          | m17_src/srch6_core.cpp:511 in srch_top, VISW   |
+| bind_storage   | variable=ENTRY type=ram_2p impl=uram                                                                                                                         | m17_src/srch6_core.cpp:512 in srch_top, ENTRY  |
+| bind_storage   | variable=PST type=ram_2p impl=uram                                                                                                                           | m17_src/srch6_core.cpp:513 in srch_top, PST    |
+| bind_storage   | variable=SEEN type=ram_2p impl=bram                                                                                                                          | m17_src/srch6_core.cpp:514 in srch_top, SEEN   |
+| bind_storage   | variable=REACH type=ram_2p impl=bram                                                                                                                         | m17_src/srch6_core.cpp:515 in srch_top, REACH  |
+| bind_storage   | variable=RA type=ram_2p impl=lutram                                                                                                                          | m17_src/srch6_core.cpp:516 in srch_top, RA     |
+| bind_storage   | variable=RB type=ram_2p impl=lutram                                                                                                                          | m17_src/srch6_core.cpp:517 in srch_top, RB     |
+| bind_storage   | variable=QT type=ram_1p impl=lutram                                                                                                                          | m17_src/srch6_core.cpp:518 in srch_top, QT     |
+| bind_storage   | variable=CF type=ram_1p impl=lutram                                                                                                                          | m17_src/srch6_core.cpp:519 in srch_top, CF     |
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+
+

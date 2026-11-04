@@ -1,0 +1,15 @@
+0
+            "DPU Frequency (MHz)":300,
+            "XRT Frequency (MHz)":100,
+            "fingerprint":"0x101000056010402",
+T1
+I1104 04:44:49.004606 16667 test_dpu_runner_mt.cpp:477] shuffle results for batch...
+I1104 04:45:49.122012 16667 performance_test.hpp:94] FPS= 7.23671 number_of_frames= 435 time= 60.1102 seconds.
+T2
+I1104 04:45:52.524137 16725 test_dpu_runner_mt.cpp:477] shuffle results for batch...
+I1104 04:46:52.699856 16725 performance_test.hpp:94] FPS= 7.51303 number_of_frames= 452 time= 60.1622 seconds.
+T4
+I1104 04:46:58.118763 16784 test_dpu_runner_mt.cpp:477] shuffle results for batch...
+I1104 04:47:58.572229 16784 performance_test.hpp:94] FPS= 7.51339 number_of_frames= 454 time= 60.4254 seconds.
+
+[exited with code 143]

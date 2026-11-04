@@ -1,0 +1,7 @@
+# batch 1 (2026-10-13): controller's (b) on the real camera, the 32 MB segment on the real camera with one light
+# receiver, then the segment-size pair on the replay camera
+# NOT run yet (2026-10-14): the board session died after l_a2. Run on the Nano with: bash $B/tools/seq.sh $B/tools/batch1.txt
+l_b1 DUR=90 WARM=15 RX=be:best_effort:5+rel:reliable:30
+l_s1 DUR=90 WARM=15 RX=be:best_effort:5 CAM_DDS_PROFILE=/repo/tools/nano_ros2/fastdds_shm_localhost.xml
+r_shm32 CAMERA=replay DUR=60 WARM=10 REPLAY_HZ=30 REPLAY_EXTRA=--rgb RX=be:best_effort:5 CAM_DDS_PROFILE=/repo/tools/nano_ros2/fastdds_shm_localhost.xml
+r_def2 CAMERA=replay DUR=60 WARM=10 REPLAY_HZ=30 REPLAY_EXTRA=--rgb RX=be:best_effort:5

@@ -1,0 +1,12 @@
+# Detection post-processing core: HLS steps
+# Excerpts copied verbatim from the original files (line numbers of the original file given); numbers unchanged.
+
+## source: DETPOST1/README.md -- csynth report per step
+L17: | 步 | 改了什么 | LUT | FF | DSP | BRAM18 | 主循环 II | csim 逐字节 |
+L19: | 0 | 参考模型原样包顶层（DETPOST0 外壳＋全状态口、网格寄存器，候选上限 256） | 20,485 | 15,238 | 54 | 22 | DFL 32、NMS 7、写出 9 | 193/193 |
+L23: | 4 | **结构重写**：128 位扫描＋dataflow 候选管理＋计数排序＋按 NMS 序回读解码，单一 m_axi 束 | **9,656** | **4,930** | **6** | **10** | 全部 1（找最低档 2、装载 6） | 194/194 |
+
+## source: DETPOST1/results/qor_steps.csv -- csynth rows s0 / s8
+L1: step,LUT,FF,DSP,BRAM18,URAM,est_ns,lat_best,lat_worst,w207_55,ignored_pragmas,loop_II
+L3: s0_ref_wrapper,20485,15238,54,22,0,4.380,undef,undef,0,False,"VITIS_LOOP_101_8:II=32 VITIS_LOOP_123_9:II=1 VITIS_LOOP_124_10:II=1 VITIS_LOOP_133_12:II=7 VITIS_LOOP_150_13:II=9 VITIS_LOOP_57_1:II=1 VITIS_LOOP_69_5:II=1 VITIS_LOOP_79_6:II=2 VITIS_LOOP_86_7:II=2 VITIS_LOOP_33_1:II=1 VITIS_LOOP_36_2:II=1 VITIS_LOOP_37_3:II=1"
+L10: s8_maxi_params,8659,5001,6,10,0,4.380,8031,6649746,0,False,"ACC:II=1 DIV:II=1 EXT:II=1 RD:II=1 CMP:II=1 LOAD_PRM:II=6 PFX:II=1 SCAT:II=1 CLR:II=1 COMPACT:II=1 FIND:II=2 WORDS:II=1"

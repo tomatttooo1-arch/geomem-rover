@@ -1,0 +1,17 @@
+run,chain,metric,n,median,p95,p99,mean
+main_y8s640,colour,frames_window,,773,,,
+main_y8s640,colour,ok_frames,,773,,,
+main_y8s640,colour,engine_fail,,0,,,
+main_y8s640,colour,camera_frames_span,,3379,,,
+main_y8s640,colour,skip_rate,,0.7712340929269015,,,
+main_y8s640,colour,mono_viol,,0,,,
+main_y8s640,colour,order_viol,,0,,,
+main_y8s640,colour,cam_to_boxes_ms,773,165.08984,180.77852040000002,182.94995939999998,165.02016682923673
+main_y8s640,colour,seg_arrive_to_read_ms,773,19.682873,33.957724999999996,35.631093199999995,18.95032619534282
+main_y8s640,colour,seg_prep_ms,773,4.871844,5.259694,5.441360919999999,4.930079583441138
+main_y8s640,colour,seg_queue_ms,773,0.710408,0.946665,1.1351787999999994,0.8488071086675291
+main_y8s640,colour,seg_dpu_ms,773,133.718455,133.944037,134.14890996,133.73469633764552
+main_y8s640,colour,seg_post_cpu_ms,773,6.257768,8.0651646,9.377576399999995,6.556257604139715
+main_y8s640,colour,pipeline_fps,,6.843210465698248,,,
+main_y8s640,colour,ndet_mean,,0.9909443725743855,,,
+main_y8s640,power,som_5v_W,1100,,6.2604999999999995,,5.825454545454545

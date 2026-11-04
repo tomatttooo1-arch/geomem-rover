@@ -1,0 +1,64 @@
+/* GeoMem 展台页（10-17）：版式照效果稿 render.html ?style=fv&ui=1（浅色档）与 fp.html，按 1920×1080 设计，
+   --k 随窗口等比缩放。只读页面：不发任何命令。 */
+:root{--k:1;--card:rgba(255,255,255,.78);--ink:#1d2430;--line:rgba(0,0,0,.08);--accent:#ff9a3c;--ok:#1fb86a;--bad:#e5484d;--muted:#7a8394;
+  --dcard:rgba(12,18,28,.62);--dline:rgba(255,255,255,.12)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:#e8e2d8;font-family:'Noto Sans SC','Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif;color:var(--ink)}
+#fp-bg{position:fixed;inset:0;background:#05070b;display:none}
+#kiosk-canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+#ui{position:fixed;inset:0;pointer-events:none}
+#ui .live{pointer-events:auto}
+.px{font-size:calc(22px*var(--k))}
+.status{position:absolute;left:calc(40px*var(--k));top:calc(34px*var(--k));max-width:calc(1060px*var(--k));padding:calc(22px*var(--k)) calc(30px*var(--k));border-radius:calc(18px*var(--k));background:var(--card);border:1px solid var(--line);backdrop-filter:blur(8px)}
+.status .k{font-size:calc(22px*var(--k));opacity:.75;letter-spacing:calc(2px*var(--k))}
+.status .v{font-size:calc(54px*var(--k));font-weight:700;margin-top:calc(6px*var(--k));letter-spacing:calc(2px*var(--k));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.status .s{font-size:calc(22px*var(--k));margin-top:calc(10px*var(--k));opacity:.9}
+.status .s:empty{display:none}
+.status .dot{display:inline-block;width:calc(14px*var(--k));height:calc(14px*var(--k));border-radius:50%;background:var(--accent);margin-right:calc(10px*var(--k));box-shadow:0 0 calc(12px*var(--k)) var(--accent)}
+.status .dot.idle{background:#9aa3ad;box-shadow:none}
+.status .dot.ok{background:#3ddc84;box-shadow:0 0 calc(12px*var(--k)) #3ddc84}
+.status .dot.bad{background:var(--bad);box-shadow:0 0 calc(12px*var(--k)) var(--bad)}
+.notes{position:absolute;left:calc(40px*var(--k));display:flex;flex-direction:column;gap:calc(8px*var(--k));align-items:flex-start}
+.note{font-size:calc(18px*var(--k));padding:calc(7px*var(--k)) calc(16px*var(--k));border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.note[hidden]{display:none}
+.note.warn{background:rgba(255,241,224,.92);color:#8a4b00;border-color:rgba(255,154,60,.45)}
+.note.error{background:rgba(255,232,232,.94);color:#a1161b;border-color:rgba(229,72,77,.4)}
+.note.info{background:rgba(232,242,255,.92);color:#1d4f91;border-color:rgba(63,169,255,.35)}
+.brand{position:absolute;right:calc(40px*var(--k));top:calc(34px*var(--k));text-align:right;font-size:calc(20px*var(--k));opacity:.85;letter-spacing:calc(1px*var(--k))}
+.brand b{font-size:calc(28px*var(--k));letter-spacing:calc(3px*var(--k));display:block}
+.fpga{position:absolute;right:calc(40px*var(--k));top:calc(120px*var(--k));width:calc(340px*var(--k));padding:calc(16px*var(--k)) calc(20px*var(--k));border-radius:calc(14px*var(--k));background:var(--card);border:1px solid var(--line);font-size:calc(18px*var(--k));line-height:1.75}
+.fpga .t{font-size:calc(16px*var(--k));opacity:.7;letter-spacing:calc(2px*var(--k));margin-bottom:calc(4px*var(--k))}
+.fpga .row{display:flex;justify-content:space-between;gap:calc(12px*var(--k))}
+.fpga .row[hidden]{display:none}
+.fpga .v{font-weight:600;white-space:nowrap}
+.fpga .v.ok{color:var(--ok)}
+.fpga .v.bad{color:var(--bad)}
+.fpga .v.na{color:var(--muted);font-weight:500}
+.dock{position:absolute;right:calc(40px*var(--k));bottom:calc(36px*var(--k));display:flex;align-items:center;gap:calc(14px*var(--k))}
+.dock.above{flex-direction:column-reverse;align-items:flex-end}
+.cams{display:flex;gap:calc(10px*var(--k))}
+.pill{border-radius:999px;background:var(--card);border:1px solid var(--line);padding:calc(6px*var(--k));display:flex;font:inherit;color:inherit}
+.pill button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;border-radius:999px;padding:calc(14px*var(--k)) calc(28px*var(--k));font-size:calc(22px*var(--k));opacity:.7}
+.pill button.on{background:var(--accent);color:#1b1206;opacity:1;font-weight:700}
+.pill.small{padding:calc(4px*var(--k))}
+.pill.small button{padding:calc(10px*var(--k)) calc(20px*var(--k));font-size:calc(18px*var(--k))}
+.pill.small button.on{background:rgba(255,154,60,.24);color:inherit;font-weight:700}
+.hint{position:absolute;left:calc(40px*var(--k));bottom:calc(40px*var(--k));font-size:calc(18px*var(--k));opacity:.6}
+/* 第一视角（阶段 1 壳）：深色，同 fp.html */
+body:not([data-view=first]) .fp{display:none !important}
+body[data-view=first] #fp-bg{display:block}
+body[data-view=first] .third{display:none !important}
+body[data-view=first] .status{background:var(--dcard);border-color:var(--dline);color:#fff}
+body[data-view=first] .pill{background:rgba(12,18,28,.7);border-color:rgba(255,255,255,.18);color:#fff}
+/* 画面区的底纹画在 #fp-bg（三维画布之下），.fp-cam 本身透明：否则它盖住画布，小窗（画布上同一 renderer 画的）会被画面区挡掉左半
+   （第 3 棒截图发现）。阶段 2 接入真画面时，画面也要放在画布之下这一层。 */
+#fp-bg::before{content:'';position:absolute;left:calc(240px*var(--k));top:0;width:calc(1440px*var(--k));height:calc(1080px*var(--k));
+  border-left:1px solid rgba(255,255,255,.06);border-right:1px solid rgba(255,255,255,.06);background:repeating-linear-gradient(135deg,#0a0e15 0 calc(22px*var(--k)),#0c111a calc(22px*var(--k)) calc(44px*var(--k)))}
+.fp-cam{position:absolute;left:calc(240px*var(--k));top:0;width:calc(1440px*var(--k));height:calc(1080px*var(--k));display:flex;align-items:center;justify-content:center}
+.fp-cam span{color:rgba(255,255,255,.55);font-size:calc(34px*var(--k));letter-spacing:calc(4px*var(--k));border:1px dashed rgba(255,255,255,.25);border-radius:calc(14px*var(--k));padding:calc(18px*var(--k)) calc(36px*var(--k))}
+.fp-mini{position:absolute;right:calc(40px*var(--k));bottom:calc(120px*var(--k));width:calc(360px*var(--k));height:calc(220px*var(--k));border-radius:calc(14px*var(--k));border:2px solid rgba(255,255,255,.25);overflow:hidden}
+.fp-mini span{position:absolute;left:calc(10px*var(--k));top:calc(8px*var(--k));font-size:calc(16px*var(--k));background:rgba(0,0,0,.5);color:#fff;padding:calc(2px*var(--k)) calc(8px*var(--k));border-radius:calc(6px*var(--k))}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+/* 第一视角：状态卡等叠在车载画面区之上（同 fp.html；第 3 棒截图发现画面区盖住了状态卡） */
+.fp{z-index:0}
+.status,.notes,.brand,.fpga,.hint,.dock{z-index:1}

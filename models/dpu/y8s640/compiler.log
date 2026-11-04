@@ -1,0 +1,19 @@
+[UNILOG][INFO] Compile mode: dpu
+[UNILOG][INFO] Debug mode: null
+[UNILOG][INFO] Target architecture: DPUCZDX8G_ISA1_B1024
+[UNILOG][INFO] Graph name: QatYOLO_0, with op num: 773
+[UNILOG][INFO] Begin to compile...
+[UNILOG][INFO] Total device subgraph number 5, DPU subgraph number 1
+[UNILOG][INFO] Compile done.
+[UNILOG][INFO] The meta json is saved to "/output/meta.json"
+[UNILOG][INFO] The compiled xmodel is saved to "/output/q4_y8s_640_b1024.xmodel"
+[UNILOG][INFO] The compiled xmodel's md5sum is a0092792cd694e272b470c0aa2b52cdd, and has been saved to "/output/md5sum.txt"
+**************************************************
+* VITIS_AI Compilation - Xilinx Inc.
+**************************************************
+{
+  "model": "/output/q4_y8s_640_b1024.xmodel",
+  "sha256": "b04fd7c1c7862eb965cd13fce49663e308bdaa1e6409ab9aa027113be2b884cd",
+  "dpu_subgraph_count": 1,
+  "note": "CPU/USER input data nodes are listed separately; inspect their actual operation types before calling them compute fallback"
+}

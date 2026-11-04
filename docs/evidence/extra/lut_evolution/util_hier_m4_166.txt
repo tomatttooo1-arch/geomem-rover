@@ -1,0 +1,25 @@
+Excerpt of Vivado 2022.2 report_utilization -hierarchical (Design State: Routed, device xck26-sfvc784-2LV-c).
+Build: m4 whole-board build, fast clock 166.67 MHz, BUILD_ID 0x08880589. Report date 2026-11-03. Header lines (host, paths) removed; table rows verbatim.
+
++--------------------+------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+|      Instance      |         Module         | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | URAM | DSP Blocks |
++--------------------+------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+| m7_pl_wrapper      |                  (top) |      40895 |      38507 |     676 | 1712 | 43553 |     41 |      6 |    9 |        166 |
+|   (m7_pl_wrapper)  |                  (top) |          0 |          0 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|   m7_pl_i          |                  m7_pl |      40895 |      38507 |     676 | 1712 | 43553 |     41 |      6 |    9 |        166 |
+|     cdc_frame_done | m7_pl_cdc_frame_done_0 |          0 |          0 |       0 |    0 |     4 |      0 |      0 |    0 |          0 |
+|     frame          |          m7_pl_frame_0 |      24638 |      23025 |     130 | 1483 | 25721 |     25 |      2 |    0 |        151 |
+|     irq_concat     |     m7_pl_irq_concat_0 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|     permit         |         m7_pl_permit_0 |        395 |        395 |       0 |    0 |   500 |      0 |      0 |    0 |          0 |
+|     ps             |             m7_pl_ps_0 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|     roi            |            m7_pl_roi_0 |       6268 |       6021 |     198 |   49 |  7698 |     11 |      1 |    0 |          9 |
+|     rolling        |        m7_pl_rolling_0 |       8376 |       7853 |     348 |  175 |  7550 |      5 |      3 |    9 |          6 |
+|     rst_pl0        |        m7_pl_rst_pl0_0 |         16 |         15 |       0 |    1 |    30 |      0 |      0 |    0 |          0 |
+|     rst_pl1        |        m7_pl_rst_pl1_0 |         13 |         12 |       0 |    1 |    26 |      0 |      0 |    0 |          0 |
+|     sc_ctrl        |        m7_pl_sc_ctrl_0 |       1112 |       1109 |       0 |    3 |  1798 |      0 |      0 |    0 |          0 |
+|     sysinfo        |        m7_pl_sysinfo_0 |         78 |         78 |       0 |    0 |   162 |      0 |      0 |    0 |          0 |
+|     timebase       |       m7_pl_timebase_0 |          1 |          1 |       0 |    0 |    64 |      0 |      0 |    0 |          0 |
++--------------------+------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

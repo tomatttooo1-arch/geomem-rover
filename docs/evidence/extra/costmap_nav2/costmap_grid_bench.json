@@ -1,0 +1,109 @@
+{
+ "records": 489,
+ "off_mismatched_records": 0,
+ "on_mismatched_records": 0,
+ "op_counts": {
+  "1": 397,
+  "2": 44,
+  "3": 42,
+  "0": 5,
+  "7": 1
+ },
+ "grid_calls": 655,
+ "grid_calls_by_flags": {
+  "3": 376,
+  "1": 93,
+  "2": 93,
+  "0": 93
+ },
+ "grid_words_compared": 1423200,
+ "grid_words_diff": 0,
+ "grid_header_diff": 0,
+ "grid_status_bad": 0,
+ "model_status_bad": 0,
+ "bridge_frames": 376,
+ "bridge_grid_cells_diff": 0,
+ "bridge_strict_cells_diff": 0,
+ "bridge_tall_cells_diff": 0,
+ "exact_cost_frames": 376,
+ "exact_cost_cells_diff": 0,
+ "skipped_band_outside_window": 15,
+ "first_differences": [],
+ "rejections": {
+  "before_reset": [
+   1,
+   0
+  ],
+  "band_lo_gt_hi": [
+   2,
+   2
+  ],
+  "band_hi_ge_mz": [
+   2,
+   2
+  ],
+  "tall_below_band": [
+   2,
+   2
+  ],
+  "tall_above_band": [
+   2,
+   2
+  ],
+  "flags_bit2": [
+   2,
+   5
+  ],
+  "radius_too_big": [
+   2,
+   3
+  ],
+  "centre_out_of_range": [
+   2,
+   3
+  ],
+  "table_last_column_nonzero": [
+   2,
+   4
+  ],
+  "bad_table_ignored_without_inflation": [
+   0,
+   0
+  ],
+  "feature_off_op4": [
+   2,
+   0
+  ],
+  "state_unchanged_by_rejections": true
+ },
+ "controls": {
+  "GRID_RING_Y_detected": 292,
+  "GRID_LAST_AUX_detected": 376,
+  "mutant_tried": 376,
+  "wrong_band_detected": 93,
+  "wrong_band_tried": 376
+ },
+ "frames_integrate_accepted": 391,
+ "params": {
+  "band": "D-035 ground 0.0 m, robot height 0.31 m",
+  "body": "synthetic pose, r 0.35 m",
+  "nav2": "inflation 0.45 m, scaling 3.0, robot radius 0.30 m",
+  "lut_row0": [
+   254,
+   253,
+   253,
+   253,
+   253,
+   253,
+   247,
+   213,
+   183,
+   157,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "verdict": "PASS"
+}

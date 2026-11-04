@@ -1,0 +1,20 @@
+# Depth evidence (verification) core
+# Excerpts copied verbatim from the original files (line numbers of the original file given); numbers unchanged.
+
+## source: MERGE1/README.md -- previous whole-board routed hierarchical utilization (v3fc2 column)
+L133: 分模块（LUT / FF / RAMB36＋RAMB18 / URAM / DSP；166 档，142.86 档差 ≤ 200 LUT）：
+L139: | ROI 证据核 roi | 10,013 / 11,750 / 12＋1 / 0 / 9 | 10,009 / 11,745 / 12＋1 / 0 / 9 | 不变（同一 IP） |
+
+## source: SLIM_ROI1/README.md -- same-flow OOC, step-by-step
+L60: ## 前后对比（OOC，产品流程 run_export_hls.tcl，xck26，6 ns，不确定度 12.5%，export_design -flow syn；build/extract.sh）
+L62: | 版本 | 提交 | LUT | FF | DSP | RAMB36 / RAMB18 | 综合后 CP (ns) | WNS@6 | 207-55 / Ignored | 三个流水循环 II | 运算器（batch_1 实例） |
+L64: | 改前 | 3c087c9 | 10,398 | 12,613 | 9 | 12 / 1 | 3.572 | +2.428 | 0 / 无 | 1/1/1 | dsub1 dadd1 ddiv1 dcmp4 fptrunc2 mul1 |
+L65: | 第 1 步 除法→整数比较 | 9122021 | 7,729 (−25.7%) | 9,062 | 9 | 12 / 1 | 3.572 | +2.428 | 0 / 无 | 1/1/1 | ddiv 消失 |
+L66: | 第 2 步 加减共用 | 914d836 | 7,083 | 8,723 | **6** | 12 / 1 | 3.572 | +2.428 | 0 / 无 | 1/1/1 | 只剩 dadd1（无 dsub），fptrunc1 |
+L67: | 第 3 步 位模式比较 | cde3ac2 | 6,676 | 8,145 | 6 | 12 / 1 | 3.572 | +2.428 | 0 / 无 | 1/1/1 | dcmp 4→0 |
+L68: | 第 4 步 面积代替计数 | b572c81 | **6,450** | **7,748** | 9 | 11 / 1 | 4.679 | +1.321 | 0 / 无 | 1/1/1 | mul 1→2 |
+L71: 合计改前→终版：LUT −3,948（−38.0%），FF −4,865（−38.6%），RAMB36 −1，DSP 9→9（第 2 步省的 3 个被第 4 步的面积乘法用回），综合后 CP 3.572→4.679 ns（6 ns 下仍余 1.321 ns）。
+
+## source: BOARD3/README.md -- board ROI device time per frame (290 frames, 5,510 rows = 19 boxes/frame)
+L132: - 逐位：m2 166 开关 0 与开关 1 共有 290 帧 5,510 行 0 差；m2 166 开关 0 与本包所有 ROI 运行（7 次）、与 BOARD2 m1_166 开关 0（289 帧）、SW_M1 m1_166 改前串行（288 帧）都 0 差；阳性对照每次都报差（`raw/roi_cross/`）。ROI 核瘦身没有改变板上结果。
+L133: - ROI 设备时间：166 档 1.41 ms（SW_M1 同口径 m1_166 1.41 ms），不变；142.86 档 1.64 ms。

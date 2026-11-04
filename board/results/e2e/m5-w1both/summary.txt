@@ -1,0 +1,21 @@
+E2E0 summary  raw=.  warm=10s
+build_id.txt missing
+idle_all power nan W (n=None)   idle_cam nan W
+--- model y8s512
+1 camera->field  tick run (replan every tick): median/p95 n/a
+    product run (0.5 s replan)         : 49.5 / 61.8 ms (n=171)
+    processing only (cam->GRID + plan_ms), tick: n/a
+    cam->geometry 13.8 / 16.5 ms (n=2487) | cam->GRID 18.6 / 22.4 ms (n=2487) | plan_ms n/a | depth rate 27.27 fps | skip 0.089
+2 camera->boxes  main run: 99.4 / 106.8 ms (n=1259) ; pipeline 13.58 fps
+    segments: arrive->read 26.2 / 32.6 ms (n=1259) | PL prep 4.5 / 4.8 ms (n=1259) | queue 0.5 / 0.8 ms (n=1259) | DPU 64.1 / 64.2 ms (n=1259) | CPU post 4.0 / 5.4 ms (n=1259)
+3 power main run 6.002 W (n=900, 90 s)  minus idle_all = +nan W
+  checks: depth frames 2487 fail geo/fuse/grid 0/0/0 mono 0 order 0 | colour frames 1259 fail 0 mono 0 order 0 | warnings dpu_rx 0 kv_server 0 | field {"kv_nav_field": "pl", "driver": "{\"core\":\"pl_planner\",\"bus\":{\"regs\":\"/dev/uio11\",\"wait\":\"irq\",\"dma\":\"dmaheap:reserved\"},\"map_pa\":\"0x379d0000\",\"field_pa\":\"0x384c0000\",\"flags
+--- model y8s640
+1 camera->field  tick run (replan every tick): median/p95 n/a
+    product run (0.5 s replan)         : 47.8 / 62.7 ms (n=172)
+    processing only (cam->GRID + plan_ms), tick: n/a
+    cam->geometry 14.0 / 16.6 ms (n=2467) | cam->GRID 18.8 / 22.1 ms (n=2467) | plan_ms n/a | depth rate 26.98 fps | skip 0.099
+2 camera->boxes  main run: 157.1 / 177.1 ms (n=630) ; pipeline 6.79 fps
+    segments: arrive->read 9.8 / 29.3 ms (n=630) | PL prep 4.9 / 5.3 ms (n=630) | queue 0.7 / 1.1 ms (n=630) | DPU 133.9 / 134.1 ms (n=630) | CPU post 7.3 / 9.0 ms (n=630)
+3 power main run 5.974 W (n=900, 90 s)  minus idle_all = +nan W
+  checks: depth frames 2467 fail geo/fuse/grid 0/0/0 mono 0 order 0 | colour frames 630 fail 0 mono 0 order 0 | warnings dpu_rx 0 kv_server 0 | field {"kv_nav_field": "pl", "driver": "{\"core\":\"pl_planner\",\"bus\":{\"regs\":\"/dev/uio11\",\"wait\":\"irq\",\"dma\":\"dmaheap:reserved\"},\"map_pa\":\"0x379d0000\",\"field_pa\":\"0x384c0000\",\"flags

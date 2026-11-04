@@ -1,0 +1,78 @@
+{
+ "raw": ".",
+ "warm_s": 10.0,
+ "idle_all": null,
+ "idle_cam": null,
+ "main_y8s640": {
+  "depth": null,
+  "colour": {
+   "frames_window": 773,
+   "ok_frames": 773,
+   "engine_fail": 0,
+   "camera_frames_span": 3379,
+   "skip_rate": 0.7712340929269015,
+   "mono_viol": 0,
+   "order_viol": 0,
+   "cam_to_boxes_ms": {
+    "n": 773,
+    "median": 165.08984,
+    "p95": 180.77852040000002,
+    "p99": 182.94995939999998,
+    "mean": 165.02016682923673
+   },
+   "seg_arrive_to_read_ms": {
+    "n": 773,
+    "median": 19.682873,
+    "p95": 33.957724999999996,
+    "p99": 35.631093199999995,
+    "mean": 18.95032619534282
+   },
+   "seg_prep_ms": {
+    "n": 773,
+    "median": 4.871844,
+    "p95": 5.259694,
+    "p99": 5.441360919999999,
+    "mean": 4.930079583441138
+   },
+   "seg_queue_ms": {
+    "n": 773,
+    "median": 0.710408,
+    "p95": 0.946665,
+    "p99": 1.1351787999999994,
+    "mean": 0.8488071086675291
+   },
+   "seg_dpu_ms": {
+    "n": 773,
+    "median": 133.718455,
+    "p95": 133.944037,
+    "p99": 134.14890996,
+    "mean": 133.73469633764552
+   },
+   "seg_post_cpu_ms": {
+    "n": 773,
+    "median": 6.257768,
+    "p95": 8.0651646,
+    "p99": 9.377576399999995,
+    "mean": 6.556257604139715
+   },
+   "pipeline_fps": 6.843210465698248,
+   "ndet_mean": 0.9909443725743855
+  },
+  "power": {
+   "n": 1100,
+   "mean_W": 5.825454545454545,
+   "p95_W": 6.2604999999999995,
+   "duration_s": 109.9,
+   "max_gap_s": 0.1010000000000062
+  },
+  "dpu_rx_warnings": 0,
+  "kv_server_warnings": null,
+  "kv_nav_field": null,
+  "dpu_rx_summary": {
+   "out_fps_steady": 6.843,
+   "inferred": 842,
+   "engine_errors": 0,
+   "workers": 1
+  }
+ }
+}

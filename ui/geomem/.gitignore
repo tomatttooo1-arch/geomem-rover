@@ -1,0 +1,4 @@
+# 超过仓库 1 MiB 准入上限的三个原包文件不入库，取回方法见 external_files.md
+runtime/node.exe
+app/vendor/three.core.js
+界面预览.png

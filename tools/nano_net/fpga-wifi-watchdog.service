@@ -1,0 +1,13 @@
+[Unit]
+Description=FPGA WiFi watchdog (re-associate when associated but dead)
+After=NetworkManager.service
+Wants=NetworkManager.service
+
+[Service]
+ExecStart=/usr/local/sbin/fpga-wifi-watchdog.sh
+Restart=always
+RestartSec=10
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

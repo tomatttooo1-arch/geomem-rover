@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.8)
+project(fpga_sim)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY launch config worlds maps DESTINATION share/${PROJECT_NAME})
+install(PROGRAMS scripts/velocity_guard.py scripts/sim_adapter.py scripts/sim_estop_gate.py DESTINATION lib/${PROJECT_NAME})
+ament_package()

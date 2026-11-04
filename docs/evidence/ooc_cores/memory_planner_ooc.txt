@@ -1,0 +1,10 @@
+# Memory core and planner (field part) single-core OOC numbers
+# Excerpts copied verbatim (line numbers of the original file given); numbers unchanged.
+
+## source: MEMK4/README.md -- memory core OOC after route
+L12:    FF 909、DSP 4、RAMB36 4、URAM 2，布线后周期 8.0 ns（100 MHz 下 WNS +2.0 ns）。
+L28: | LUT | ≈1,450 | 2,201 | 1,964 | **1,487** | 9,180 |
+
+## source: PLNPATH0/README.md -- planner field part (first column) before path readback was added
+L16: | LUT | 3,747 | **4,377** | +630 | +363（门 ≤ +600） |
+L17: | FF | 3,777 | 4,429 | +652 | +434 |

@@ -1,0 +1,11 @@
+# Recognition pre-processing core: HLS steps
+# Excerpts copied verbatim from the original files (line numbers of the original file given); numbers unchanged.
+
+## source: PREP1/results/qor_steps.csv -- csynth rows s2 / s18 and OOC row s18 (delivered version)
+L1: step,LUT,FF,DSP,BRAM18,URAM,est_ns,lat_best,lat_worst,w207_55,ignored_pragmas,loop_II
+L2: s2syn,18712,9118,26,23,0,26.257,1,308832,0,False,"cv:II=1 hp:II=1 pk:II=1 ld:II=1 row_word:II=1 upk:II=1 vp:II=1 wd:II=1 xr_xd:II=1 yd:II=1"
+L24: s18ooc,8329,7321,22,15,0,7.300,17,308846,0,False,"cv:II=1 hp:II=1 pk:II=1 hdr:II=1 ld:II=1 rw:II=1 upk:II=1 vp:II=1 wd:II=1 xr_xd:II=1 yd:II=1"
+L25: s18ooc_OOC@10ns,LUT=3551,FF=6335,DSP=22,RAMB36=9,RAMB18=1,WNS=+5.230,WHS=+0.018,csim=PASS(Vitis 70/70),cosim=PASS(2/2+meta),cycles_sq512=322900,cycles_sq416_yuyv=318390,ctrl=242,m_axi=1129,frame=2089(pack 398 unpack 425 s_in 87 s_xt 42 s_yt 36 LUTRAM)
+
+## source: PREP1/README.md -- cycles to time
+L79: - 换算：方 512 一帧约 3.23 ms @100 MHz。DPU 512 档推理约 64 ms，核可以与 DPU 流水重叠（DPU 做第 N 帧时核做第 N+1 帧），只进单帧时延，不进吞吐。

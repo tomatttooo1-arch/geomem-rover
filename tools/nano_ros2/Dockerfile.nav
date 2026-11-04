@@ -1,0 +1,26 @@
+# Nav stack image for the car-side Jetson Orin Nano (arm64).
+# Base: fpga-ros:humble-ros-base-20260927 = ros:humble-ros-base pinned by digest
+#   sha256:86eaec9ba3b5f345090bf92c3f1d7b9f7af369ebc3232876908467ce622e1cd7
+#   (see docs/design/NANO_ROS2_CONTAINER_20260927.md).
+# Apt mirrors: Docker Hub / packages.ros.org are slow or unreachable from the Nano,
+# so both Ubuntu ports and ROS 2 apt sources are switched to the Tsinghua (TUNA) mirror.
+FROM fpga-ros:humble-ros-base-20260927
+
+ARG MIRROR=https://mirrors.tuna.tsinghua.edu.cn
+RUN sed -i "s#http://ports.ubuntu.com/ubuntu-ports/#${MIRROR}/ubuntu-ports/#g" /etc/apt/sources.list \
+ && sed -i "s#http://packages.ros.org/ros2/ubuntu#${MIRROR}/ros2/ubuntu#g" /etc/apt/sources.list.d/ros2.sources \
+ && sed -i "s#^Types: deb deb-src#Types: deb#" /etc/apt/sources.list.d/ros2.sources \
+ && apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      ros-humble-rtabmap-ros \
+      ros-humble-navigation2 \
+      ros-humble-nav2-bringup \
+      ros-humble-robot-localization \
+      ros-humble-imu-filter-madgwick \
+ && mkdir -p /opt/fpga \
+ && dpkg-query -W -f='${Package}\t${Version}\t${Architecture}\n' | sort > /opt/fpga/packages.tsv \
+ && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+LABEL org.fpga.image="fpga-ros:humble-nav-20260927" \
+      org.fpga.base="fpga-ros:humble-ros-base-20260927" \
+      org.fpga.apt-mirror="${MIRROR}"
